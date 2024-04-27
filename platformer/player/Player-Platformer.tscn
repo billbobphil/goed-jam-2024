@@ -4,15 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_x3o6o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_le067"]
-radius = 15.0
-height = 48.0
+radius = 8.0
+height = 26.0
 
 [node name="Player-platformer" type="CharacterBody2D"]
 script = ExtResource("1_o6osv")
-JUMP_VELOCITY = -600.0
+SPEED = 225.0
+JUMP_VELOCITY = -500.0
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-scale = Vector2(1, 1.5)
+scale = Vector2(0.5, 0.75)
 texture = ExtResource("1_x3o6o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -30,8 +31,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(57, 0)
-zoom = Vector2(0.5, 0.5)
+position = Vector2(57, -82)
 position_smoothing_speed = 100.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

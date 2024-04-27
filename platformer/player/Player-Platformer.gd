@@ -48,7 +48,7 @@ func _physics_process(delta):
 	if isJumping && !is_on_floor() && velocity.y > -69:
 		jumpTimer += delta;
 		gravity = baseGravity * .75;
-		if(jumpTimer > .275):
+		if(jumpTimer > .175):
 			gravity = baseGravity * 1.35;
 	
 	#apply gravity, should fall rather than is_on_floor to allow for coyote time
@@ -95,7 +95,7 @@ func handleInputBufferTimer(delta):
 			inputBufferTimer = 0;
 
 func jump():
-	gravity = baseGravity * 2;
+	gravity = baseGravity * 1.6;
 	velocity.y = JUMP_VELOCITY;
 	isJumping = true;
 	shouldFall = true;
