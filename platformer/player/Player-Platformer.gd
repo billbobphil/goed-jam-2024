@@ -11,7 +11,7 @@ extends CharacterBody2D
 var jumpTimer = 0;
 var isJumping = false;
 var coyoteTimer = 0;
-var coyoteTimeWindow : float = .15;
+var coyoteTimeWindow : float = .1;
 var shouldFall = false;
 var inputBufferTimeWindow : float = .1;
 var inputBufferTimer : float = 0;
