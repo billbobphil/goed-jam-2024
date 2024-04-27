@@ -1,0 +1,119 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgls8cg8vvlfj"]
+
+[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_44mup"]
+[ext_resource type="PackedScene" uid="uid://lr7db3m6hb41" path="res://platformer/player/Player-Platformer.tscn" id="2_wx2aq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u325i"]
+size = Vector2(1600, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmkhi"]
+size = Vector2(379, 32)
+
+[node name="Demo" type="Node2D"]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(-697, 344)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+self_modulate = Color(0.333333, 0.431373, 0.101961, 1)
+scale = Vector2(50, 1)
+texture = ExtResource("1_44mup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_u325i")
+
+[node name="Ground2" type="StaticBody2D" parent="."]
+position = Vector2(1022, 267)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground2"]
+self_modulate = Color(0.333333, 0.431373, 0.101961, 1)
+position = Vector2(-610, 0)
+scale = Vector2(11.875, 1)
+texture = ExtResource("1_44mup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+position = Vector2(-610.5, 0)
+shape = SubResource("RectangleShape2D_kmkhi")
+
+[node name="Player-platformer" parent="." instance=ExtResource("2_wx2aq")]
+position = Vector2(24, 302)
+
+[node name="Ground3" type="StaticBody2D" parent="."]
+position = Vector2(1548, 265)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground3"]
+self_modulate = Color(0.333333, 0.431373, 0.101961, 1)
+position = Vector2(-610, 0)
+scale = Vector2(11.875, 1)
+texture = ExtResource("1_44mup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3"]
+position = Vector2(-610.5, 0)
+shape = SubResource("RectangleShape2D_kmkhi")
+
+[node name="Ground4" type="StaticBody2D" parent="."]
+position = Vector2(2053, 183)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground4"]
+self_modulate = Color(0.333333, 0.431373, 0.101961, 1)
+position = Vector2(-610, 0)
+scale = Vector2(11.875, 1)
+texture = ExtResource("1_44mup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4"]
+position = Vector2(-610.5, 0)
+shape = SubResource("RectangleShape2D_kmkhi")
+
+[node name="Ground5" type="StaticBody2D" parent="."]
+position = Vector2(2709, 313)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground5"]
+self_modulate = Color(0.333333, 0.431373, 0.101961, 1)
+position = Vector2(-610, 0)
+scale = Vector2(11.875, 1)
+texture = ExtResource("1_44mup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground5"]
+position = Vector2(-610.5, 0)
+shape = SubResource("RectangleShape2D_kmkhi")
+
+[node name="Ground6" type="StaticBody2D" parent="."]
+position = Vector2(3178, 237)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground6"]
+self_modulate = Color(0.333333, 0.431373, 0.101961, 1)
+position = Vector2(-610, 0)
+scale = Vector2(11.875, 1)
+texture = ExtResource("1_44mup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground6"]
+position = Vector2(-610.5, 0)
+shape = SubResource("RectangleShape2D_kmkhi")
+
+[node name="Ground7" type="StaticBody2D" parent="."]
+position = Vector2(2739, -546)
+rotation = -1.59217
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground7"]
+self_modulate = Color(0.333333, 0.431373, 0.101961, 1)
+position = Vector2(-610, 0)
+scale = Vector2(11.875, 1)
+texture = ExtResource("1_44mup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground7"]
+position = Vector2(-610.5, 0)
+shape = SubResource("RectangleShape2D_kmkhi")
+
+[node name="Ground8" type="StaticBody2D" parent="."]
+position = Vector2(-347, -435)
+rotation = -1.59217
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground8"]
+self_modulate = Color(0.333333, 0.431373, 0.101961, 1)
+position = Vector2(-610, 0)
+scale = Vector2(11.875, 1)
+texture = ExtResource("1_44mup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground8"]
+position = Vector2(-610.5, 0)
+shape = SubResource("RectangleShape2D_kmkhi")
