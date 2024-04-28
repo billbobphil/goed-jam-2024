@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name PlayerPlatformer
+
 @export_group("Debug")
 @export var isDebugEnabled = false;
 @onready var DebugCanvas = $DebugCanvas;
@@ -11,11 +13,17 @@ extends CharacterBody2D
 var jumpTimer = 0;
 var isJumping = false;
 var coyoteTimer = 0;
-var coyoteTimeWindow : float = .1;
+var coyoteTimeWindow : float = .08;
 var shouldFall = false;
 var inputBufferTimeWindow : float = .1;
 var inputBufferTimer : float = 0;
 var isInputBuffered : bool = false;
+var shouldGetKnockedBack : bool = false;
+var knockbackXForce : float = 0;
+var knockbackYForce : float = 0;
+var isKnockedBack : bool = false;
+var knockBackTimer : float = 0;
+var numberOfCollectibles : int = 0;
 
 var gravity;
 var baseGravity = ProjectSettings.get_setting("physics/2d/default_gravity");
@@ -23,15 +31,19 @@ var baseGravity = ProjectSettings.get_setting("physics/2d/default_gravity");
 func _ready():
 	gravity = baseGravity;
 
-	if !isDebugEnabled:
-		DebugCanvas.hide();
-
 	if isDebugEnabled:
 		Engine.set_time_scale(timeScaleModifcation);
+		DebugCanvas.show();
 
 func _physics_process(delta):
 
 	handleInputBufferTimer(delta);
+
+	if isKnockedBack:
+		knockBackTimer += delta;
+		if(knockBackTimer > .25):
+			isKnockedBack = false;
+			knockBackTimer = 0;
 
 	if is_on_floor():
 		coyoteTimer = 0;
@@ -60,14 +72,21 @@ func _physics_process(delta):
 		isInputBuffered = true;
 		inputBufferTimer = 0;
 
-	if !isJumping && Input.is_action_just_pressed("platformer-jump") and (is_on_floor() || isCoyoteTimeValid()):
+	if !isKnockedBack && !isJumping && Input.is_action_just_pressed("platformer-jump") and (is_on_floor() || isCoyoteTimeValid()):
 		jump();
 
-	var direction = Input.get_axis("platformer-left", "platformer-right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if !isKnockedBack:
+		var direction = Input.get_axis("platformer-left", "platformer-right")
+		if direction:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	if shouldGetKnockedBack:
+		velocity.x = knockbackXForce;
+		velocity.y = knockbackYForce;
+		shouldGetKnockedBack = false;
+		isKnockedBack = true;
 
 	if(isDebugEnabled):
 		DebugCanvas.get_node("VelocityYLabel").text = str(velocity.y);
@@ -99,3 +118,13 @@ func jump():
 	velocity.y = JUMP_VELOCITY;
 	isJumping = true;
 	shouldFall = true;
+
+func enemyBounceJump():
+	velocity.y = JUMP_VELOCITY * .8;
+	shouldFall = true;
+	isJumping = true;
+
+func knockback(knockbackDirection, knockbackForce):
+	shouldGetKnockedBack = true;
+	knockbackXForce = knockbackDirection * knockbackForce;
+	knockbackYForce = -100;

@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi7r0jceyhdij"]
+
+[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_etoa3"]
+[ext_resource type="Script" path="res://platformer/build_station/BuildStation.gd" id="1_ga3va"]
+[ext_resource type="Texture2D" uid="uid://bgcg16p5iho52" path="res://generic-art-assets/E_Key_Light.png" id="2_pjl3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irh1v"]
+size = Vector2(201, 89)
+
+[node name="BuildStation" type="Node2D"]
+script = ExtResource("1_ga3va")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.211765, 0.411765, 0.701961, 1)
+scale = Vector2(4, 2)
+texture = ExtResource("1_etoa3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -12.5)
+shape = SubResource("RectangleShape2D_irh1v")
+
+[node name="BuildPrompt" type="Node2D" parent="."]
+visible = false
+position = Vector2(-1, -55)
+
+[node name="Sprite2D2" type="Sprite2D" parent="BuildPrompt"]
+position = Vector2(0, -7)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_pjl3d")
+
+[node name="Label" type="Label" parent="BuildPrompt"]
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 26.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 8
+text = "BUILD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NotEnoughMaterialsPrompt" type="Node2D" parent="."]
+visible = false
+position = Vector2(-1, -55)
+
+[node name="Label" type="Label" parent="NotEnoughMaterialsPrompt"]
+offset_left = -45.0
+offset_top = 3.0
+offset_right = 51.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 8
+text = "Insufficient Tower Pieces"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

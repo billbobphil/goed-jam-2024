@@ -7,7 +7,7 @@
 radius = 8.0
 height = 26.0
 
-[node name="Player-platformer" type="CharacterBody2D"]
+[node name="Player-platformer" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_o6osv")
 SPEED = 225.0
 JUMP_VELOCITY = -500.0
@@ -20,6 +20,7 @@ texture = ExtResource("1_x3o6o")
 shape = SubResource("CapsuleShape2D_le067")
 
 [node name="DebugCanvas" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="VelocityYLabel" type="Label" parent="DebugCanvas"]
 offset_left = 576.0
