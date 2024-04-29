@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://7q6vfq0gown8"]
+
+[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_f2376"]
+[ext_resource type="Script" path="res://logistics/needs_module/NeedsSystem.gd" id="1_fi0lj"]
+[ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="2_hwrfb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dcqed"]
+radius = 97.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcgki"]
+size = Vector2(128, 96)
+
+[node name="NeedsModule" type="Node2D"]
+script = ExtResource("1_fi0lj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 3)
+texture = ExtResource("1_f2376")
+
+[node name="Interactable" parent="." instance=ExtResource("2_hwrfb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_dcqed")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_jcgki")
+debug_color = Color(0.886275, 0.286275, 0.435294, 0.419608)

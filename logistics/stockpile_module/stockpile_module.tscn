@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://drs3xmyxyxx2b"]
+
+[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_bg8wv"]
+[ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="2_cxpok"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0r0vw"]
+radius = 73.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnodc"]
+size = Vector2(64, 96)
+
+[node name="StockpileModule" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 3)
+texture = ExtResource("1_bg8wv")
+
+[node name="Interactable" parent="." instance=ExtResource("2_cxpok")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_0r0vw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_lnodc")
+debug_color = Color(0.894118, 0.278431, 0.407843, 0.419608)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7x7cet5prnd0"]
+
+[ext_resource type="Script" path="res://logistics/interactable/Interactable.gd" id="1_esvk5"]
+[ext_resource type="Texture2D" uid="uid://bgcg16p5iho52" path="res://generic-art-assets/E_Key_Light.png" id="2_7oll8"]
+
+[node name="Interactable" type="Area2D"]
+script = ExtResource("1_esvk5")
+
+[node name="InteractKeySprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7oll8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

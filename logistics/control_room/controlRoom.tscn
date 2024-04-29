@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://djcuow8plteka"]
+
+[ext_resource type="PackedScene" uid="uid://7q6vfq0gown8" path="res://logistics/needs_module/needs_module.tscn" id="2_k83lv"]
+[ext_resource type="PackedScene" uid="uid://hrnniijy3dar" path="res://logistics/player/player_logistics.tscn" id="2_vrpsp"]
+[ext_resource type="PackedScene" uid="uid://cqpxw627b3wta" path="res://logistics/assignments_module/assignments_module.tscn" id="3_hrk0s"]
+[ext_resource type="PackedScene" uid="uid://7vmxawjwdiwg" path="res://logistics/requisitions_module/requisitions_module.tscn" id="4_khfr4"]
+[ext_resource type="PackedScene" uid="uid://brthe3mw3ir6e" path="res://logistics/arrivals_module/arrivals_module.tscn" id="5_v83tu"]
+[ext_resource type="PackedScene" uid="uid://drs3xmyxyxx2b" path="res://logistics/stockpile_module/stockpile_module.tscn" id="6_26bx3"]
+[ext_resource type="Script" path="res://logistics/day_night_cycle/DayNightCycle.gd" id="7_dj60l"]
+
+[node name="ControlRoom" type="Node2D"]
+
+[node name="PlayerLogistics" parent="." instance=ExtResource("2_vrpsp")]
+position = Vector2(319, 227)
+
+[node name="NeedsModule" parent="." instance=ExtResource("2_k83lv")]
+position = Vector2(320, 55)
+
+[node name="AssignmentsModule" parent="." instance=ExtResource("3_hrk0s")]
+position = Vector2(111, 117)
+
+[node name="RequisitionsModule" parent="." instance=ExtResource("4_khfr4")]
+position = Vector2(529, 117)
+
+[node name="ArrivalsModule" parent="." instance=ExtResource("5_v83tu")]
+position = Vector2(111, 282)
+
+[node name="StockpileModule" parent="." instance=ExtResource("6_26bx3")]
+position = Vector2(529, 282)
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("7_dj60l")
