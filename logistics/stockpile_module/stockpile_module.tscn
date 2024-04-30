@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://drs3xmyxyxx2b"]
+[gd_scene load_steps=6 format=3 uid="uid://drs3xmyxyxx2b"]
 
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_bg8wv"]
+[ext_resource type="Script" path="res://logistics/stockpile_module/StockpileModule.gd" id="1_j7pgf"]
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="2_cxpok"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0r0vw"]
@@ -10,6 +11,7 @@ radius = 73.0
 size = Vector2(64, 96)
 
 [node name="StockpileModule" type="Node2D"]
+script = ExtResource("1_j7pgf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 3)
@@ -25,3 +27,113 @@ shape = SubResource("CircleShape2D_0r0vw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_lnodc")
 debug_color = Color(0.894118, 0.278431, 0.407843, 0.419608)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+self_modulate = Color(0, 0, 0, 0.466667)
+position = Vector2(320.5, 178.5)
+scale = Vector2(21.0313, 12.1563)
+texture = ExtResource("1_bg8wv")
+
+[node name="FoodAndWaterLabel" type="Label" parent="CanvasLayer"]
+offset_left = 72.0
+offset_top = 49.0
+offset_right = 195.0
+offset_bottom = 72.0
+text = "Food and Water"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FoodAndWaterValue" type="Label" parent="CanvasLayer"]
+offset_left = 72.0
+offset_top = 72.0
+offset_right = 195.0
+offset_bottom = 95.0
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FuelLabel" type="Label" parent="CanvasLayer"]
+offset_left = 263.0
+offset_top = 50.0
+offset_right = 386.0
+offset_bottom = 73.0
+text = "Fuel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FuelValue" type="Label" parent="CanvasLayer"]
+offset_left = 263.0
+offset_top = 73.0
+offset_right = 386.0
+offset_bottom = 96.0
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuildingMaterialsLabel" type="Label" parent="CanvasLayer"]
+offset_left = 446.0
+offset_top = 51.0
+offset_right = 586.0
+offset_bottom = 74.0
+text = "Building Materials"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuildingMaterialsValue" type="Label" parent="CanvasLayer"]
+offset_left = 457.0
+offset_top = 73.0
+offset_right = 580.0
+offset_bottom = 96.0
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EntertainmentLabel" type="Label" parent="CanvasLayer"]
+offset_left = 166.0
+offset_top = 170.0
+offset_right = 289.0
+offset_bottom = 193.0
+text = "Entertainment"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EntertainmentValue" type="Label" parent="CanvasLayer"]
+offset_left = 166.0
+offset_top = 193.0
+offset_right = 289.0
+offset_bottom = 216.0
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TechnologyLabel" type="Label" parent="CanvasLayer"]
+offset_left = 365.0
+offset_top = 171.0
+offset_right = 488.0
+offset_bottom = 194.0
+text = "Technology"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TechnologyValue" type="Label" parent="CanvasLayer"]
+offset_left = 365.0
+offset_top = 194.0
+offset_right = 488.0
+offset_bottom = 217.0
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 511.0
+offset_top = 305.0
+offset_right = 628.0
+offset_bottom = 351.0
+text = "EXIT"
+
+[connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
+[connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
