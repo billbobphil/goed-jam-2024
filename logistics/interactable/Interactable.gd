@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name Interactable
+
 signal player_entered_interactable
 signal player_exited_interactable
 signal player_interacted
@@ -17,6 +19,9 @@ func _process(_delta):
 			print("player interacted");
 			player_interacted.emit();
 			playerCanInteract = false;
+
+func reenableInteraction():
+	playerCanInteract = true;
 
 func _on_body_entered(body:Node2D):
 	if body is PlayerLogistics:

@@ -27,3 +27,95 @@ shape = SubResource("CircleShape2D_dcqed")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_jcgki")
 debug_color = Color(0.886275, 0.286275, 0.435294, 0.419608)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+self_modulate = Color(0, 0, 0, 0.466667)
+position = Vector2(320.5, 178.5)
+scale = Vector2(21.0313, 12.1563)
+texture = ExtResource("1_f2376")
+
+[node name="FoodAndWaterLabel" type="Label" parent="CanvasLayer"]
+offset_left = 77.0
+offset_top = 52.0
+offset_right = 183.0
+offset_bottom = 75.0
+text = "Food & Water"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FoodAndWaterValue" type="Label" parent="CanvasLayer"]
+offset_left = 106.0
+offset_top = 81.0
+offset_right = 146.0
+offset_bottom = 104.0
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FuelLabel" type="Label" parent="CanvasLayer"]
+offset_left = 249.0
+offset_top = 53.0
+offset_right = 355.0
+offset_bottom = 76.0
+text = "Fuel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FuelValue" type="Label" parent="CanvasLayer"]
+offset_left = 282.0
+offset_top = 82.0
+offset_right = 322.0
+offset_bottom = 105.0
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuildingMaterialsLabel" type="Label" parent="CanvasLayer"]
+offset_left = 433.0
+offset_top = 52.0
+offset_right = 539.0
+offset_bottom = 75.0
+text = "Building Materials"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuildingMaterialsValue" type="Label" parent="CanvasLayer"]
+offset_left = 481.0
+offset_top = 81.0
+offset_right = 521.0
+offset_bottom = 104.0
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EntertainmentLabel" type="Label" parent="CanvasLayer"]
+offset_left = 57.0
+offset_top = 163.0
+offset_right = 197.0
+offset_bottom = 186.0
+text = "Building Materials"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EntertainmentValue" type="Label" parent="CanvasLayer"]
+offset_left = 105.0
+offset_top = 192.0
+offset_right = 145.0
+offset_bottom = 215.0
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 511.0
+offset_top = 305.0
+offset_right = 628.0
+offset_bottom = 351.0
+text = "EXIT"
+
+[connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
+[connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

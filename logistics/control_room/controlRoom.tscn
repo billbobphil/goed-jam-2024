@@ -28,5 +28,7 @@ position = Vector2(111, 282)
 [node name="StockpileModule" parent="." instance=ExtResource("6_26bx3")]
 position = Vector2(529, 282)
 
-[node name="Node" type="Node" parent="."]
+[node name="DayNightCycle" type="Node" parent="."]
 script = ExtResource("7_dj60l")
+
+[connection signal="day_tick" from="DayNightCycle" to="NeedsModule" method="_on_day_tick"]
