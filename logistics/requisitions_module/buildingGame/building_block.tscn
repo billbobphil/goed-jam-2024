@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://qsxjgkn4b8gl"]
+
+[ext_resource type="Script" path="res://logistics/requisitions_module/buildingGame/BuildingBlock.gd" id="1_arwsm"]
+[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_oajch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uanng"]
+size = Vector2(32, 32)
+
+[node name="BuildingBlock" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.1
+max_contacts_reported = 8
+contact_monitor = true
+script = ExtResource("1_arwsm")
+horizontalSpeed = 100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_oajch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uanng")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

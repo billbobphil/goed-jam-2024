@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqxex403ldgog"]
+
+[ext_resource type="Script" path="res://logistics/requisitions_module/fuelGame/FuelGame.gd" id="1_7p745"]
+[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="2_lvfgd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pcan"]
+bg_color = Color(0.239216, 0.658824, 0.772549, 0.145098)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jonpo"]
+color = Color(0.780392, 0.698039, 0.101961, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ni53"]
+bg_color = Color(0.627451, 0.501961, 0.878431, 1)
+
+[node name="FuelGame" type="Node2D" groups=["FuelGame"]]
+script = ExtResource("1_7p745")
+speed = 75.0
+windows = Array[Vector2]([Vector2(15, 25), Vector2(25, 40), Vector2(60, 70), Vector2(40, 55), Vector2(75, 85), Vector2(35, 50), Vector2(85, 95)])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 0.321569)
+position = Vector2(317.5, 176)
+scale = Vector2(20.8438, 12)
+texture = ExtResource("2_lvfgd")
+
+[node name="MinBar" type="ProgressBar" parent="."]
+offset_left = 295.0
+offset_top = 21.0
+offset_right = 330.0
+offset_bottom = 330.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1pcan")
+theme_override_styles/fill = SubResource("StyleBoxLine_jonpo")
+fill_mode = 3
+show_percentage = false
+
+[node name="MaxBar" type="ProgressBar" parent="."]
+offset_left = 295.0
+offset_top = 21.0
+offset_right = 330.0
+offset_bottom = 330.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1pcan")
+theme_override_styles/fill = SubResource("StyleBoxLine_jonpo")
+fill_mode = 3
+show_percentage = false
+
+[node name="FillBar" type="ProgressBar" parent="."]
+offset_left = 295.0
+offset_top = 21.0
+offset_right = 330.0
+offset_bottom = 330.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1pcan")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0ni53")
+fill_mode = 3
+show_percentage = false
+
+[node name="Button" type="Button" parent="."]
+offset_left = 511.0
+offset_top = 305.0
+offset_right = 628.0
+offset_bottom = 351.0
+text = "EXIT"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

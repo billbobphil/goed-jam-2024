@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi8pgy1vk8q86"]
+
+[ext_resource type="Script" path="res://logistics/requisitions_module/buildingGame/BuildingGame.gd" id="1_s4pq3"]
+[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="2_kjfvh"]
+[ext_resource type="PackedScene" uid="uid://qsxjgkn4b8gl" path="res://logistics/requisitions_module/buildingGame/building_block.tscn" id="3_bj5k5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isoor"]
+size = Vector2(838, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvmo0"]
+size = Vector2(32, 108.8)
+
+[node name="BuildingGame" type="Node2D" groups=["BuildingGame"]]
+script = ExtResource("1_s4pq3")
+buildingBlockScene = ExtResource("3_bj5k5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 0.266667)
+position = Vector2(318.5, 175)
+scale = Vector2(20.9063, 11.9375)
+texture = ExtResource("2_kjfvh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 360)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(298, 0)
+scale = Vector2(26.1875, 1)
+texture = ExtResource("2_kjfvh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(298, 0)
+shape = SubResource("RectangleShape2D_isoor")
+
+[node name="BlockSpawnPoint" type="Node2D" parent="."]
+position = Vector2(330, 29)
+
+[node name="BlocksContainer" type="Node" parent="."]
+
+[node name="AchievementLine" type="Sprite2D" parent="."]
+self_modulate = Color(0.207843, 0.619608, 0.372549, 1)
+position = Vector2(320, 143)
+scale = Vector2(21, 0.15625)
+texture = ExtResource("2_kjfvh")
+
+[node name="Area2D" type="Area2D" parent="AchievementLine"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AchievementLine/Area2D"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_lvmo0")
+debug_color = Color(0.976471, 0.156863, 0.0470588, 0.419608)
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 121.0
+offset_bottom = 52.0
+text = "EXIT"
+
+[connection signal="body_entered" from="AchievementLine/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="AchievementLine/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

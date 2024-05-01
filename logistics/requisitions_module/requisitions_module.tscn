@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://7vmxawjwdiwg"]
+[gd_scene load_steps=8 format=3 uid="uid://7vmxawjwdiwg"]
 
+[ext_resource type="Script" path="res://logistics/requisitions_module/RequisitionsModule.gd" id="1_1bka1"]
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_r1hi4"]
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="2_hre31"]
+[ext_resource type="PackedScene" uid="uid://bi8pgy1vk8q86" path="res://logistics/requisitions_module/buildingGame/building_game.tscn" id="3_hfw4m"]
+[ext_resource type="PackedScene" uid="uid://dqxex403ldgog" path="res://logistics/requisitions_module/fuelGame/fuel_game.tscn" id="4_cuxtc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mmog8"]
 radius = 76.0066
@@ -10,6 +13,16 @@ radius = 76.0066
 size = Vector2(96, 64)
 
 [node name="RequisitionsModule" type="Node2D"]
+script = ExtResource("1_1bka1")
+
+[node name="Games" type="Node" parent="."]
+
+[node name="FuelGame" parent="Games" node_paths=PackedStringArray("interactable") instance=ExtResource("4_cuxtc")]
+visible = false
+interactable = NodePath("../../Interactable")
+
+[node name="BuildingGame" parent="Games" instance=ExtResource("3_hfw4m")]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 2)
@@ -25,3 +38,39 @@ shape = SubResource("CircleShape2D_mmog8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_ww8vl")
 debug_color = Color(0.929412, 0.211765, 0.411765, 0.419608)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+self_modulate = Color(0, 0, 0, 0.419608)
+position = Vector2(318.5, 178)
+scale = Vector2(20.9063, 12.125)
+texture = ExtResource("1_r1hi4")
+
+[node name="FuelButton" type="Button" parent="CanvasLayer"]
+offset_left = 78.0
+offset_top = 80.0
+offset_right = 224.0
+offset_bottom = 142.0
+text = "FUEL"
+
+[node name="BuildingButton" type="Button" parent="CanvasLayer"]
+offset_left = 408.0
+offset_top = 80.0
+offset_right = 554.0
+offset_bottom = 142.0
+text = "BUILDING"
+
+[node name="ExitButton" type="Button" parent="CanvasLayer"]
+offset_left = 511.0
+offset_top = 305.0
+offset_right = 628.0
+offset_bottom = 351.0
+text = "EXIT"
+
+[connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
+[connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]
+[connection signal="pressed" from="CanvasLayer/FuelButton" to="." method="_on_fuel_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BuildingButton" to="." method="_on_building_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ExitButton" to="." method="_on_exit_button_pressed"]
