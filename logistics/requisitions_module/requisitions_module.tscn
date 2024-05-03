@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://7vmxawjwdiwg"]
+[gd_scene load_steps=10 format=3 uid="uid://7vmxawjwdiwg"]
 
 [ext_resource type="Script" path="res://logistics/requisitions_module/RequisitionsModule.gd" id="1_1bka1"]
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_r1hi4"]
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="2_hre31"]
 [ext_resource type="PackedScene" uid="uid://bi8pgy1vk8q86" path="res://logistics/requisitions_module/buildingGame/building_game.tscn" id="3_hfw4m"]
 [ext_resource type="PackedScene" uid="uid://dqxex403ldgog" path="res://logistics/requisitions_module/fuelGame/fuel_game.tscn" id="4_cuxtc"]
+[ext_resource type="PackedScene" uid="uid://cgef17oa63su7" path="res://logistics/requisitions_module/entertainmentGame/entertainment_game.tscn" id="4_r6ko4"]
+[ext_resource type="PackedScene" uid="uid://c34nfyiecdpaa" path="res://logistics/requisitions_module/foodGame/food_game.tscn" id="5_qi75g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mmog8"]
 radius = 76.0066
@@ -21,8 +23,17 @@ script = ExtResource("1_1bka1")
 visible = false
 interactable = NodePath("../../Interactable")
 
-[node name="BuildingGame" parent="Games" instance=ExtResource("3_hfw4m")]
+[node name="BuildingGame" parent="Games" node_paths=PackedStringArray("interactable") instance=ExtResource("3_hfw4m")]
 visible = false
+interactable = NodePath("../../Interactable")
+
+[node name="EntertainmentGame" parent="Games" node_paths=PackedStringArray("interactable") instance=ExtResource("4_r6ko4")]
+visible = false
+interactable = NodePath("../../Interactable")
+
+[node name="FoodGame" parent="Games" node_paths=PackedStringArray("interactable") instance=ExtResource("5_qi75g")]
+visible = false
+interactable = NodePath("../../Interactable")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 2)
@@ -69,8 +80,24 @@ offset_right = 628.0
 offset_bottom = 351.0
 text = "EXIT"
 
+[node name="EntertainmentButton" type="Button" parent="CanvasLayer"]
+offset_left = 77.0
+offset_top = 188.0
+offset_right = 223.0
+offset_bottom = 250.0
+text = "ENTERTAINMENT"
+
+[node name="FoodButton" type="Button" parent="CanvasLayer"]
+offset_left = 411.0
+offset_top = 188.0
+offset_right = 557.0
+offset_bottom = 250.0
+text = "FOOD"
+
 [connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
 [connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]
 [connection signal="pressed" from="CanvasLayer/FuelButton" to="." method="_on_fuel_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/BuildingButton" to="." method="_on_building_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/EntertainmentButton" to="." method="_on_entertainment_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/FoodButton" to="." method="_on_food_button_pressed"]

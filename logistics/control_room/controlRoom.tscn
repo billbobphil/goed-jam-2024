@@ -10,7 +10,7 @@
 
 [node name="ControlRoom" type="Node2D"]
 
-[node name="PlayerLogistics" parent="." instance=ExtResource("2_vrpsp")]
+[node name="PlayerLogistics" parent="." groups=["Player"] instance=ExtResource("2_vrpsp")]
 position = Vector2(319, 227)
 
 [node name="NeedsModule" parent="." instance=ExtResource("2_k83lv")]

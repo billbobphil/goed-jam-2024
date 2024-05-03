@@ -15,6 +15,14 @@ func _ready():
 	for buildingGameNode in buildingGameNodes:
 		buildingGameNode.building_gained.connect(gainBuilding);
 
+	var entertainmentGameNodes = get_tree().get_nodes_in_group("EntertainmentGame");
+	for entertainmentGameNode in entertainmentGameNodes:
+		entertainmentGameNode.entertainment_gained.connect(gainEntertainment);
+
+	var foodGameNodes = get_tree().get_nodes_in_group("FoodGame");
+	for foodGameNode in foodGameNodes:
+		foodGameNode.food_gained.connect(foodGained);
+
 func extractPopulationMaterials(foodAndWaterAmount, buildingMaterialsAmount, entertainmentMaterialsAmount, fuelMaterialsAmount):
 	foodAndWater -= foodAndWaterAmount
 	buildingMaterials -= buildingMaterialsAmount
@@ -29,3 +37,9 @@ func gainFuel(fuelAmount):
 
 func gainBuilding(buildingAmount):
 	buildingMaterials += buildingAmount
+
+func gainEntertainment(entertainmentAmount):
+	entertainmentMaterials += entertainmentAmount
+
+func foodGained(foodAmount):
+	foodAndWater += foodAmount;

@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://c34nfyiecdpaa"]
+
+[ext_resource type="Script" path="res://logistics/requisitions_module/foodGame/FoodGame.gd" id="1_30wlt"]
+[ext_resource type="PackedScene" uid="uid://b52ntg6ft8q8r" path="res://logistics/requisitions_module/foodGame/food_note.tscn" id="2_t272p"]
+[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="2_vjbr6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s225n"]
+size = Vector2(48, 391)
+
+[node name="FoodGame" type="Node2D" groups=["FoodGame"]]
+script = ExtResource("1_30wlt")
+noteScene = ExtResource("2_t272p")
+minimumTimeBetweenNotes = 1.0
+maximumTimeBetweenNotes = 2.25
+numberOfNotesBeforeScore = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 0.466667)
+position = Vector2(319, 181)
+scale = Vector2(20.9375, 12.3125)
+texture = ExtResource("2_vjbr6")
+
+[node name="NoteHitter" type="Node2D" parent="."]
+position = Vector2(330, 170)
+
+[node name="Sprite2D" type="Sprite2D" parent="NoteHitter"]
+scale = Vector2(1.5, 3)
+texture = ExtResource("2_vjbr6")
+
+[node name="Area2D" type="Area2D" parent="NoteHitter"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoteHitter/Area2D"]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_s225n")
+
+[node name="NoteSpawnLocation" type="Node2D" parent="."]
+position = Vector2(733, 170)
+
+[node name="NoteContainer" type="Node" parent="."]
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 126.0
+offset_bottom = 55.0
+text = "EXIT"
+
+[connection signal="area_entered" from="NoteHitter/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="NoteHitter/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

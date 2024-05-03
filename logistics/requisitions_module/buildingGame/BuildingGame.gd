@@ -6,11 +6,15 @@ extends Game
 @onready var achievementLine : Sprite2D = $AchievementLine;
 var spawnedBlocks : Array = [];
 var blocksWithActiveCollisionsWithLine : Array = [];
+var playerReference;
 
 signal building_gained
 
 func _ready():
 	disableGame();
+	var playerNodes = get_tree().get_nodes_in_group("Player");
+	if playerNodes.size() > 0:
+		playerReference = playerNodes[0];
 
 func _process(_delta):
 	if !isGameActive:
@@ -23,18 +27,26 @@ func _process(_delta):
 func enableGame():
 	isGameActive = true;
 	visible = true;
+	if playerReference:
+		playerReference.isMovementEnabled = false;
 	resetGame();
 
 func disableGame():
+	cleanupBlocks();
 	isGameActive = false;
 	visible = false;
+	if playerReference:
+		playerReference.isMovementEnabled = true;
 
 func resetGame():
+	cleanupBlocks();
+	spawnBlock();
+
+func cleanupBlocks():
 	for block in spawnedBlocks:
 		block.queue_free();
 	spawnedBlocks.clear();
 	blocksWithActiveCollisionsWithLine.clear();
-	spawnBlock();
 
 func spawnBlock():
 	if !isGameActive:
@@ -55,8 +67,7 @@ func _on_area_2d_body_exited(body:Node2D):
 		blocksWithActiveCollisionsWithLine.erase(body);
 
 func _on_exit_button_pressed():
-	isGameActive = false;
-	visible = false;
+	disableGame();
 	if interactable:
 		interactable.reenableInteraction();
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_oajch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uanng"]
-size = Vector2(32, 32)
+size = Vector2(48, 32)
 
 [node name="BuildingBlock" type="RigidBody2D"]
 collision_layer = 2
@@ -16,6 +16,7 @@ script = ExtResource("1_arwsm")
 horizontalSpeed = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1)
 texture = ExtResource("1_oajch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
