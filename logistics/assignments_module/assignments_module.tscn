@@ -1,7 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqpxw627b3wta"]
+[gd_scene load_steps=11 format=3 uid="uid://cqpxw627b3wta"]
 
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="1_csql7"]
+[ext_resource type="Script" path="res://logistics/assignments_module/AssignmentsModule.gd" id="1_gs4kk"]
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="2_cnr8n"]
+[ext_resource type="PackedScene" uid="uid://smbhlrn06woj" path="res://logistics/technologyManager/food_tech_tree.tscn" id="3_ty68p"]
+[ext_resource type="PackedScene" uid="uid://b7axyll4oswre" path="res://logistics/technologyManager/fuel_tech_tree.tscn" id="5_g4lgg"]
+[ext_resource type="PackedScene" uid="uid://h2hpl563bx80" path="res://logistics/technologyManager/building_tech_tree.tscn" id="6_27t6c"]
+[ext_resource type="PackedScene" uid="uid://d3qkbbvucy14x" path="res://logistics/technologyManager/entertainment_tech_tree.tscn" id="7_rdgb5"]
+[ext_resource type="PackedScene" uid="uid://bfkuaeerlmupi" path="res://logistics/technologyManager/efficiency_tech_tree.tscn" id="8_v7wp5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gka08"]
 radius = 78.0256
@@ -10,6 +16,7 @@ radius = 78.0256
 size = Vector2(96, 64)
 
 [node name="AssignmentsModule" type="Node2D"]
+script = ExtResource("1_gs4kk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 2)
@@ -25,3 +32,92 @@ shape = SubResource("CircleShape2D_gka08")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_73m1m")
 debug_color = Color(0.882353, 0.286275, 0.466667, 0.419608)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
+offset_right = 640.0
+offset_bottom = 360.0
+current_tab = 4
+
+[node name="Food" type="Control" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="FoodTechTree" parent="CanvasLayer/TabContainer/Food" instance=ExtResource("3_ty68p")]
+position = Vector2(-127, -22)
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Food"]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 269.0
+offset_right = 627.0
+offset_bottom = 319.0
+text = "EXIT"
+
+[node name="Fuel" type="Control" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Fuel"]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 269.0
+offset_right = 627.0
+offset_bottom = 319.0
+text = "EXIT"
+
+[node name="FuelTechTree" parent="CanvasLayer/TabContainer/Fuel" instance=ExtResource("5_g4lgg")]
+position = Vector2(-127, -22)
+
+[node name="Building" type="Control" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Building"]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 269.0
+offset_right = 627.0
+offset_bottom = 319.0
+text = "EXIT"
+
+[node name="BuildingTechTree" parent="CanvasLayer/TabContainer/Building" instance=ExtResource("6_27t6c")]
+position = Vector2(-127, -22)
+
+[node name="Entertainment" type="Control" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Entertainment"]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 269.0
+offset_right = 627.0
+offset_bottom = 319.0
+text = "EXIT"
+
+[node name="EntertainmentTechTree" parent="CanvasLayer/TabContainer/Entertainment" instance=ExtResource("7_rdgb5")]
+position = Vector2(-127, -22)
+
+[node name="Efficiency" type="Control" parent="CanvasLayer/TabContainer"]
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Efficiency"]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 269.0
+offset_right = 627.0
+offset_bottom = 319.0
+text = "EXIT"
+
+[node name="EfficiencyTechTree" parent="CanvasLayer/TabContainer/Efficiency" instance=ExtResource("8_v7wp5")]
+position = Vector2(-127, -22)
+
+[connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
+[connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Food/ExitButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Fuel/ExitButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Building/ExitButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Entertainment/ExitButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Efficiency/ExitButton" to="." method="_on_button_pressed"]

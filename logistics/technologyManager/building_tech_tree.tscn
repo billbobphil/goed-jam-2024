@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://h2hpl563bx80"]
+
+[ext_resource type="PackedScene" uid="uid://byjmdwoosl8a3" path="res://logistics/technologyManager/tech_tree_node.tscn" id="1_iliod"]
+
+[node name="BuildingTechTree" type="Node2D"]
+
+[node name="AutoGatherTrack" type="Node2D" parent="."]
+position = Vector2(173, 72)
+
+[node name="AutoGatherOne" parent="AutoGatherTrack" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_iliod")]
+nextNodes = [NodePath("../AutoGatherTwo")]
+
+[node name="Line2D" type="Line2D" parent="AutoGatherTrack"]
+position = Vector2(16, 0)
+points = PackedVector2Array(0, 0, 59, 0)
+width = 2.0
+default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
+
+[node name="AutoGatherTwo" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_iliod")]
+position = Vector2(91, 0)
+prevNode = NodePath("../AutoGatherOne")
+nextNodes = [NodePath("../AutoGatherThree")]
+
+[node name="Line2D2" type="Line2D" parent="AutoGatherTrack"]
+position = Vector2(107, 0)
+points = PackedVector2Array(0, 0, 59, 0)
+width = 2.0
+default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
+
+[node name="AutoGatherThree" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_iliod")]
+position = Vector2(182, 0)
+prevNode = NodePath("../AutoGatherTwo")
+nextNodes = [NodePath("")]
+
+[node name="AutoGatherLabel" type="Label" parent="AutoGatherTrack"]
+offset_left = -15.0
+offset_top = -45.0
+offset_right = 80.0
+offset_bottom = -22.0
+text = "Auto Gather"
+metadata/_edit_use_anchors_ = true
+
+[node name="FasterAutoGather" type="Node2D" parent="."]
+position = Vector2(173, 190)
+
+[node name="FasterAutoGatherSix" parent="FasterAutoGather" instance=ExtResource("1_iliod")]
+
+[node name="FasterAutoGatherLabel" type="Label" parent="FasterAutoGather"]
+offset_left = -15.0
+offset_top = -45.0
+offset_right = 80.0
+offset_bottom = -22.0
+text = "Faster Auto Gather"
+metadata/_edit_use_anchors_ = true
+
+[node name="LowerTowerHeight" type="Node2D" parent="."]
+position = Vector2(173, 298)
+
+[node name="LowerTowerHeight25" parent="LowerTowerHeight" instance=ExtResource("1_iliod")]
+
+[node name="LowerTowerHeightLabel" type="Label" parent="LowerTowerHeight"]
+offset_left = -15.0
+offset_top = -45.0
+offset_right = 80.0
+offset_bottom = -22.0
+text = "Lower Tower Height Requirements"
