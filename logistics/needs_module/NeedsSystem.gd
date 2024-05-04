@@ -1,8 +1,5 @@
 extends Node2D
 
-#TODO: remove?
-var technologyRequirement = 0; #never a requirement, but can be used to increase efficiency of other needs
-
 @export_group("Food Needs")
 var foodAndWaterRequirement = 0; #linear -> need X food per population and the demand is always population * food per person
 @export var foodPerPopulation : int = 2;
@@ -46,11 +43,21 @@ func _ready():
 	generateNewNeeds();
 
 func _on_day_tick(_day : int):
-	print('day ticked, should check if player has sufficient resources');
-	#TODO: Check with supply manager and if supply has enough in each category consume the required amount and advance
-	if true:
+	if hasEnoughToSatisfy():
+		ResourceManager.extractPopulationMaterials(foodAndWaterRequirement, buildingMaterialsRequirement, entertainmentRequirement, fuelRequirement);
 		generateNewNeeds();
 		PopulationManager.increasePopulation(1);
+
+func hasEnoughToSatisfy():
+	if ResourceManager.foodAndWater < foodAndWaterRequirement:
+		return false;
+	if ResourceManager.buildingMaterials < buildingMaterialsRequirement:
+		return false;
+	if ResourceManager.entertainmentMaterials < entertainmentRequirement:
+		return false;
+	if ResourceManager.fuelMaterials < fuelRequirement:
+		return false;
+	return true;
 
 func generateNewNeeds():
 	var currentPopulation = PopulationManager.getCurrentPopulation();

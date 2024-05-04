@@ -8,4 +8,4 @@ func getCurrentPopulation():
 
 func increasePopulation(amount):
 	currentPopulation += amount;
-	#TODO: communicate with relevant interface elements
+	TechnologyManager.increaseTechPoints(1);

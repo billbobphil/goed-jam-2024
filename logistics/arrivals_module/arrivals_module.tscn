@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://brthe3mw3ir6e"]
+[gd_scene load_steps=6 format=3 uid="uid://brthe3mw3ir6e"]
 
+[ext_resource type="Script" path="res://logistics/arrivals_module/ArrivalsModule.gd" id="1_e66t1"]
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_tuolu"]
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="2_5d21o"]
 
@@ -10,6 +11,7 @@ radius = 73.0069
 size = Vector2(64, 96)
 
 [node name="ArrivalsModule" type="Node2D"]
+script = ExtResource("1_e66t1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 3)
@@ -25,3 +27,83 @@ shape = SubResource("CircleShape2D_kg5xr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_b5ivj")
 debug_color = Color(0.94902, 0.12549, 0.466667, 0.419608)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+self_modulate = Color(0, 0, 0, 0.490196)
+position = Vector2(319.5, 179)
+scale = Vector2(20.9688, 12.1875)
+texture = ExtResource("1_tuolu")
+
+[node name="PopulationLabel" type="Label" parent="CanvasLayer"]
+offset_left = 85.0
+offset_top = 63.0
+offset_right = 170.0
+offset_bottom = 86.0
+text = "Population"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PopulationValue" type="Label" parent="CanvasLayer"]
+offset_left = 87.0
+offset_top = 89.0
+offset_right = 127.0
+offset_bottom = 112.0
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PopulationGoal" type="Label" parent="CanvasLayer"]
+offset_left = 128.0
+offset_top = 89.0
+offset_right = 168.0
+offset_bottom = 112.0
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PopulationSlash" type="Label" parent="CanvasLayer"]
+offset_left = 123.0
+offset_top = 89.0
+offset_right = 133.0
+offset_bottom = 112.0
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="Button" parent="CanvasLayer"]
+offset_left = 511.0
+offset_top = 305.0
+offset_right = 628.0
+offset_bottom = 351.0
+text = "EXIT"
+
+[node name="TechPointsLabel" type="Label" parent="CanvasLayer"]
+offset_left = 416.0
+offset_top = 63.0
+offset_right = 554.0
+offset_bottom = 86.0
+text = "Available Reward"
+
+[node name="TechPointsValue" type="Label" parent="CanvasLayer"]
+offset_left = 415.0
+offset_top = 91.0
+offset_right = 553.0
+offset_bottom = 114.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TechPointsCollectButton" type="Button" parent="CanvasLayer"]
+offset_left = 425.0
+offset_top = 124.0
+offset_right = 542.0
+offset_bottom = 170.0
+text = "COLLECT"
+
+[connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
+[connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]
+[connection signal="pressed" from="CanvasLayer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TechPointsCollectButton" to="." method="_on_tech_points_collect_button_pressed"]
