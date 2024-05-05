@@ -1,23 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://smbhlrn06woj"]
 
 [ext_resource type="PackedScene" uid="uid://byjmdwoosl8a3" path="res://logistics/technologyManager/tech_tree_node.tscn" id="1_imhwb"]
-[ext_resource type="Script" path="res://logistics/technologyManager/skills/food/FoodAutoGatherSkill.gd" id="2_jw62h"]
-
-[sub_resource type="Resource" id="Resource_j27ba"]
-script = ExtResource("2_jw62h")
-amountToSetAutoGatherTo = 1
-
-[sub_resource type="Resource" id="Resource_o0jj0"]
-script = ExtResource("2_jw62h")
-amountToSetAutoGatherTo = 2
-
-[sub_resource type="Resource" id="Resource_l1htb"]
-script = ExtResource("2_jw62h")
-amountToSetAutoGatherTo = 4
-
-[sub_resource type="Resource" id="Resource_t4lae"]
-script = ExtResource("2_jw62h")
-amountToSetAutoGatherTo = 8
 
 [node name="FoodTechTree" type="Node2D"]
 
@@ -26,7 +9,6 @@ position = Vector2(173, 72)
 
 [node name="AutoGatherOne" parent="AutoGatherTrack" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_imhwb")]
 cost = 1
-skill = SubResource("Resource_j27ba")
 nextNodes = [NodePath("../AutoGatherTwo")]
 
 [node name="Line2D" type="Line2D" parent="AutoGatherTrack"]
@@ -38,7 +20,6 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 [node name="AutoGatherTwo" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_imhwb")]
 position = Vector2(91, 0)
 cost = 1
-skill = SubResource("Resource_o0jj0")
 prevNode = NodePath(".")
 nextNodes = [NodePath("../AutoGatherFour")]
 
@@ -51,7 +32,6 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 [node name="AutoGatherFour" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_imhwb")]
 position = Vector2(182, 0)
 cost = 1
-skill = SubResource("Resource_l1htb")
 prevNode = NodePath(".")
 nextNodes = [NodePath("../AutoGatherEight")]
 
@@ -64,7 +44,6 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 [node name="AutoGatherEight" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode") instance=ExtResource("1_imhwb")]
 position = Vector2(273, 0)
 cost = 1
-skill = SubResource("Resource_t4lae")
 prevNode = NodePath(".")
 
 [node name="AutoGatherLabel" type="Label" parent="AutoGatherTrack"]
