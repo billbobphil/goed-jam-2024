@@ -9,3 +9,8 @@ func getCurrentPopulation():
 func increasePopulation(amount):
 	currentPopulation += amount;
 	TechnologyManager.increaseTechPoints(1);
+	checkVictory();
+
+func checkVictory():
+	if currentPopulation >= populationVictoryThreshold:
+		SceneChangeManager.goToEnd();

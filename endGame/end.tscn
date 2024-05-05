@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyunplvkewb7i"]
+
+[ext_resource type="Script" path="res://endGame/End.gd" id="1_0stnc"]
+
+[node name="End" type="Node2D"]
+script = ExtResource("1_0stnc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Thanks for playing"
+
+[node name="MenuButton" type="Button" parent="CanvasLayer"]
+offset_left = 37.0
+offset_top = 36.0
+offset_right = 94.0
+offset_bottom = 67.0
+text = "MENU"
+
+[connection signal="pressed" from="CanvasLayer/MenuButton" to="." method="_on_menu_button_pressed"]

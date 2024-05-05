@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmgj04kvyt4x8"]
+[gd_scene load_steps=8 format=3 uid="uid://dmgj04kvyt4x8"]
 
 [ext_resource type="Script" path="res://Base.gd" id="1_lbqj0"]
 [ext_resource type="PackedScene" uid="uid://cuycak53mdrlk" path="res://menu/menu.tscn" id="2_r5s5h"]
 [ext_resource type="PackedScene" uid="uid://dlnmc7lsxlrm8" path="res://cutscenes/cutscene_one_player.tscn" id="3_nnv4s"]
 [ext_resource type="PackedScene" uid="uid://cybuho2sam237" path="res://platformer/level_one/platformer_level_one.tscn" id="4_yv81j"]
 [ext_resource type="PackedScene" uid="uid://djcuow8plteka" path="res://logistics/control_room/controlRoom.tscn" id="5_d8rtb"]
+[ext_resource type="PackedScene" uid="uid://dktovqiqegf06" path="res://cutscenes/cutscene_two_player.tscn" id="5_y2rmd"]
+[ext_resource type="PackedScene" uid="uid://dyunplvkewb7i" path="res://endGame/end.tscn" id="7_4um1e"]
 
 [node name="Base" type="Node2D" groups=["Base"]]
 scale = Vector2(1, 0.998095)
@@ -12,4 +14,6 @@ script = ExtResource("1_lbqj0")
 menuScene = ExtResource("2_r5s5h")
 cutSceneOne = ExtResource("3_nnv4s")
 platformer = ExtResource("4_yv81j")
+cutSceneTwo = ExtResource("5_y2rmd")
 logistics = ExtResource("5_d8rtb")
+end = ExtResource("7_4um1e")

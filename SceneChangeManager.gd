@@ -21,3 +21,6 @@ func goToCutsceneTwo():
 
 func goToLogistics():
 	baseScene.changeToLogistics();
+
+func goToEnd():
+	baseScene.changeToEnd();

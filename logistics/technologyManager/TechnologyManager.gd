@@ -1,7 +1,7 @@
 extends Node
 
 var techPointsAvailableToCollect = 0;
-var techPointsInInventory = 4;
+var techPointsInInventory = 0;
 var techPointsDisplays = [];
 
 func initialize():

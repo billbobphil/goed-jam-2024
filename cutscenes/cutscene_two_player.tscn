@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=3 uid="uid://dktovqiqegf06"]
+
+[ext_resource type="PackedScene" uid="uid://dg0r4fgs0ooi0" path="res://cutscenes/CutscenePlayer.tscn" id="1_u6n7f"]
+[ext_resource type="PackedScene" uid="uid://drifvq73v8fg3" path="res://cutscenes/cutsceneTwoScenes/cutscene_two_one.tscn" id="2_bk1fr"]
+[ext_resource type="PackedScene" uid="uid://bonkxbmj8n5ce" path="res://cutscenes/cutsceneTwoScenes/cutscene_two_two.tscn" id="3_1rh7i"]
+[ext_resource type="PackedScene" uid="uid://b0gap7q6icjym" path="res://cutscenes/cutsceneTwoScenes/cutscene_two_three.tscn" id="4_u3xsk"]
+
+[node name="CutscenePlayer" instance=ExtResource("1_u6n7f")]
+scenes = Array[PackedScene]([ExtResource("2_bk1fr"), ExtResource("3_1rh7i"), ExtResource("4_u3xsk")])
+followUpScene = 1

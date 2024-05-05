@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bonkxbmj8n5ce"]
+
+[ext_resource type="PackedScene" uid="uid://cpsf7i6vbjed5" path="res://cutscenes/cutscene_scene.tscn" id="1_h2by3"]
+[ext_resource type="Texture2D" uid="uid://dfwhcgya8jwvw" path="res://cutscenes/cutsceneTwoAssets/build-two.png" id="2_ajcto"]
+
+[node name="CutsceneScene" instance=ExtResource("1_h2by3")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ajcto")
+
+[node name="CutsceneText" parent="." index="1"]
+offset_left = 209.0
+offset_top = 3.0
+offset_right = 636.0
+offset_bottom = 104.0
+text = "Your job is to ensure the population continues to grow.
+   Use the various stations to monitor your supplies and 
+    what is required while making requisitions from the 
+    mainland."
+
+[node name="NextInstructionsText" parent="." index="2"]
+offset_left = 444.0
+offset_top = 82.0
+offset_right = 631.0
+offset_bottom = 105.0

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0gap7q6icjym"]
+
+[ext_resource type="PackedScene" uid="uid://cpsf7i6vbjed5" path="res://cutscenes/cutscene_scene.tscn" id="1_yifl7"]
+[ext_resource type="Texture2D" uid="uid://cns32k5aobx6" path="res://cutscenes/cutsceneTwoAssets/build-three.png" id="2_ua55o"]
+
+[node name="CutsceneScene" instance=ExtResource("1_yifl7")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ua55o")
+
+[node name="CutsceneText" parent="." index="1"]
+offset_left = 14.0
+offset_top = 110.0
+offset_right = 635.0
+offset_bottom = 185.0
+text = "With enough effort you will succeed in bringing a stable population to the island."
+
+[node name="NextInstructionsText" parent="." index="2"]
+offset_left = 242.0
+offset_top = 138.0
+offset_right = 429.0
+offset_bottom = 161.0

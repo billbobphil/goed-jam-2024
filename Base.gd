@@ -5,6 +5,7 @@ extends Node2D
 @export var platformer : PackedScene;
 @export var cutSceneTwo : PackedScene;
 @export var logistics : PackedScene;
+@export var end : PackedScene;
 var activeScene = null;
 
 func _ready():
@@ -26,6 +27,9 @@ func changeToCutSceneTwo():
 
 func changeToLogistics():
 	changeToNewScene(logistics);
+
+func changeToEnd():
+	changeToNewScene(end);
 
 func changeToNewScene(scene):
 	var newScene = scene.instantiate();

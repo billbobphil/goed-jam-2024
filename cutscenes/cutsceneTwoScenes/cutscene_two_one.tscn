@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://drifvq73v8fg3"]
+
+[ext_resource type="PackedScene" uid="uid://cpsf7i6vbjed5" path="res://cutscenes/cutscene_scene.tscn" id="1_f0ik1"]
+[ext_resource type="Texture2D" uid="uid://00auyr2d1l1r" path="res://cutscenes/cutsceneTwoAssets/build-one.png" id="2_ukvbi"]
+
+[node name="CutsceneScene" instance=ExtResource("1_f0ik1")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ukvbi")
+
+[node name="CutsceneText" parent="." index="1"]
+offset_left = 27.0
+offset_top = 245.0
+offset_right = 327.0
+offset_bottom = 348.0
+text = "After an extended construction effort you
+managed to build the comms tower. Now
+you will run the control room from the top
+of the tower."
+
+[node name="NextInstructionsText" parent="." index="2"]
+offset_left = 139.0
+offset_top = 322.0
+offset_right = 326.0
+offset_bottom = 345.0
