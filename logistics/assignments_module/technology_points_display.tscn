@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3sajvl14bsgp"]
+
+[ext_resource type="Script" path="res://logistics/assignments_module/TechnologyPointsDisplay.gd" id="1_fsbeo"]
+
+[node name="TechnologyPointsDisplay" type="Node2D" groups=["TechnologyPointsDisplay"]]
+script = ExtResource("1_fsbeo")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

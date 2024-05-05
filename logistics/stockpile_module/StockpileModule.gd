@@ -17,7 +17,7 @@ func assignValuesToInterface():
 	fuelLabel.text = str(ResourceManager.fuelMaterials);
 	buildingMaterialsLabel.text = str(ResourceManager.buildingMaterials);
 	entertainmentLabel.text = str(ResourceManager.entertainmentMaterials);
-	technologyLabel.text = str(ResourceManager.technologyMaterials);
+	technologyLabel.text = str(TechnologyManager.techPointsInInventory);
 
 func _on_button_pressed():
 	canvas.hide();
