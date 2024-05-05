@@ -7,6 +7,7 @@ const MINUTES_PER_HOUR = 60;
 const INGAME_TO_REAL_MINUTE_DURATION = (2 * PI) / MINUTES_PER_DAY;
 var pastMinute = -1.0;
 var pastDay = 1;
+var pastHour = -1;
 @onready var dayValue : Label = $CanvasLayer/DayValue;
 @onready var hourValue : Label = $CanvasLayer/HourValue;
 @onready var minuteValue : Label = $CanvasLayer/MinuteValue;
@@ -19,6 +20,7 @@ var pastDay = 1;
 
 signal time_tick(day : int, hour : int, minute : int);
 signal day_tick(day : int);
+signal hour_tick(hour : int);
 
 func _ready():
 	time = INGAME_TO_REAL_MINUTE_DURATION * initialHour * MINUTES_PER_HOUR;
@@ -43,6 +45,10 @@ func recalculate_time():
 		dayValue.text = str(day);
 		hourValue.text = "%02d" % hour;
 		minuteValue.text = "%02d" % minute;
+
+	if pastHour != hour:
+		pastHour = hour;
+		hour_tick.emit(hour);
 
 	if pastDay != day:
 		print('day ticked');

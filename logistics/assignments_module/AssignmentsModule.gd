@@ -14,5 +14,4 @@ func _on_interactable_player_exited_interactable():
 	canvas.hide();
 
 func _on_interactable_player_interacted():
-	print('interacted');
 	canvas.show();

@@ -34,15 +34,15 @@ shape = SubResource("RectangleShape2D_73m1m")
 debug_color = Color(0.882353, 0.286275, 0.466667, 0.419608)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
 offset_right = 640.0
 offset_bottom = 360.0
-current_tab = 4
 
 [node name="Food" type="Control" parent="CanvasLayer/TabContainer"]
-visible = false
 layout_mode = 2
+mouse_filter = 2
 
 [node name="FoodTechTree" parent="CanvasLayer/TabContainer/Food" instance=ExtResource("3_ty68p")]
 position = Vector2(-127, -22)
@@ -58,6 +58,7 @@ text = "EXIT"
 [node name="Fuel" type="Control" parent="CanvasLayer/TabContainer"]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Fuel"]
 layout_mode = 0
@@ -73,6 +74,7 @@ position = Vector2(-127, -22)
 [node name="Building" type="Control" parent="CanvasLayer/TabContainer"]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Building"]
 layout_mode = 0
@@ -88,6 +90,7 @@ position = Vector2(-127, -22)
 [node name="Entertainment" type="Control" parent="CanvasLayer/TabContainer"]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Entertainment"]
 layout_mode = 0
@@ -101,7 +104,9 @@ text = "EXIT"
 position = Vector2(-127, -22)
 
 [node name="Efficiency" type="Control" parent="CanvasLayer/TabContainer"]
+visible = false
 layout_mode = 2
+mouse_filter = 2
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Efficiency"]
 layout_mode = 0

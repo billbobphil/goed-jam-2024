@@ -14,7 +14,7 @@ var isUnlocked : bool = false;
 
 func _ready():
 	if prevNode == null:
-		isAvailable = true;
+		makeAvailable();
 	else:
 		sprite.modulate.a = 0.5;
 		costLabel.text = "LOCKED";
@@ -26,11 +26,13 @@ func makeAvailable():
 
 func _on_area_2d_input_event(_viewport:Node, event:InputEvent, _shape_idx:int):
 	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.is_pressed():
+		print('pressed');
 		if isAvailable && !isUnlocked && TechnologyManager.techPointsInInventory >= cost:
 			unlock();
 
 func unlock():
-	TechnologyManager.decreaseTechPoints(cost);
+	print('unlocking');
+	TechnologyManager.spendTechPoints(cost);
 	isUnlocked = true;
 	skill.activate();
 	costLabel.text = "UNLOCKED";
