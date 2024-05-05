@@ -9,17 +9,16 @@
 texture = ExtResource("2_ajcto")
 
 [node name="CutsceneText" parent="." index="1"]
-offset_left = 209.0
-offset_top = 3.0
-offset_right = 636.0
-offset_bottom = 104.0
+offset_left = 243.0
+offset_top = 15.0
+offset_right = 670.0
+offset_bottom = 116.0
 text = "Your job is to ensure the population continues to grow.
-   Use the various stations to monitor your supplies and 
-    what is required while making requisitions from the 
-    mainland."
+Use the various stations to monitor your supplies and 
+what is required while making requisitions from the mainland."
 
 [node name="NextInstructionsText" parent="." index="2"]
-offset_left = 444.0
-offset_top = 82.0
-offset_right = 631.0
-offset_bottom = 105.0
+offset_left = 335.0
+offset_top = 74.0
+offset_right = 522.0
+offset_bottom = 97.0

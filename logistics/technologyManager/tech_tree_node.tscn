@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://byjmdwoosl8a3"]
+[gd_scene load_steps=5 format=3 uid="uid://byjmdwoosl8a3"]
 
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_46wqp"]
 [ext_resource type="Script" path="res://logistics/technologyManager/TechTreeNode.gd" id="1_80c06"]
+[ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="3_iv3et"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5o6b"]
 size = Vector2(32, 32)
@@ -20,10 +21,11 @@ shape = SubResource("RectangleShape2D_h5o6b")
 debug_color = Color(0.313726, 0.623529, 0.113725, 0.419608)
 
 [node name="CostLabel" type="Label" parent="."]
-offset_left = -42.0
+offset_left = -43.0
 offset_top = 14.0
-offset_right = 45.0
+offset_right = 44.0
 offset_bottom = 37.0
+theme = ExtResource("3_iv3et")
 text = "000"
 horizontal_alignment = 1
 vertical_alignment = 1

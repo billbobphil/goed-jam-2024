@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqxex403ldgog"]
+[gd_scene load_steps=7 format=3 uid="uid://dqxex403ldgog"]
 
 [ext_resource type="Script" path="res://logistics/requisitions_module/fuelGame/FuelGame.gd" id="1_7p745"]
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="2_lvfgd"]
+[ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="3_xbh7b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pcan"]
 bg_color = Color(0.239216, 0.658824, 0.772549, 0.145098)
@@ -56,9 +57,10 @@ show_percentage = false
 
 [node name="Button" type="Button" parent="."]
 offset_left = 511.0
-offset_top = 305.0
+offset_top = 12.0
 offset_right = 628.0
-offset_bottom = 351.0
+offset_bottom = 58.0
+theme = ExtResource("3_xbh7b")
 text = "EXIT"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -9,10 +9,10 @@
 texture = ExtResource("2_jdrn2")
 
 [node name="CutsceneText" parent="." index="1"]
-offset_left = 18.0
-offset_top = 18.0
-offset_right = 339.0
-offset_bottom = 168.0
+offset_left = 38.0
+offset_top = 38.0
+offset_right = 359.0
+offset_bottom = 188.0
 text = "Your first task is to climb to the highest
 point on the island while collecting any 
 materials necessary for construction of a
@@ -23,7 +23,7 @@ the mainland to requisition supplies and
 increase the population."
 
 [node name="NextInstructionsText" parent="." index="2"]
-offset_left = 68.0
-offset_top = 238.0
-offset_right = 255.0
-offset_bottom = 261.0
+offset_left = 69.0
+offset_top = 206.0
+offset_right = 256.0
+offset_bottom = 229.0

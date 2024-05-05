@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://7q6vfq0gown8"]
+[gd_scene load_steps=7 format=3 uid="uid://7q6vfq0gown8"]
 
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_f2376"]
 [ext_resource type="Script" path="res://logistics/needs_module/NeedsSystem.gd" id="1_fi0lj"]
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="2_hwrfb"]
+[ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_l4nj6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dcqed"]
 radius = 97.0
@@ -38,55 +39,67 @@ scale = Vector2(21.0313, 12.1563)
 texture = ExtResource("1_f2376")
 
 [node name="FoodAndWaterLabel" type="Label" parent="CanvasLayer"]
-offset_left = 77.0
+offset_left = 58.0
 offset_top = 52.0
-offset_right = 183.0
-offset_bottom = 75.0
+offset_right = 224.0
+offset_bottom = 82.0
+theme = ExtResource("4_l4nj6")
+theme_override_font_sizes/font_size = 32
 text = "Food & Water"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FoodAndWaterValue" type="Label" parent="CanvasLayer"]
-offset_left = 106.0
-offset_top = 81.0
-offset_right = 146.0
-offset_bottom = 104.0
+offset_left = 116.0
+offset_top = 84.0
+offset_right = 158.0
+offset_bottom = 114.0
+theme = ExtResource("4_l4nj6")
+theme_override_font_sizes/font_size = 32
 text = "000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FuelLabel" type="Label" parent="CanvasLayer"]
-offset_left = 249.0
-offset_top = 53.0
-offset_right = 355.0
-offset_bottom = 76.0
+offset_left = 409.0
+offset_top = 55.0
+offset_right = 515.0
+offset_bottom = 85.0
+theme = ExtResource("4_l4nj6")
+theme_override_font_sizes/font_size = 32
 text = "Fuel"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FuelValue" type="Label" parent="CanvasLayer"]
-offset_left = 282.0
-offset_top = 82.0
-offset_right = 322.0
-offset_bottom = 105.0
+offset_left = 442.0
+offset_top = 84.0
+offset_right = 484.0
+offset_bottom = 114.0
+theme = ExtResource("4_l4nj6")
+theme_override_font_sizes/font_size = 32
 text = "000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BuildingMaterialsLabel" type="Label" parent="CanvasLayer"]
-offset_left = 433.0
-offset_top = 52.0
-offset_right = 539.0
-offset_bottom = 75.0
+offset_left = 350.0
+offset_top = 163.0
+offset_right = 578.0
+offset_bottom = 193.0
+theme = ExtResource("4_l4nj6")
+theme_override_font_sizes/font_size = 32
 text = "Building Materials"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BuildingMaterialsValue" type="Label" parent="CanvasLayer"]
-offset_left = 481.0
-offset_top = 81.0
-offset_right = 521.0
-offset_bottom = 104.0
+offset_left = 445.0
+offset_top = 195.0
+offset_right = 487.0
+offset_bottom = 225.0
+theme = ExtResource("4_l4nj6")
+theme_override_font_sizes/font_size = 32
 text = "000"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -96,15 +109,19 @@ offset_left = 57.0
 offset_top = 163.0
 offset_right = 197.0
 offset_bottom = 186.0
-text = "Building Materials"
+theme = ExtResource("4_l4nj6")
+theme_override_font_sizes/font_size = 32
+text = "Entertainment"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="EntertainmentValue" type="Label" parent="CanvasLayer"]
-offset_left = 105.0
+offset_left = 117.0
 offset_top = 192.0
-offset_right = 145.0
-offset_bottom = 215.0
+offset_right = 159.0
+offset_bottom = 222.0
+theme = ExtResource("4_l4nj6")
+theme_override_font_sizes/font_size = 32
 text = "000"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -114,6 +131,7 @@ offset_left = 511.0
 offset_top = 305.0
 offset_right = 628.0
 offset_bottom = 351.0
+theme = ExtResource("4_l4nj6")
 text = "EXIT"
 
 [connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]

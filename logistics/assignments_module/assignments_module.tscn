@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqpxw627b3wta"]
+[gd_scene load_steps=13 format=3 uid="uid://cqpxw627b3wta"]
 
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="1_csql7"]
 [ext_resource type="Script" path="res://logistics/assignments_module/AssignmentsModule.gd" id="1_gs4kk"]
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="2_cnr8n"]
 [ext_resource type="PackedScene" uid="uid://smbhlrn06woj" path="res://logistics/technologyManager/food_tech_tree.tscn" id="3_ty68p"]
+[ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_wdy85"]
 [ext_resource type="PackedScene" uid="uid://b7axyll4oswre" path="res://logistics/technologyManager/fuel_tech_tree.tscn" id="5_g4lgg"]
 [ext_resource type="PackedScene" uid="uid://d3sajvl14bsgp" path="res://logistics/assignments_module/technology_points_display.tscn" id="5_rmo44"]
 [ext_resource type="PackedScene" uid="uid://h2hpl563bx80" path="res://logistics/technologyManager/building_tech_tree.tscn" id="6_27t6c"]
@@ -40,6 +41,8 @@ visible = false
 [node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
 offset_right = 640.0
 offset_bottom = 360.0
+theme = ExtResource("4_wdy85")
+all_tabs_in_front = true
 
 [node name="Food" type="Control" parent="CanvasLayer/TabContainer"]
 layout_mode = 2

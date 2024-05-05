@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bi8pgy1vk8q86"]
+[gd_scene load_steps=7 format=3 uid="uid://bi8pgy1vk8q86"]
 
 [ext_resource type="Script" path="res://logistics/requisitions_module/buildingGame/BuildingGame.gd" id="1_s4pq3"]
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="2_kjfvh"]
 [ext_resource type="PackedScene" uid="uid://qsxjgkn4b8gl" path="res://logistics/requisitions_module/buildingGame/building_block.tscn" id="3_bj5k5"]
+[ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_3l0gc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isoor"]
 size = Vector2(838, 32)
@@ -55,10 +56,11 @@ shape = SubResource("RectangleShape2D_lvmo0")
 debug_color = Color(0.976471, 0.156863, 0.0470588, 0.419608)
 
 [node name="ExitButton" type="Button" parent="."]
-offset_left = 4.0
+offset_left = 519.0
 offset_top = 6.0
-offset_right = 121.0
+offset_right = 636.0
 offset_bottom = 52.0
+theme = ExtResource("4_3l0gc")
 text = "EXIT"
 
 [connection signal="body_entered" from="AchievementLine/Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpsf7i6vbjed5"]
+[gd_scene load_steps=7 format=3 uid="uid://cpsf7i6vbjed5"]
 
 [ext_resource type="Script" path="res://cutscenes/CutsceneScene.gd" id="1_7nvnl"]
 [ext_resource type="Texture2D" uid="uid://coros4hu4xjnj" path="res://cutscenes/cutsceneOneAssets/city-scape-1.png" id="1_kiqpk"]
+[ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="3_1xiym"]
 
 [sub_resource type="Animation" id="Animation_6yuo1"]
 resource_name = "fade_in"
@@ -102,6 +103,9 @@ offset_left = 52.0
 offset_top = 277.0
 offset_right = 608.0
 offset_bottom = 352.0
+theme = ExtResource("3_1xiym")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
 text = "Here is where the text telling the very important story will end up going.
 asdas"
 
@@ -110,6 +114,9 @@ offset_left = 237.0
 offset_top = 335.0
 offset_right = 424.0
 offset_bottom = 358.0
+theme = ExtResource("3_1xiym")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
 text = "[SPACEBAR] to continue"
 horizontal_alignment = 1
 vertical_alignment = 1

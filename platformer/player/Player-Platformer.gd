@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name PlayerPlatformer
 
+@onready var playerSprite : AnimatedSprite2D = $PlayerSprite;
+
 @export_group("Debug")
 @export var isDebugEnabled = false;
 @onready var DebugCanvas = $DebugCanvas;
@@ -13,7 +15,7 @@ class_name PlayerPlatformer
 var jumpTimer = 0;
 var isJumping = false;
 var coyoteTimer = 0;
-var coyoteTimeWindow : float = .08;
+var coyoteTimeWindow : float = .1;
 var shouldFall = false;
 var inputBufferTimeWindow : float = .1;
 var inputBufferTimer : float = 0;
@@ -36,6 +38,15 @@ func _ready():
 		DebugCanvas.show();
 
 func _physics_process(delta):
+	if velocity.x == 0:
+		playerSprite.play("idle");
+	elif is_on_floor():
+		playerSprite.play("walk");
+
+	if velocity.x < 0:
+		playerSprite.flip_h = true;
+	elif velocity.x > 0:
+		playerSprite.flip_h = false;
 
 	handleInputBufferTimer(delta);
 
@@ -118,6 +129,7 @@ func jump():
 	velocity.y = JUMP_VELOCITY;
 	isJumping = true;
 	shouldFall = true;
+	playerSprite.play("jump");
 
 func enemyBounceJump():
 	velocity.y = JUMP_VELOCITY * .8;

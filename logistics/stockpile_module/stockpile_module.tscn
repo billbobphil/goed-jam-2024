@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://drs3xmyxyxx2b"]
+[gd_scene load_steps=7 format=3 uid="uid://drs3xmyxyxx2b"]
 
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_bg8wv"]
 [ext_resource type="Script" path="res://logistics/stockpile_module/StockpileModule.gd" id="1_j7pgf"]
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="2_cxpok"]
+[ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_g2ord"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0r0vw"]
 radius = 73.0
@@ -38,100 +39,121 @@ scale = Vector2(21.0313, 12.1563)
 texture = ExtResource("1_bg8wv")
 
 [node name="FoodAndWaterLabel" type="Label" parent="CanvasLayer"]
-offset_left = 72.0
-offset_top = 49.0
-offset_right = 195.0
-offset_bottom = 72.0
+offset_left = 27.0
+offset_top = 67.0
+offset_right = 221.0
+offset_bottom = 97.0
+theme = ExtResource("4_g2ord")
+theme_override_font_sizes/font_size = 32
 text = "Food and Water"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FoodAndWaterValue" type="Label" parent="CanvasLayer"]
-offset_left = 72.0
-offset_top = 72.0
-offset_right = 195.0
-offset_bottom = 95.0
+offset_left = 56.0
+offset_top = 102.0
+offset_right = 179.0
+offset_bottom = 132.0
+theme = ExtResource("4_g2ord")
+theme_override_font_sizes/font_size = 32
 text = "000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FuelLabel" type="Label" parent="CanvasLayer"]
-offset_left = 263.0
-offset_top = 50.0
-offset_right = 386.0
-offset_bottom = 73.0
+offset_left = 251.0
+offset_top = 68.0
+offset_right = 374.0
+offset_bottom = 98.0
+theme = ExtResource("4_g2ord")
+theme_override_font_sizes/font_size = 32
 text = "Fuel"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FuelValue" type="Label" parent="CanvasLayer"]
-offset_left = 263.0
-offset_top = 73.0
-offset_right = 386.0
-offset_bottom = 96.0
+offset_left = 250.0
+offset_top = 102.0
+offset_right = 373.0
+offset_bottom = 132.0
+theme = ExtResource("4_g2ord")
+theme_override_font_sizes/font_size = 32
 text = "000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BuildingMaterialsLabel" type="Label" parent="CanvasLayer"]
-offset_left = 446.0
-offset_top = 51.0
-offset_right = 586.0
-offset_bottom = 74.0
+offset_left = 401.0
+offset_top = 69.0
+offset_right = 629.0
+offset_bottom = 99.0
+theme = ExtResource("4_g2ord")
+theme_override_font_sizes/font_size = 32
 text = "Building Materials"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BuildingMaterialsValue" type="Label" parent="CanvasLayer"]
-offset_left = 457.0
-offset_top = 73.0
-offset_right = 580.0
-offset_bottom = 96.0
+offset_left = 449.0
+offset_top = 103.0
+offset_right = 572.0
+offset_bottom = 133.0
+theme = ExtResource("4_g2ord")
+theme_override_font_sizes/font_size = 32
 text = "000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="EntertainmentLabel" type="Label" parent="CanvasLayer"]
-offset_left = 166.0
-offset_top = 170.0
-offset_right = 289.0
-offset_bottom = 193.0
+offset_left = 120.0
+offset_top = 201.0
+offset_right = 292.0
+offset_bottom = 231.0
+theme = ExtResource("4_g2ord")
+theme_override_font_sizes/font_size = 32
 text = "Entertainment"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="EntertainmentValue" type="Label" parent="CanvasLayer"]
-offset_left = 166.0
-offset_top = 193.0
-offset_right = 289.0
-offset_bottom = 216.0
+offset_left = 142.0
+offset_top = 230.0
+offset_right = 265.0
+offset_bottom = 260.0
+theme = ExtResource("4_g2ord")
+theme_override_font_sizes/font_size = 32
 text = "000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TechnologyLabel" type="Label" parent="CanvasLayer"]
-offset_left = 365.0
-offset_top = 171.0
-offset_right = 488.0
-offset_bottom = 194.0
+offset_left = 352.0
+offset_top = 202.0
+offset_right = 492.0
+offset_bottom = 232.0
+theme = ExtResource("4_g2ord")
+theme_override_font_sizes/font_size = 32
 text = "Technology"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TechnologyValue" type="Label" parent="CanvasLayer"]
-offset_left = 365.0
-offset_top = 194.0
-offset_right = 488.0
-offset_bottom = 217.0
+offset_left = 362.0
+offset_top = 230.0
+offset_right = 485.0
+offset_bottom = 260.0
+theme = ExtResource("4_g2ord")
+theme_override_font_sizes/font_size = 32
 text = "000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 511.0
+offset_left = 512.0
 offset_top = 305.0
-offset_right = 628.0
+offset_right = 629.0
 offset_bottom = 351.0
+theme = ExtResource("4_g2ord")
 text = "EXIT"
 
 [connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]

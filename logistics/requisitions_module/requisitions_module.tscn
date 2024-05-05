@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://7vmxawjwdiwg"]
+[gd_scene load_steps=11 format=3 uid="uid://7vmxawjwdiwg"]
 
 [ext_resource type="Script" path="res://logistics/requisitions_module/RequisitionsModule.gd" id="1_1bka1"]
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_r1hi4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dqxex403ldgog" path="res://logistics/requisitions_module/fuelGame/fuel_game.tscn" id="4_cuxtc"]
 [ext_resource type="PackedScene" uid="uid://cgef17oa63su7" path="res://logistics/requisitions_module/entertainmentGame/entertainment_game.tscn" id="4_r6ko4"]
 [ext_resource type="PackedScene" uid="uid://c34nfyiecdpaa" path="res://logistics/requisitions_module/foodGame/food_game.tscn" id="5_qi75g"]
+[ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="8_ddvob"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mmog8"]
 radius = 76.0066
@@ -64,13 +65,15 @@ offset_left = 78.0
 offset_top = 80.0
 offset_right = 224.0
 offset_bottom = 142.0
+theme = ExtResource("8_ddvob")
 text = "FUEL"
 
 [node name="BuildingButton" type="Button" parent="CanvasLayer"]
 offset_left = 408.0
 offset_top = 80.0
-offset_right = 554.0
+offset_right = 555.0
 offset_bottom = 142.0
+theme = ExtResource("8_ddvob")
 text = "BUILDING"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer"]
@@ -78,6 +81,7 @@ offset_left = 511.0
 offset_top = 305.0
 offset_right = 628.0
 offset_bottom = 351.0
+theme = ExtResource("8_ddvob")
 text = "EXIT"
 
 [node name="EntertainmentButton" type="Button" parent="CanvasLayer"]
@@ -85,13 +89,15 @@ offset_left = 77.0
 offset_top = 188.0
 offset_right = 223.0
 offset_bottom = 250.0
+theme = ExtResource("8_ddvob")
 text = "ENTERTAINMENT"
 
 [node name="FoodButton" type="Button" parent="CanvasLayer"]
 offset_left = 411.0
 offset_top = 188.0
-offset_right = 557.0
+offset_right = 558.0
 offset_bottom = 250.0
+theme = ExtResource("8_ddvob")
 text = "FOOD"
 
 [connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]

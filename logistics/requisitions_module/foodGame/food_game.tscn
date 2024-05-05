@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c34nfyiecdpaa"]
+[gd_scene load_steps=6 format=3 uid="uid://c34nfyiecdpaa"]
 
 [ext_resource type="Script" path="res://logistics/requisitions_module/foodGame/FoodGame.gd" id="1_30wlt"]
 [ext_resource type="PackedScene" uid="uid://b52ntg6ft8q8r" path="res://logistics/requisitions_module/foodGame/food_note.tscn" id="2_t272p"]
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="2_vjbr6"]
+[ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_nyxpy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s225n"]
 size = Vector2(48, 391)
@@ -39,10 +40,11 @@ position = Vector2(733, 170)
 [node name="NoteContainer" type="Node" parent="."]
 
 [node name="ExitButton" type="Button" parent="."]
-offset_left = 9.0
-offset_top = 9.0
-offset_right = 126.0
-offset_bottom = 55.0
+offset_left = 515.0
+offset_top = 6.0
+offset_right = 632.0
+offset_bottom = 52.0
+theme = ExtResource("4_nyxpy")
 text = "EXIT"
 
 [connection signal="area_entered" from="NoteHitter/Area2D" to="." method="_on_area_2d_area_entered"]

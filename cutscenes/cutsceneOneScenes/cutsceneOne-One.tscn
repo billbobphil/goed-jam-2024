@@ -5,5 +5,14 @@
 [node name="CutsceneScene" instance=ExtResource("1_4f3b7")]
 
 [node name="CutsceneText" parent="." index="1"]
-text = "Over population, and crisis are running rampant in the land that you
-call home."
+offset_left = 71.0
+offset_top = 282.0
+offset_right = 627.0
+offset_bottom = 357.0
+text = "Over population, and crisis are running rampant in the land that you call home."
+
+[node name="NextInstructionsText" parent="." index="2"]
+offset_left = 236.0
+offset_top = 307.0
+offset_right = 423.0
+offset_bottom = 330.0

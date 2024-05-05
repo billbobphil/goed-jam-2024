@@ -9,17 +9,16 @@
 texture = ExtResource("2_drstb")
 
 [node name="CutsceneText" parent="." index="1"]
-offset_left = 18.0
-offset_top = 182.0
-offset_right = 287.0
-offset_bottom = 283.0
-text = "A large unoccupied island exists 
-just off the coast. It looks like it 
-could provide salvation for your 
+offset_left = 16.0
+offset_top = 185.0
+offset_right = 285.0
+offset_bottom = 286.0
+text = "A large unoccupied island exists just off the coast.
+It looks like it could provide salvation for your 
 people."
 
 [node name="NextInstructionsText" parent="." index="2"]
-offset_left = 37.0
-offset_top = 331.0
-offset_right = 224.0
-offset_bottom = 354.0
+offset_left = 57.0
+offset_top = 246.0
+offset_right = 244.0
+offset_bottom = 269.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://djcuow8plteka"]
+[gd_scene load_steps=10 format=3 uid="uid://djcuow8plteka"]
 
 [ext_resource type="Script" path="res://logistics/control_room/ControlRoom.gd" id="1_fo1qf"]
 [ext_resource type="PackedScene" uid="uid://7q6vfq0gown8" path="res://logistics/needs_module/needs_module.tscn" id="2_k83lv"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://brthe3mw3ir6e" path="res://logistics/arrivals_module/arrivals_module.tscn" id="5_v83tu"]
 [ext_resource type="PackedScene" uid="uid://drs3xmyxyxx2b" path="res://logistics/stockpile_module/stockpile_module.tscn" id="6_26bx3"]
 [ext_resource type="Script" path="res://logistics/day_night_cycle/DayNightCycle.gd" id="7_dj60l"]
+[ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="9_1nn4h"]
 
 [node name="ControlRoom" type="Node2D"]
 script = ExtResource("1_fo1qf")
@@ -40,15 +41,17 @@ layer = 0
 [node name="DayLabel" type="Label" parent="DayNightCycle/CanvasLayer"]
 offset_right = 35.0
 offset_bottom = 23.0
+theme = ExtResource("9_1nn4h")
 text = "Day:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DayValue" type="Label" parent="DayNightCycle/CanvasLayer"]
-offset_left = 33.0
+offset_left = 26.0
 offset_top = 1.0
-offset_right = 61.0
+offset_right = 54.0
 offset_bottom = 24.0
+theme = ExtResource("9_1nn4h")
 text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -58,24 +61,27 @@ offset_left = -2.0
 offset_top = 21.0
 offset_right = 26.0
 offset_bottom = 44.0
+theme = ExtResource("9_1nn4h")
 text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HourMinuteColon" type="Label" parent="DayNightCycle/CanvasLayer"]
-offset_left = 12.0
+offset_left = 9.0
 offset_top = 21.0
-offset_right = 40.0
+offset_right = 37.0
 offset_bottom = 44.0
+theme = ExtResource("9_1nn4h")
 text = ":"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MinuteValue" type="Label" parent="DayNightCycle/CanvasLayer"]
-offset_left = 26.0
+offset_left = 19.0
 offset_top = 21.0
-offset_right = 54.0
+offset_right = 47.0
 offset_bottom = 44.0
+theme = ExtResource("9_1nn4h")
 text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1

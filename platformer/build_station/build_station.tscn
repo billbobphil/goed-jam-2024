@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi7r0jceyhdij"]
+[gd_scene load_steps=6 format=3 uid="uid://bi7r0jceyhdij"]
 
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_etoa3"]
 [ext_resource type="Script" path="res://platformer/build_station/BuildStation.gd" id="1_ga3va"]
 [ext_resource type="Texture2D" uid="uid://bgcg16p5iho52" path="res://generic-art-assets/E_Key_Light.png" id="2_pjl3d"]
+[ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_atni4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irh1v"]
 size = Vector2(201, 89)
@@ -32,10 +33,10 @@ texture = ExtResource("2_pjl3d")
 
 [node name="Label" type="Label" parent="BuildPrompt"]
 offset_left = -23.0
-offset_top = 3.0
+offset_top = 4.0
 offset_right = 26.0
-offset_bottom = 26.0
-theme_override_font_sizes/font_size = 8
+offset_bottom = 27.0
+theme = ExtResource("4_atni4")
 text = "BUILD"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -45,11 +46,11 @@ visible = false
 position = Vector2(-1, -55)
 
 [node name="Label" type="Label" parent="NotEnoughMaterialsPrompt"]
-offset_left = -45.0
+offset_left = -82.0
 offset_top = 3.0
-offset_right = 51.0
+offset_right = 80.0
 offset_bottom = 26.0
-theme_override_font_sizes/font_size = 8
+theme = ExtResource("4_atni4")
 text = "Insufficient Tower Pieces"
 horizontal_alignment = 1
 vertical_alignment = 1

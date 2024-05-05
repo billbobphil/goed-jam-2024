@@ -9,10 +9,10 @@
 texture = ExtResource("2_rk7w2")
 
 [node name="CutsceneText" parent="." index="1"]
-offset_left = 337.0
-offset_top = 25.0
-offset_right = 632.0
-offset_bottom = 282.0
+offset_left = 360.0
+offset_top = 53.0
+offset_right = 655.0
+offset_bottom = 310.0
 text = "The council has decided that you will 
 be the first to venture to this new 
 island.
@@ -25,7 +25,7 @@ main land with no one around to help
 you."
 
 [node name="NextInstructionsText" parent="." index="2"]
-offset_left = 393.0
-offset_top = 319.0
-offset_right = 580.0
-offset_bottom = 342.0
+offset_left = 392.0
+offset_top = 258.0
+offset_right = 579.0
+offset_bottom = 281.0

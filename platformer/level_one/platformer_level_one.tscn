@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cybuho2sam237"]
+[gd_scene load_steps=10 format=3 uid="uid://cybuho2sam237"]
 
-[ext_resource type="Texture2D" uid="uid://dxbu4oph8m6yr" path="res://temp-assets/floor-wall-tileset-16x16.png" id="1_c350g"]
+[ext_resource type="Texture2D" uid="uid://usuva7wvhgom" path="res://temp-assets/floor-wall-tileset-16x16.png" id="1_c350g"]
 [ext_resource type="PackedScene" uid="uid://lr7db3m6hb41" path="res://platformer/player/Player-Platformer.tscn" id="2_pkrma"]
 [ext_resource type="PackedScene" uid="uid://bnixgulkfkuqp" path="res://platformer/collectibles/platformerCollectible.tscn" id="3_eerqp"]
 [ext_resource type="PackedScene" uid="uid://dku1ydavjyi3v" path="res://platformer/knockback_enemy/knockbackEnemy.tscn" id="4_yscv6"]
 [ext_resource type="Script" path="res://platformer/level_one/HUD.gd" id="5_p37vb"]
 [ext_resource type="PackedScene" uid="uid://bi7r0jceyhdij" path="res://platformer/build_station/build_station.tscn" id="6_7oknt"]
+[ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="6_511pq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5755y"]
 texture = ExtResource("1_c350g")
@@ -322,25 +323,29 @@ position = Vector2(2267, -56)
 script = ExtResource("5_p37vb")
 
 [node name="TowerPiecesLabel" type="Label" parent="HUD"]
+offset_left = 7.0
 offset_top = 29.0
-offset_right = 101.0
+offset_right = 108.0
 offset_bottom = 52.0
+theme = ExtResource("6_511pq")
 text = "Tower Pieces"
 
 [node name="TowerPiecesValue" type="Label" parent="HUD"]
-offset_left = -4.0
+offset_left = -2.0
 offset_top = 6.0
-offset_right = 46.0
+offset_right = 48.0
 offset_bottom = 29.0
+theme = ExtResource("6_511pq")
 text = "000"
 horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="TowerPiecesRequired" type="Label" parent="HUD"]
-offset_left = 48.0
+offset_left = 50.0
 offset_top = 6.0
-offset_right = 98.0
+offset_right = 100.0
 offset_bottom = 29.0
+theme = ExtResource("6_511pq")
 text = "/ 7"
 vertical_alignment = 1
 

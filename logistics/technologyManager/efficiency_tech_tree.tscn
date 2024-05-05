@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfkuaeerlmupi"]
+[gd_scene load_steps=11 format=3 uid="uid://bfkuaeerlmupi"]
 
 [ext_resource type="PackedScene" uid="uid://byjmdwoosl8a3" path="res://logistics/technologyManager/tech_tree_node.tscn" id="1_scgf1"]
 [ext_resource type="Script" path="res://logistics/technologyManager/skills/efficiency/IncreaseMoveSpeedSkill.gd" id="2_md3q1"]
 [ext_resource type="Script" path="res://logistics/technologyManager/skills/efficiency/SlowPassageOfTimeSkill.gd" id="3_daf62"]
+[ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="3_ymm5x"]
 [ext_resource type="Script" path="res://logistics/technologyManager/skills/efficiency/AutoCollectTechPointsSkill.gd" id="4_mqvgp"]
 
 [sub_resource type="Resource" id="Resource_1k71j"]
@@ -45,12 +46,12 @@ skill = SubResource("Resource_ebvma")
 prevNode = NodePath("../IncreaseSpeed20")
 
 [node name="Label" type="Label" parent="IncreaseMoveSpeed"]
-offset_left = -15.0
-offset_top = -45.0
-offset_right = 80.0
-offset_bottom = -22.0
+offset_left = -16.0
+offset_top = -34.0
+offset_right = 144.0
+offset_bottom = -11.0
+theme = ExtResource("3_ymm5x")
 text = "Increase Movement Speed"
-metadata/_edit_use_anchors_ = true
 
 [node name="SlowTime" type="Node2D" parent="."]
 position = Vector2(173, 190)
@@ -71,12 +72,12 @@ skill = SubResource("Resource_n1xa8")
 prevNode = NodePath("../SlowTime50")
 
 [node name="Label" type="Label" parent="SlowTime"]
-offset_left = -15.0
-offset_top = -45.0
-offset_right = 80.0
-offset_bottom = -22.0
+offset_left = -16.0
+offset_top = -34.0
+offset_right = 126.0
+offset_bottom = -11.0
+theme = ExtResource("3_ymm5x")
 text = "Slow Passage of Time"
-metadata/_edit_use_anchors_ = true
 
 [node name="AutoCollect" type="Node2D" parent="."]
 position = Vector2(173, 298)
@@ -85,8 +86,9 @@ position = Vector2(173, 298)
 skill = SubResource("Resource_r1p2j")
 
 [node name="Label" type="Label" parent="AutoCollect"]
-offset_left = -15.0
-offset_top = -45.0
-offset_right = 80.0
-offset_bottom = -22.0
+offset_left = -16.0
+offset_top = -34.0
+offset_right = 139.0
+offset_bottom = -11.0
+theme = ExtResource("3_ymm5x")
 text = "Auto-Collect Tech Points"

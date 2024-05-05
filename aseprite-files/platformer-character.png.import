@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://usuva7wvhgom"
-path="res://.godot/imported/floor-wall-tileset-16x16.png-f3945e449ededd0a51abcfcb8d120a54.ctex"
+uid="uid://devg2rusawd2v"
+path="res://.godot/imported/platformer-character.png-bfed9979ff7314fa1b4cabf2b022aae0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://temp-assets/floor-wall-tileset-16x16.png"
-dest_files=["res://.godot/imported/floor-wall-tileset-16x16.png-f3945e449ededd0a51abcfcb8d120a54.ctex"]
+source_file="res://aseprite-files/platformer-character.png"
+dest_files=["res://.godot/imported/platformer-character.png-bfed9979ff7314fa1b4cabf2b022aae0.ctex"]
 
 [params]
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://d3qkbbvucy14x"]
+[gd_scene load_steps=16 format=3 uid="uid://d3qkbbvucy14x"]
 
 [ext_resource type="PackedScene" uid="uid://byjmdwoosl8a3" path="res://logistics/technologyManager/tech_tree_node.tscn" id="1_bt5x5"]
 [ext_resource type="Script" path="res://logistics/technologyManager/skills/AutoGatherSkill.gd" id="2_4p4aw"]
 [ext_resource type="Script" path="res://logistics/technologyManager/skills/FasterGatherSkill.gd" id="3_lfbav"]
+[ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="3_t566v"]
 [ext_resource type="Script" path="res://logistics/technologyManager/skills/entertainment/HighRiskSkill.gd" id="4_hksux"]
 
 [sub_resource type="Resource" id="Resource_5t0jf"]
@@ -110,12 +111,12 @@ skill = SubResource("Resource_m1q1k")
 prevNode = NodePath("../AutoGather12")
 
 [node name="AutoGatherLabel" type="Label" parent="AutoGatherTrack"]
-offset_left = -15.0
-offset_top = -45.0
-offset_right = 80.0
-offset_bottom = -22.0
+offset_left = -16.0
+offset_top = -33.0
+offset_right = 79.0
+offset_bottom = -10.0
+theme = ExtResource("3_t566v")
 text = "Auto Gather"
-metadata/_edit_use_anchors_ = true
 
 [node name="FasterAutoGather" type="Node2D" parent="."]
 position = Vector2(173, 190)
@@ -160,12 +161,12 @@ skill = SubResource("Resource_0r1k8")
 prevNode = NodePath("../FasterAutoGatherTwo")
 
 [node name="FasterAutoGatherLabel" type="Label" parent="FasterAutoGather"]
-offset_left = -15.0
-offset_top = -45.0
-offset_right = 80.0
-offset_bottom = -22.0
+offset_left = -16.0
+offset_top = -33.0
+offset_right = 104.0
+offset_bottom = -10.0
+theme = ExtResource("3_t566v")
 text = "Faster Auto Gather"
-metadata/_edit_use_anchors_ = true
 
 [node name="HighRisk" type="Node2D" parent="."]
 position = Vector2(173, 298)
@@ -174,8 +175,9 @@ position = Vector2(173, 298)
 skill = SubResource("Resource_q2sd3")
 
 [node name="HighRiskLabel" type="Label" parent="HighRisk"]
-offset_left = -15.0
-offset_top = -45.0
-offset_right = 80.0
-offset_bottom = -22.0
+offset_left = -16.0
+offset_top = -33.0
+offset_right = 116.0
+offset_bottom = -10.0
+theme = ExtResource("3_t566v")
 text = "Big Risk, Big Reward"
