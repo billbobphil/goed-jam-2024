@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpnawmd4ybjtu"]
+
+[ext_resource type="PackedScene" uid="uid://cpsf7i6vbjed5" path="res://cutscenes/cutscene_scene.tscn" id="1_kki7o"]
+[ext_resource type="Texture2D" uid="uid://bc4je5fk1w2te" path="res://cutscenes/cutsceneOneAssets/tower-4.png" id="2_jdrn2"]
+
+[node name="CutsceneScene" instance=ExtResource("1_kki7o")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_jdrn2")
+
+[node name="CutsceneText" parent="." index="1"]
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 339.0
+offset_bottom = 168.0
+text = "Your first task is to climb to the highest
+point on the island while collecting any 
+materials necessary for construction of a
+communications tower.
+
+Once built you'll be able to coordinate with 
+the mainland to requisition supplies and 
+increase the population."
+
+[node name="NextInstructionsText" parent="." index="2"]
+offset_left = 68.0
+offset_top = 238.0
+offset_right = 255.0
+offset_bottom = 261.0

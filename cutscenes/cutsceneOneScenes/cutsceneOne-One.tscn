@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://1ccmvimk1cu0"]
+
+[ext_resource type="PackedScene" uid="uid://cpsf7i6vbjed5" path="res://cutscenes/cutscene_scene.tscn" id="1_4f3b7"]
+
+[node name="CutsceneScene" instance=ExtResource("1_4f3b7")]
+
+[node name="CutsceneText" parent="." index="1"]
+text = "Over population, and crisis are running rampant in the land that you
+call home."

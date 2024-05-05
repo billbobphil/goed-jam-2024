@@ -10,7 +10,7 @@ func _ready():
 
 func _process(_delta):
 	if buildPrompt.visible && Input.is_action_just_pressed("platformer-interact"):
-		print("Show the construction of the tower cutscene here");
+		goToNextScene();
 
 func _on_area_2d_body_entered(body:Node2D):
 	if body is PlayerPlatformer:
@@ -25,3 +25,5 @@ func _on_area_2d_body_exited(body:Node2D):
 		notEnoughMaterialsPrompt.hide();
 
 
+func goToNextScene():
+	SceneChangeManager.goToLogistics();

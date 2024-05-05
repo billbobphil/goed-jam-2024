@@ -5,8 +5,7 @@ var entertainmentGame;
 var buildingGame;
 var fuelGame;
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+func initialize():
 	var foodGameNodes = get_tree().get_nodes_in_group("FoodGame");
 	if foodGameNodes.size() > 0:
 		foodGame = foodGameNodes[0];

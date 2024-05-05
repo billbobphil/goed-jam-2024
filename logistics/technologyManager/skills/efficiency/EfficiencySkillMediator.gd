@@ -4,7 +4,7 @@ var playerReference;
 var dayNightCycleReference;
 var isAutoCollectTechPointsEnabled : bool = false;
 
-func _ready():
+func initialize():
 	var playerNodes = get_tree().get_nodes_in_group("Player");
 	if playerNodes.size() > 0:
 		playerReference = playerNodes[0];

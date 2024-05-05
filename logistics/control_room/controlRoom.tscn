@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://djcuow8plteka"]
+[gd_scene load_steps=9 format=3 uid="uid://djcuow8plteka"]
 
+[ext_resource type="Script" path="res://logistics/control_room/ControlRoom.gd" id="1_fo1qf"]
 [ext_resource type="PackedScene" uid="uid://7q6vfq0gown8" path="res://logistics/needs_module/needs_module.tscn" id="2_k83lv"]
 [ext_resource type="PackedScene" uid="uid://hrnniijy3dar" path="res://logistics/player/player_logistics.tscn" id="2_vrpsp"]
 [ext_resource type="PackedScene" uid="uid://cqpxw627b3wta" path="res://logistics/assignments_module/assignments_module.tscn" id="3_hrk0s"]
@@ -9,6 +10,7 @@
 [ext_resource type="Script" path="res://logistics/day_night_cycle/DayNightCycle.gd" id="7_dj60l"]
 
 [node name="ControlRoom" type="Node2D"]
+script = ExtResource("1_fo1qf")
 
 [node name="PlayerLogistics" parent="." groups=["Player"] instance=ExtResource("2_vrpsp")]
 position = Vector2(319, 227)

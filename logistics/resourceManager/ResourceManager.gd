@@ -6,7 +6,7 @@ extends Node
 @export var entertainmentMaterials : int = 0;
 @export var fuelMaterials : int = 0;
 
-func _ready():
+func initialize():
 	var fuelGameNodes = get_tree().get_nodes_in_group("FuelGame");
 	for fuelGameNode in fuelGameNodes:
 		fuelGameNode.fuel_gained.connect(gainFuel);

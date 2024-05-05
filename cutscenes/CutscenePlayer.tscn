@@ -1,0 +1,18 @@
+[gd_scene load_steps=7 format=3 uid="uid://dg0r4fgs0ooi0"]
+
+[ext_resource type="Script" path="res://cutscenes/CutscenePlayer.gd" id="1_x3dg3"]
+[ext_resource type="PackedScene" uid="uid://1ccmvimk1cu0" path="res://cutscenes/cutsceneOneScenes/cutsceneOne-One.tscn" id="2_yvlb0"]
+[ext_resource type="PackedScene" uid="uid://bvhv774sxxiqd" path="res://cutscenes/cutsceneOneScenes/cutsceneOne-Two.tscn" id="3_w1xxu"]
+[ext_resource type="PackedScene" uid="uid://dj7hxwckng25o" path="res://cutscenes/cutsceneOneScenes/cutsceneOne-Three.tscn" id="4_a7x72"]
+[ext_resource type="PackedScene" uid="uid://bpnawmd4ybjtu" path="res://cutscenes/cutsceneOneScenes/cutSceneOne-Four.tscn" id="5_k2oo2"]
+[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="6_8bxue"]
+
+[node name="CutscenePlayer" type="Node2D"]
+script = ExtResource("1_x3dg3")
+scenes = Array[PackedScene]([ExtResource("2_yvlb0"), ExtResource("3_w1xxu"), ExtResource("4_a7x72"), ExtResource("5_k2oo2")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.0509804, 0.0509804, 0.0509804, 1)
+position = Vector2(319, 178.5)
+scale = Vector2(20.9375, 12.1563)
+texture = ExtResource("6_8bxue")

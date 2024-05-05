@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj7hxwckng25o"]
+
+[ext_resource type="PackedScene" uid="uid://cpsf7i6vbjed5" path="res://cutscenes/cutscene_scene.tscn" id="1_a7o1j"]
+[ext_resource type="Texture2D" uid="uid://bcj2wxvrr3d8w" path="res://cutscenes/cutsceneOneAssets/person-3.png" id="2_rk7w2"]
+
+[node name="CutsceneScene" instance=ExtResource("1_a7o1j")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_rk7w2")
+
+[node name="CutsceneText" parent="." index="1"]
+offset_left = 337.0
+offset_top = 25.0
+offset_right = 632.0
+offset_bottom = 282.0
+text = "The council has decided that you will 
+be the first to venture to this new 
+island.
+
+Your task will be to help establish a 
+new civilization here.
+
+You'll be completely isolated from the
+main land with no one around to help
+you."
+
+[node name="NextInstructionsText" parent="." index="2"]
+offset_left = 393.0
+offset_top = 319.0
+offset_right = 580.0
+offset_bottom = 342.0

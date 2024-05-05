@@ -4,7 +4,7 @@ var techPointsAvailableToCollect = 0;
 var techPointsInInventory = 4;
 var techPointsDisplays = [];
 
-func _ready():
+func initialize():
 	techPointsDisplays = get_tree().get_nodes_in_group("TechnologyPointsDisplay");
 	updateTechPointsDisplays();
 

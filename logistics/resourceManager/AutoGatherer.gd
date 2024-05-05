@@ -27,8 +27,7 @@ var isAutoBuildingDispensingEnabled = false;
 var hoursRequiredForBuildingDispensing = 12;
 var amountOfBuildingToDispense = 0;
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+func initialize():
 	var dayNightCycleNodes = get_tree().get_nodes_in_group("DayNightCycle");
 	if dayNightCycleNodes.size() > 0:
 		var dayNightCycle = dayNightCycleNodes[0];
