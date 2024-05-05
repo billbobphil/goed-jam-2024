@@ -1,7 +1,64 @@
-[gd_scene load_steps=5 format=3 uid="uid://dku1ydavjyi3v"]
+[gd_scene load_steps=13 format=3 uid="uid://dku1ydavjyi3v"]
 
-[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_gj47u"]
 [ext_resource type="Script" path="res://platformer/knockback_enemy/KnockbackEnemy.gd" id="1_yaf2b"]
+[ext_resource type="Texture2D" uid="uid://dmhdg5b14ntsc" path="res://aseprite-files/mushroom-enemy.png" id="2_cky1v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fs7s"]
+atlas = ExtResource("2_cky1v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnsw5"]
+atlas = ExtResource("2_cky1v")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6k1y"]
+atlas = ExtResource("2_cky1v")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsegg"]
+atlas = ExtResource("2_cky1v")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r03fq"]
+atlas = ExtResource("2_cky1v")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjpa0"]
+atlas = ExtResource("2_cky1v")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fir8"]
+atlas = ExtResource("2_cky1v")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_67pck"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fs7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnsw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6k1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsegg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r03fq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjpa0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fir8")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gkidj"]
 radius = 7.0
@@ -14,10 +71,10 @@ size = Vector2(14, 2)
 script = ExtResource("1_yaf2b")
 knockbackForce = 200
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.0705882, 0.129412, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_gj47u")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_67pck")
+animation = &"walk"
+autoplay = "walk"
 
 [node name="LeftRayCast" type="RayCast2D" parent="."]
 position = Vector2(-8, 0)

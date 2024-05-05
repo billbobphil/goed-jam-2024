@@ -1,17 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnixgulkfkuqp"]
+[gd_scene load_steps=11 format=3 uid="uid://bnixgulkfkuqp"]
 
-[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_0v1os"]
 [ext_resource type="Script" path="res://platformer/collectibles/PlatformerCollectible.gd" id="1_nt404"]
+[ext_resource type="Texture2D" uid="uid://bqw1n7lq3c4t7" path="res://aseprite-files/collectible.png" id="2_4cgee"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_accjj"]
+atlas = ExtResource("2_4cgee")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00qvl"]
+atlas = ExtResource("2_4cgee")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylbd0"]
+atlas = ExtResource("2_4cgee")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdti6"]
+atlas = ExtResource("2_4cgee")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqvnp"]
+atlas = ExtResource("2_4cgee")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh4a0"]
+atlas = ExtResource("2_4cgee")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sm6v5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_accjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00qvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylbd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdti6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqvnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uh4a0")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 7.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ooj3b"]
 
 [node name="PlatformerCollectible" type="Node2D" groups=["PlatformerCollectible"]]
 script = ExtResource("1_nt404")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.596078, 0.686275, 0.192157, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_0v1os")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sm6v5")
+animation = &"spin"
+autoplay = "spin"
 
 [node name="Area2D" type="Area2D" parent="."]
 

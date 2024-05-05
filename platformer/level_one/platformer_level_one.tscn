@@ -1,12 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://cybuho2sam237"]
+[gd_scene load_steps=14 format=3 uid="uid://cybuho2sam237"]
 
 [ext_resource type="Texture2D" uid="uid://usuva7wvhgom" path="res://temp-assets/floor-wall-tileset-16x16.png" id="1_c350g"]
+[ext_resource type="Texture2D" uid="uid://irkjwxuunc3v" path="res://generic-art-assets/Dark Tree.png" id="1_xu2gw"]
+[ext_resource type="Texture2D" uid="uid://damooqbvtdnbi" path="res://generic-art-assets/Dark Tree-extra-tree-left.png" id="2_7mxdn"]
 [ext_resource type="PackedScene" uid="uid://lr7db3m6hb41" path="res://platformer/player/Player-Platformer.tscn" id="2_pkrma"]
 [ext_resource type="PackedScene" uid="uid://bnixgulkfkuqp" path="res://platformer/collectibles/platformerCollectible.tscn" id="3_eerqp"]
 [ext_resource type="PackedScene" uid="uid://dku1ydavjyi3v" path="res://platformer/knockback_enemy/knockbackEnemy.tscn" id="4_yscv6"]
 [ext_resource type="Script" path="res://platformer/level_one/HUD.gd" id="5_p37vb"]
 [ext_resource type="PackedScene" uid="uid://bi7r0jceyhdij" path="res://platformer/build_station/build_station.tscn" id="6_7oknt"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="6_511pq"]
+[ext_resource type="Texture2D" uid="uid://u0jth7s23cif" path="res://generic-art-assets/Night.png" id="6_bbrb0"]
+[ext_resource type="Texture2D" uid="uid://b4tlwxcfokkle" path="res://generic-art-assets/Far Forest.png" id="7_r8inh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5755y"]
 texture = ExtResource("1_c350g")
@@ -253,6 +257,48 @@ sources/0 = SubResource("TileSetAtlasSource_5755y")
 
 [node name="PlatformerLevelOne" type="Node2D"]
 
+[node name="BackdropTrees" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="BackdropTrees"]
+position = Vector2(-36, 251)
+texture = ExtResource("1_xu2gw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="BackdropTrees"]
+position = Vector2(300, 248)
+texture = ExtResource("1_xu2gw")
+
+[node name="Sprite2D3" type="Sprite2D" parent="BackdropTrees"]
+position = Vector2(807, 131)
+texture = ExtResource("1_xu2gw")
+
+[node name="Sprite2D4" type="Sprite2D" parent="BackdropTrees"]
+position = Vector2(1143, 131)
+texture = ExtResource("1_xu2gw")
+
+[node name="Sprite2D5" type="Sprite2D" parent="BackdropTrees"]
+position = Vector2(1479, 131)
+texture = ExtResource("1_xu2gw")
+
+[node name="Sprite2D6" type="Sprite2D" parent="BackdropTrees"]
+position = Vector2(1815, 131)
+texture = ExtResource("1_xu2gw")
+
+[node name="Sprite2D7" type="Sprite2D" parent="BackdropTrees"]
+position = Vector2(615, 134)
+texture = ExtResource("2_7mxdn")
+
+[node name="Sprite2D8" type="Sprite2D" parent="BackdropTrees"]
+position = Vector2(2070.5, -142)
+texture = ExtResource("1_xu2gw")
+
+[node name="Sprite2D9" type="Sprite2D" parent="BackdropTrees"]
+position = Vector2(2406.5, -142)
+texture = ExtResource("1_xu2gw")
+
+[node name="Sprite2D10" type="Sprite2D" parent="BackdropTrees"]
+position = Vector2(1878.5, -139)
+texture = ExtResource("2_7mxdn")
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_stq0c")
 format = 2
@@ -354,3 +400,23 @@ position = Vector2(1927, -56)
 
 [node name="BuildStation" parent="." instance=ExtResource("6_7oknt")]
 position = Vector2(1036, -1168)
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Node" type="Node2D" parent="Background"]
+position = Vector2(429, 245)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Node"]
+self_modulate = Color(0.74902, 0.74902, 0.74902, 1)
+z_index = -1
+position = Vector2(-109.375, -62.5)
+scale = Vector2(1.90104, 1.90104)
+texture = ExtResource("6_bbrb0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background/Node"]
+self_modulate = Color(0.74902, 0.74902, 0.74902, 1)
+z_index = -1
+position = Vector2(-108, -65)
+scale = Vector2(1.90104, 1.90104)
+texture = ExtResource("7_r8inh")
