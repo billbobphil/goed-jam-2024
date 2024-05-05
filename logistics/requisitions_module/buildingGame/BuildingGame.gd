@@ -7,6 +7,7 @@ extends Game
 var spawnedBlocks : Array = [];
 var blocksWithActiveCollisionsWithLine : Array = [];
 var playerReference;
+var achievementLineY : float = 143;
 
 signal building_gained
 
@@ -29,6 +30,7 @@ func enableGame():
 	visible = true;
 	if playerReference:
 		playerReference.isMovementEnabled = false;
+	achievementLine.position.y = achievementLineY;
 	resetGame();
 
 func disableGame():

@@ -5,6 +5,7 @@ extends Game
 @onready var dieGuessNumber : Label = $DieGuessNumber;
 @onready var higherButton : Button = $HigherButton;
 @onready var lowerButton : Button = $LowerButton;
+var isHighRiskEnabled = false;
 
 var numberToGuessAround = 0;
 var guessDirection = "empty";
@@ -66,13 +67,20 @@ func rollAndCheck():
 
 	if guessDirection == 'higher' && dieTotal > numberToGuessAround:
 		print('guessed higher and won');
-		entertainment_gained.emit(1);
+		giveReward();
 	elif guessDirection == 'lower' && dieTotal < numberToGuessAround:
 		print('guessed lower and won');
-		entertainment_gained.emit(1);
+		giveReward();
 	else:
-		#TODO: loss indication here
-		pass;
+		if isHighRiskEnabled:
+			entertainment_gained.emit(-2);
 
 	resetGame();
+
+func giveReward():
+	if !isHighRiskEnabled:
+		entertainment_gained.emit(1);
+	else:
+		entertainment_gained.emit(3);
+
 	

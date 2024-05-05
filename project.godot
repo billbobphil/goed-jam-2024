@@ -21,6 +21,8 @@ PopulationManager="*res://logistics/populationManager/PopulationManager.gd"
 ResourceManager="*res://logistics/resourceManager/ResourceManager.gd"
 TechnologyManager="*res://logistics/technologyManager/TechnologyManager.gd"
 AutoGatherer="*res://logistics/resourceManager/AutoGatherer.gd"
+GameReferenceManager="*res://logistics/gameReferenceManager/GameReferenceManager.gd"
+EfficiencySkillMediator="*res://logistics/technologyManager/skills/efficiency/EfficiencySkillMediator.gd"
 
 [display]
 

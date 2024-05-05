@@ -1,6 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://h2hpl563bx80"]
+[gd_scene load_steps=10 format=3 uid="uid://h2hpl563bx80"]
 
 [ext_resource type="PackedScene" uid="uid://byjmdwoosl8a3" path="res://logistics/technologyManager/tech_tree_node.tscn" id="1_iliod"]
+[ext_resource type="Script" path="res://logistics/technologyManager/skills/AutoGatherSkill.gd" id="2_ghmgy"]
+[ext_resource type="Script" path="res://logistics/technologyManager/skills/FasterGatherSkill.gd" id="3_msjwi"]
+[ext_resource type="Script" path="res://logistics/technologyManager/skills/building/LowerBuildingHeightSkill.gd" id="4_5bdht"]
+
+[sub_resource type="Resource" id="Resource_d466d"]
+script = ExtResource("2_ghmgy")
+gatherType = 3
+amountToSetAutoGatherTo = 1
+
+[sub_resource type="Resource" id="Resource_5mbyc"]
+script = ExtResource("2_ghmgy")
+gatherType = 3
+amountToSetAutoGatherTo = 2
+
+[sub_resource type="Resource" id="Resource_xq414"]
+script = ExtResource("2_ghmgy")
+gatherType = 3
+amountToSetAutoGatherTo = 3
+
+[sub_resource type="Resource" id="Resource_vyjmw"]
+script = ExtResource("3_msjwi")
+gatherType = 3
+newNumberOfHoursToGatherAfter = 6
+
+[sub_resource type="Resource" id="Resource_5xodi"]
+script = ExtResource("4_5bdht")
+newBuildingLineHeightPercentageDecrease = 0.25
 
 [node name="BuildingTechTree" type="Node2D"]
 
@@ -8,6 +35,7 @@
 position = Vector2(173, 72)
 
 [node name="AutoGatherOne" parent="AutoGatherTrack" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_iliod")]
+skill = SubResource("Resource_d466d")
 nextNodes = [NodePath("../AutoGatherTwo")]
 
 [node name="Line2D" type="Line2D" parent="AutoGatherTrack"]
@@ -18,6 +46,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="AutoGatherTwo" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_iliod")]
 position = Vector2(91, 0)
+skill = SubResource("Resource_5mbyc")
 prevNode = NodePath("../AutoGatherOne")
 nextNodes = [NodePath("../AutoGatherThree")]
 
@@ -27,10 +56,10 @@ points = PackedVector2Array(0, 0, 59, 0)
 width = 2.0
 default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
-[node name="AutoGatherThree" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_iliod")]
+[node name="AutoGatherThree" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode") instance=ExtResource("1_iliod")]
 position = Vector2(182, 0)
+skill = SubResource("Resource_xq414")
 prevNode = NodePath("../AutoGatherTwo")
-nextNodes = [null]
 
 [node name="AutoGatherLabel" type="Label" parent="AutoGatherTrack"]
 offset_left = -15.0
@@ -44,6 +73,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(173, 190)
 
 [node name="FasterAutoGatherSix" parent="FasterAutoGather" instance=ExtResource("1_iliod")]
+skill = SubResource("Resource_vyjmw")
 
 [node name="FasterAutoGatherLabel" type="Label" parent="FasterAutoGather"]
 offset_left = -15.0
@@ -57,6 +87,8 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(173, 298)
 
 [node name="LowerTowerHeight25" parent="LowerTowerHeight" instance=ExtResource("1_iliod")]
+scale = Vector2(0.997936, 0.993715)
+skill = SubResource("Resource_5xodi")
 
 [node name="LowerTowerHeightLabel" type="Label" parent="LowerTowerHeight"]
 offset_left = -15.0

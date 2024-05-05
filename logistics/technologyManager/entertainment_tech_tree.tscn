@@ -1,6 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3qkbbvucy14x"]
+[gd_scene load_steps=15 format=3 uid="uid://d3qkbbvucy14x"]
 
 [ext_resource type="PackedScene" uid="uid://byjmdwoosl8a3" path="res://logistics/technologyManager/tech_tree_node.tscn" id="1_bt5x5"]
+[ext_resource type="Script" path="res://logistics/technologyManager/skills/AutoGatherSkill.gd" id="2_4p4aw"]
+[ext_resource type="Script" path="res://logistics/technologyManager/skills/FasterGatherSkill.gd" id="3_lfbav"]
+[ext_resource type="Script" path="res://logistics/technologyManager/skills/entertainment/HighRiskSkill.gd" id="4_hksux"]
+
+[sub_resource type="Resource" id="Resource_5t0jf"]
+script = ExtResource("2_4p4aw")
+gatherType = 1
+amountToSetAutoGatherTo = 1
+
+[sub_resource type="Resource" id="Resource_54khj"]
+script = ExtResource("2_4p4aw")
+gatherType = 1
+amountToSetAutoGatherTo = 2
+
+[sub_resource type="Resource" id="Resource_obnt3"]
+script = ExtResource("2_4p4aw")
+gatherType = 1
+amountToSetAutoGatherTo = 8
+
+[sub_resource type="Resource" id="Resource_jl8by"]
+script = ExtResource("2_4p4aw")
+gatherType = 1
+amountToSetAutoGatherTo = 12
+
+[sub_resource type="Resource" id="Resource_m1q1k"]
+script = ExtResource("2_4p4aw")
+gatherType = 1
+amountToSetAutoGatherTo = 24
+
+[sub_resource type="Resource" id="Resource_w88bd"]
+script = ExtResource("3_lfbav")
+gatherType = 1
+newNumberOfHoursToGatherAfter = 6
+
+[sub_resource type="Resource" id="Resource_eiogu"]
+script = ExtResource("3_lfbav")
+gatherType = 1
+newNumberOfHoursToGatherAfter = 4
+
+[sub_resource type="Resource" id="Resource_7is8s"]
+script = ExtResource("3_lfbav")
+gatherType = 1
+newNumberOfHoursToGatherAfter = 2
+
+[sub_resource type="Resource" id="Resource_0r1k8"]
+script = ExtResource("3_lfbav")
+gatherType = 1
+newNumberOfHoursToGatherAfter = 1
+
+[sub_resource type="Resource" id="Resource_q2sd3"]
+script = ExtResource("4_hksux")
 
 [node name="EntertainmentTechTree" type="Node2D"]
 
@@ -8,6 +59,7 @@
 position = Vector2(173, 72)
 
 [node name="AutoGatherOne" parent="AutoGatherTrack" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_bt5x5")]
+skill = SubResource("Resource_5t0jf")
 nextNodes = [NodePath("../AutoGatherTwo")]
 
 [node name="Line2D" type="Line2D" parent="AutoGatherTrack"]
@@ -18,6 +70,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="AutoGatherTwo" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_bt5x5")]
 position = Vector2(91, 0)
+skill = SubResource("Resource_54khj")
 prevNode = NodePath("../AutoGatherOne")
 nextNodes = [NodePath("../AutoGatherEight")]
 
@@ -29,6 +82,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="AutoGatherEight" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_bt5x5")]
 position = Vector2(182, 0)
+skill = SubResource("Resource_obnt3")
 prevNode = NodePath("../AutoGatherTwo")
 nextNodes = [NodePath("../AutoGather12")]
 
@@ -40,6 +94,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="AutoGather12" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_bt5x5")]
 position = Vector2(273, 0)
+skill = SubResource("Resource_jl8by")
 prevNode = NodePath("../AutoGatherEight")
 nextNodes = [NodePath("../AutoGather24")]
 
@@ -51,6 +106,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="AutoGather24" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode") instance=ExtResource("1_bt5x5")]
 position = Vector2(364, 0)
+skill = SubResource("Resource_m1q1k")
 prevNode = NodePath("../AutoGather12")
 
 [node name="AutoGatherLabel" type="Label" parent="AutoGatherTrack"]
@@ -65,6 +121,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(173, 190)
 
 [node name="FasterAutoGatherSix" parent="FasterAutoGather" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_bt5x5")]
+skill = SubResource("Resource_w88bd")
 nextNodes = [NodePath("../FasterAutoGatherFour")]
 
 [node name="Line2D2" type="Line2D" parent="FasterAutoGather"]
@@ -75,6 +132,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="FasterAutoGatherFour" parent="FasterAutoGather" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_bt5x5")]
 position = Vector2(91, 0)
+skill = SubResource("Resource_eiogu")
 prevNode = NodePath("../FasterAutoGatherSix")
 nextNodes = [NodePath("../FasterAutoGatherTwo")]
 
@@ -86,6 +144,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="FasterAutoGatherTwo" parent="FasterAutoGather" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_bt5x5")]
 position = Vector2(182, 0)
+skill = SubResource("Resource_7is8s")
 prevNode = NodePath("../FasterAutoGatherFour")
 nextNodes = [NodePath("../FasterAutoGatherOne")]
 
@@ -97,6 +156,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="FasterAutoGatherOne" parent="FasterAutoGather" node_paths=PackedStringArray("prevNode") instance=ExtResource("1_bt5x5")]
 position = Vector2(273, 0)
+skill = SubResource("Resource_0r1k8")
 prevNode = NodePath("../FasterAutoGatherTwo")
 
 [node name="FasterAutoGatherLabel" type="Label" parent="FasterAutoGather"]
@@ -110,7 +170,8 @@ metadata/_edit_use_anchors_ = true
 [node name="HighRisk" type="Node2D" parent="."]
 position = Vector2(173, 298)
 
-[node name="FasterFuelGaugeFive" parent="HighRisk" instance=ExtResource("1_bt5x5")]
+[node name="HighRiskNode" parent="HighRisk" instance=ExtResource("1_bt5x5")]
+skill = SubResource("Resource_q2sd3")
 
 [node name="HighRiskLabel" type="Label" parent="HighRisk"]
 offset_left = -15.0

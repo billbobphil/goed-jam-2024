@@ -1,6 +1,62 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7axyll4oswre"]
+[gd_scene load_steps=16 format=3 uid="uid://b7axyll4oswre"]
 
 [ext_resource type="PackedScene" uid="uid://byjmdwoosl8a3" path="res://logistics/technologyManager/tech_tree_node.tscn" id="1_vy6gu"]
+[ext_resource type="Script" path="res://logistics/technologyManager/skills/AutoGatherSkill.gd" id="2_nl8gk"]
+[ext_resource type="Script" path="res://logistics/technologyManager/skills/FasterGatherSkill.gd" id="3_t6pqu"]
+[ext_resource type="Script" path="res://logistics/technologyManager/skills/fuel/FasterFuelGaugeSkill.gd" id="4_kh0cp"]
+
+[sub_resource type="Resource" id="Resource_f2u4k"]
+script = ExtResource("2_nl8gk")
+gatherType = 2
+amountToSetAutoGatherTo = 1
+
+[sub_resource type="Resource" id="Resource_bnxn8"]
+script = ExtResource("2_nl8gk")
+gatherType = 2
+amountToSetAutoGatherTo = 8
+
+[sub_resource type="Resource" id="Resource_373jg"]
+script = ExtResource("2_nl8gk")
+gatherType = 2
+amountToSetAutoGatherTo = 16
+
+[sub_resource type="Resource" id="Resource_v5hdq"]
+script = ExtResource("2_nl8gk")
+gatherType = 2
+amountToSetAutoGatherTo = 32
+
+[sub_resource type="Resource" id="Resource_4k0vk"]
+script = ExtResource("2_nl8gk")
+gatherType = 2
+amountToSetAutoGatherTo = 64
+
+[sub_resource type="Resource" id="Resource_ly8vd"]
+script = ExtResource("3_t6pqu")
+gatherType = 2
+newNumberOfHoursToGatherAfter = 6
+
+[sub_resource type="Resource" id="Resource_4jk62"]
+script = ExtResource("3_t6pqu")
+gatherType = 2
+newNumberOfHoursToGatherAfter = 4
+
+[sub_resource type="Resource" id="Resource_elaqi"]
+script = ExtResource("3_t6pqu")
+gatherType = 2
+newNumberOfHoursToGatherAfter = 2
+
+[sub_resource type="Resource" id="Resource_o4xi8"]
+script = ExtResource("3_t6pqu")
+gatherType = 2
+newNumberOfHoursToGatherAfter = 1
+
+[sub_resource type="Resource" id="Resource_gbhrj"]
+script = ExtResource("4_kh0cp")
+newFuelGaugeSpeed = 50
+
+[sub_resource type="Resource" id="Resource_75axi"]
+script = ExtResource("4_kh0cp")
+newFuelGaugeSpeed = 75
 
 [node name="FuelTechTree" type="Node2D"]
 
@@ -8,6 +64,7 @@
 position = Vector2(173, 72)
 
 [node name="AutoGatherOne" parent="AutoGatherTrack" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_vy6gu")]
+skill = SubResource("Resource_f2u4k")
 nextNodes = [NodePath("../AutoGatherEight")]
 
 [node name="Line2D" type="Line2D" parent="AutoGatherTrack"]
@@ -18,6 +75,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="AutoGatherEight" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_vy6gu")]
 position = Vector2(91, 0)
+skill = SubResource("Resource_bnxn8")
 prevNode = NodePath("../AutoGatherOne")
 nextNodes = [NodePath("../AutoGather16")]
 
@@ -29,6 +87,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="AutoGather16" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_vy6gu")]
 position = Vector2(182, 0)
+skill = SubResource("Resource_373jg")
 prevNode = NodePath("../AutoGatherEight")
 nextNodes = [NodePath("../AutoGather32")]
 
@@ -40,6 +99,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="AutoGather32" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_vy6gu")]
 position = Vector2(273, 0)
+skill = SubResource("Resource_v5hdq")
 prevNode = NodePath("../AutoGather16")
 nextNodes = [NodePath("../AutoGather64")]
 
@@ -51,6 +111,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="AutoGather64" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode") instance=ExtResource("1_vy6gu")]
 position = Vector2(364, 0)
+skill = SubResource("Resource_4k0vk")
 prevNode = NodePath("../AutoGather32")
 
 [node name="AutoGatherLabel" type="Label" parent="AutoGatherTrack"]
@@ -65,6 +126,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(173, 190)
 
 [node name="FasterAutoGatherSix" parent="FasterAutoGather" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_vy6gu")]
+skill = SubResource("Resource_ly8vd")
 nextNodes = [NodePath("../FasterAutoGatherFour")]
 
 [node name="Line2D2" type="Line2D" parent="FasterAutoGather"]
@@ -75,6 +137,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="FasterAutoGatherFour" parent="FasterAutoGather" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_vy6gu")]
 position = Vector2(91, 0)
+skill = SubResource("Resource_4jk62")
 prevNode = NodePath("../FasterAutoGatherSix")
 nextNodes = [NodePath("../FasterAutoGatherTwo")]
 
@@ -86,6 +149,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="FasterAutoGatherTwo" parent="FasterAutoGather" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_vy6gu")]
 position = Vector2(182, 0)
+skill = SubResource("Resource_elaqi")
 prevNode = NodePath("../FasterAutoGatherFour")
 nextNodes = [NodePath("../FasterAutoGatherOne")]
 
@@ -97,6 +161,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="FasterAutoGatherOne" parent="FasterAutoGather" node_paths=PackedStringArray("prevNode") instance=ExtResource("1_vy6gu")]
 position = Vector2(273, 0)
+skill = SubResource("Resource_o4xi8")
 prevNode = NodePath("../FasterAutoGatherTwo")
 
 [node name="FasterAutoGatherLabel" type="Label" parent="FasterAutoGather"]
@@ -111,6 +176,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(173, 298)
 
 [node name="FasterFuelGaugeFive" parent="FasterFuelGauge" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_vy6gu")]
+skill = SubResource("Resource_gbhrj")
 nextNodes = [NodePath("../FasterFuelGaugeTen")]
 
 [node name="Line2D" type="Line2D" parent="FasterFuelGauge"]
@@ -121,6 +187,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="FasterFuelGaugeTen" parent="FasterFuelGauge" node_paths=PackedStringArray("prevNode") instance=ExtResource("1_vy6gu")]
 position = Vector2(91, 0)
+skill = SubResource("Resource_75axi")
 prevNode = NodePath("../FasterFuelGaugeFive")
 
 [node name="FasterFuelGaugeLabel" type="Label" parent="FasterFuelGauge"]

@@ -1,6 +1,57 @@
-[gd_scene load_steps=7 format=3 uid="uid://smbhlrn06woj"]
+[gd_scene load_steps=15 format=3 uid="uid://smbhlrn06woj"]
 
 [ext_resource type="PackedScene" uid="uid://byjmdwoosl8a3" path="res://logistics/technologyManager/tech_tree_node.tscn" id="1_imhwb"]
+[ext_resource type="Script" path="res://logistics/technologyManager/skills/AutoGatherSkill.gd" id="2_2wo1o"]
+[ext_resource type="Script" path="res://logistics/technologyManager/skills/FasterGatherSkill.gd" id="3_y70po"]
+[ext_resource type="Script" path="res://logistics/technologyManager/skills/food/FasterFoodChopsSkill.gd" id="4_73y70"]
+
+[sub_resource type="Resource" id="Resource_54xu0"]
+script = ExtResource("2_2wo1o")
+gatherType = 0
+amountToSetAutoGatherTo = 1
+
+[sub_resource type="Resource" id="Resource_h8u3f"]
+script = ExtResource("2_2wo1o")
+gatherType = 0
+amountToSetAutoGatherTo = 2
+
+[sub_resource type="Resource" id="Resource_2rld3"]
+script = ExtResource("2_2wo1o")
+gatherType = 0
+amountToSetAutoGatherTo = 4
+
+[sub_resource type="Resource" id="Resource_m6vb2"]
+script = ExtResource("2_2wo1o")
+gatherType = 0
+amountToSetAutoGatherTo = 8
+
+[sub_resource type="Resource" id="Resource_hf3co"]
+script = ExtResource("3_y70po")
+gatherType = 0
+newNumberOfHoursToGatherAfter = 6
+
+[sub_resource type="Resource" id="Resource_winh4"]
+script = ExtResource("3_y70po")
+gatherType = 0
+newNumberOfHoursToGatherAfter = 4
+
+[sub_resource type="Resource" id="Resource_tuf16"]
+script = ExtResource("3_y70po")
+gatherType = 0
+newNumberOfHoursToGatherAfter = 2
+
+[sub_resource type="Resource" id="Resource_t3kej"]
+script = ExtResource("3_y70po")
+gatherType = 0
+newNumberOfHoursToGatherAfter = 1
+
+[sub_resource type="Resource" id="Resource_13ic8"]
+script = ExtResource("4_73y70")
+numberOfChopsRequired = 5
+
+[sub_resource type="Resource" id="Resource_0umtk"]
+script = ExtResource("4_73y70")
+numberOfChopsRequired = 3
 
 [node name="FoodTechTree" type="Node2D"]
 
@@ -8,7 +59,7 @@
 position = Vector2(173, 72)
 
 [node name="AutoGatherOne" parent="AutoGatherTrack" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_imhwb")]
-cost = 1
+skill = SubResource("Resource_54xu0")
 nextNodes = [NodePath("../AutoGatherTwo")]
 
 [node name="Line2D" type="Line2D" parent="AutoGatherTrack"]
@@ -19,7 +70,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="AutoGatherTwo" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_imhwb")]
 position = Vector2(91, 0)
-cost = 1
+skill = SubResource("Resource_h8u3f")
 prevNode = NodePath(".")
 nextNodes = [NodePath("../AutoGatherFour")]
 
@@ -31,7 +82,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="AutoGatherFour" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_imhwb")]
 position = Vector2(182, 0)
-cost = 1
+skill = SubResource("Resource_2rld3")
 prevNode = NodePath(".")
 nextNodes = [NodePath("../AutoGatherEight")]
 
@@ -43,7 +94,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="AutoGatherEight" parent="AutoGatherTrack" node_paths=PackedStringArray("prevNode") instance=ExtResource("1_imhwb")]
 position = Vector2(273, 0)
-cost = 1
+skill = SubResource("Resource_m6vb2")
 prevNode = NodePath(".")
 
 [node name="AutoGatherLabel" type="Label" parent="AutoGatherTrack"]
@@ -58,6 +109,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(173, 190)
 
 [node name="FasterAutoGatherSix" parent="FasterAutoGather" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_imhwb")]
+skill = SubResource("Resource_hf3co")
 nextNodes = [NodePath("../FasterAutoGatherFour")]
 
 [node name="Line2D2" type="Line2D" parent="FasterAutoGather"]
@@ -68,6 +120,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="FasterAutoGatherFour" parent="FasterAutoGather" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_imhwb")]
 position = Vector2(91, 0)
+skill = SubResource("Resource_winh4")
 prevNode = NodePath("../FasterAutoGatherSix")
 nextNodes = [NodePath("../FasterAutoGatherTwo")]
 
@@ -79,6 +132,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="FasterAutoGatherTwo" parent="FasterAutoGather" node_paths=PackedStringArray("prevNode", "nextNodes") instance=ExtResource("1_imhwb")]
 position = Vector2(182, 0)
+skill = SubResource("Resource_tuf16")
 prevNode = NodePath("../FasterAutoGatherFour")
 nextNodes = [NodePath("../FasterAutoGatherOne")]
 
@@ -90,6 +144,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="FasterAutoGatherOne" parent="FasterAutoGather" node_paths=PackedStringArray("prevNode") instance=ExtResource("1_imhwb")]
 position = Vector2(273, 0)
+skill = SubResource("Resource_t3kej")
 prevNode = NodePath("../FasterAutoGatherTwo")
 
 [node name="FasterAutoGatherLabel" type="Label" parent="FasterAutoGather"]
@@ -104,6 +159,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(173, 298)
 
 [node name="DecreaseChopsFive" parent="DecreaseChops" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_imhwb")]
+skill = SubResource("Resource_13ic8")
 nextNodes = [NodePath("../DecreaseChopsThree")]
 
 [node name="Line2D" type="Line2D" parent="DecreaseChops"]
@@ -114,6 +170,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 
 [node name="DecreaseChopsThree" parent="DecreaseChops" node_paths=PackedStringArray("prevNode") instance=ExtResource("1_imhwb")]
 position = Vector2(91, 0)
+skill = SubResource("Resource_0umtk")
 prevNode = NodePath("../DecreaseChopsFive")
 
 [node name="DecreaseChopsLabel" type="Label" parent="DecreaseChops"]

@@ -6,7 +6,7 @@ class_name TechTreeNode
 @onready var costLabel : Label = $CostLabel
 var isAvailable : bool = false;
 var isUnlocked : bool = false;
-@export var cost : int = 0;
+@export var cost : int = 1;
 @export var skill : Skill;
 @export var prevNode : TechTreeNode = null;
 @export var nextNodes : Array[TechTreeNode] = [];

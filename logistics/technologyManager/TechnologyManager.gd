@@ -5,6 +5,8 @@ var techPointsInInventory = 4;
 
 func increaseTechPoints(amount):
 	techPointsAvailableToCollect += amount;
+	if EfficiencySkillMediator.isAutoCollectTechPointsEnabled:
+		collectAvailableTechPoints();
 
 func decreaseTechPoints(amount):
 	techPointsAvailableToCollect -= amount;
