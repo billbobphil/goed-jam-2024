@@ -345,7 +345,7 @@ layer_0/tile_data = PackedInt32Array(1310720, 65536, 0, 1310721, 65536, 0, 13107
 [node name="Collectibles" type="Node" parent="."]
 
 [node name="PlatformerCollectible2" parent="Collectibles" instance=ExtResource("3_eerqp")]
-position = Vector2(232, 222)
+position = Vector2(406, 117)
 
 [node name="PlatformerCollectible" parent="Collectibles" instance=ExtResource("3_eerqp")]
 position = Vector2(640, -2)
@@ -458,3 +458,46 @@ z_index = -1
 position = Vector2(-108, -65)
 scale = Vector2(1.90104, 1.90104)
 texture = ExtResource("7_r8inh")
+
+[node name="Tutorial" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Ascend" type="Label" parent="Tutorial"]
+offset_left = -60.0
+offset_top = 216.0
+offset_right = 67.0
+offset_bottom = 239.0
+theme = ExtResource("6_511pq")
+text = "Ascend the mountain"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Move" type="Label" parent="Tutorial"]
+offset_left = -56.0
+offset_top = 236.0
+offset_right = 62.0
+offset_bottom = 259.0
+theme = ExtResource("6_511pq")
+text = "[A] and [D] to move"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Jump" type="Label" parent="Tutorial"]
+offset_left = 168.0
+offset_top = 180.0
+offset_right = 294.0
+offset_bottom = 203.0
+theme = ExtResource("6_511pq")
+text = "[SPACEBAR] to jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Collect" type="Label" parent="Tutorial"]
+offset_left = 312.0
+offset_top = 79.0
+offset_right = 508.0
+offset_bottom = 102.0
+theme = ExtResource("6_511pq")
+text = "Collect at least 7 tower pieces"
+horizontal_alignment = 1
+vertical_alignment = 1

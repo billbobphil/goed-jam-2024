@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bi7r0jceyhdij"]
 
-[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_etoa3"]
 [ext_resource type="Script" path="res://platformer/build_station/BuildStation.gd" id="1_ga3va"]
+[ext_resource type="Texture2D" uid="uid://miimvomc1g7d" path="res://aseprite-files/junk-pile.png" id="2_63u0t"]
 [ext_resource type="Texture2D" uid="uid://bgcg16p5iho52" path="res://generic-art-assets/E_Key_Light.png" id="2_pjl3d"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_atni4"]
 
@@ -13,8 +13,7 @@ script = ExtResource("1_ga3va")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.211765, 0.411765, 0.701961, 1)
-scale = Vector2(4, 2)
-texture = ExtResource("1_etoa3")
+texture = ExtResource("2_63u0t")
 
 [node name="Area2D" type="Area2D" parent="."]
 
