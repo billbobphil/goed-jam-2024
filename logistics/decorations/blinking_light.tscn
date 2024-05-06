@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjqc3dejd82p8"]
+
+[ext_resource type="Texture2D" uid="uid://8cl22sslmvif" path="res://aseprite-files/blinking-light.png" id="1_f1gl5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ngnt"]
+atlas = ExtResource("1_f1gl5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr0q1"]
+atlas = ExtResource("1_f1gl5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8hew"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ngnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr0q1")
+}],
+"loop": true,
+"name": &"blink",
+"speed": 0.5
+}]
+
+[node name="BlinkingLight" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m8hew")
+animation = &"blink"
+autoplay = "blink"
+frame_progress = 0.291369

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://brthe3mw3ir6e"]
+[gd_scene load_steps=8 format=3 uid="uid://brthe3mw3ir6e"]
 
 [ext_resource type="Script" path="res://logistics/arrivals_module/ArrivalsModule.gd" id="1_e66t1"]
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_tuolu"]
+[ext_resource type="Texture2D" uid="uid://ef4r7wjba2xt" path="res://aseprite-files/arrivals-module.png" id="2_1jpte"]
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="2_5d21o"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_mxv4j"]
 
@@ -9,14 +10,15 @@
 radius = 73.0069
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5ivj"]
-size = Vector2(64, 96)
+size = Vector2(64, 139.494)
 
 [node name="ArrivalsModule" type="Node2D"]
 script = ExtResource("1_e66t1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 3)
-texture = ExtResource("1_tuolu")
+position = Vector2(42, 3)
+scale = Vector2(2, 2)
+texture = ExtResource("2_1jpte")
 
 [node name="Interactable" parent="." instance=ExtResource("2_5d21o")]
 
@@ -26,6 +28,8 @@ shape = SubResource("CircleShape2D_kg5xr")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.98263, 3.71432)
+rotation = -0.976603
 shape = SubResource("RectangleShape2D_b5ivj")
 debug_color = Color(0.94902, 0.12549, 0.466667, 0.419608)
 

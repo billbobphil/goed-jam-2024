@@ -108,6 +108,7 @@ SPEED = 225.0
 JUMP_VELOCITY = -500.0
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+z_index = 10
 sprite_frames = SubResource("SpriteFrames_2sgke")
 animation = &"idle"
 autoplay = "idle"

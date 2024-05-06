@@ -1,22 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://drs3xmyxyxx2b"]
+[gd_scene load_steps=8 format=3 uid="uid://drs3xmyxyxx2b"]
 
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_bg8wv"]
 [ext_resource type="Script" path="res://logistics/stockpile_module/StockpileModule.gd" id="1_j7pgf"]
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="2_cxpok"]
+[ext_resource type="Texture2D" uid="uid://c1o0gkf5e7k10" path="res://aseprite-files/stockpile-module.png" id="2_pd2ad"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_g2ord"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0r0vw"]
 radius = 73.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnodc"]
-size = Vector2(64, 96)
+size = Vector2(64, 133.899)
 
 [node name="StockpileModule" type="Node2D"]
 script = ExtResource("1_j7pgf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 3)
-texture = ExtResource("1_bg8wv")
+position = Vector2(-28, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("2_pd2ad")
 
 [node name="Interactable" parent="." instance=ExtResource("2_cxpok")]
 
@@ -26,6 +28,8 @@ shape = SubResource("CircleShape2D_0r0vw")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, -2)
+rotation = 0.994566
 shape = SubResource("RectangleShape2D_lnodc")
 debug_color = Color(0.894118, 0.278431, 0.407843, 0.419608)
 

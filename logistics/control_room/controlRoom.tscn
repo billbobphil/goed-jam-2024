@@ -1,17 +1,106 @@
-[gd_scene load_steps=10 format=3 uid="uid://djcuow8plteka"]
+[gd_scene load_steps=23 format=3 uid="uid://djcuow8plteka"]
 
 [ext_resource type="Script" path="res://logistics/control_room/ControlRoom.gd" id="1_fo1qf"]
 [ext_resource type="PackedScene" uid="uid://7q6vfq0gown8" path="res://logistics/needs_module/needs_module.tscn" id="2_k83lv"]
+[ext_resource type="Texture2D" uid="uid://cfp615fotfbh7" path="res://aseprite-files/control-room-floor.png" id="2_kq4cl"]
 [ext_resource type="PackedScene" uid="uid://hrnniijy3dar" path="res://logistics/player/player_logistics.tscn" id="2_vrpsp"]
+[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="3_0crqc"]
+[ext_resource type="Texture2D" uid="uid://8yf411jbm5u0" path="res://aseprite-files/control-room-carpet.png" id="3_1ujjn"]
 [ext_resource type="PackedScene" uid="uid://cqpxw627b3wta" path="res://logistics/assignments_module/assignments_module.tscn" id="3_hrk0s"]
+[ext_resource type="Texture2D" uid="uid://1c3dsu107ly3" path="res://aseprite-files/right-wall.png" id="4_5p7yb"]
 [ext_resource type="PackedScene" uid="uid://7vmxawjwdiwg" path="res://logistics/requisitions_module/requisitions_module.tscn" id="4_khfr4"]
+[ext_resource type="Texture2D" uid="uid://c6w3cgu6pfmgm" path="res://aseprite-files/left-wall.png" id="5_u7ms7"]
 [ext_resource type="PackedScene" uid="uid://brthe3mw3ir6e" path="res://logistics/arrivals_module/arrivals_module.tscn" id="5_v83tu"]
 [ext_resource type="PackedScene" uid="uid://drs3xmyxyxx2b" path="res://logistics/stockpile_module/stockpile_module.tscn" id="6_26bx3"]
+[ext_resource type="Texture2D" uid="uid://jyjbwyr2kn3v" path="res://aseprite-files/bottom-wall.png" id="6_l0uqd"]
 [ext_resource type="Script" path="res://logistics/day_night_cycle/DayNightCycle.gd" id="7_dj60l"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="9_1nn4h"]
+[ext_resource type="Texture2D" uid="uid://bvdg5cubaw7bd" path="res://aseprite-files/day-timer-screen.png" id="11_02xml"]
+[ext_resource type="Texture2D" uid="uid://bs0tor3uk7xjv" path="res://aseprite-files/top-wall.png" id="13_ed1k4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y7y8g"]
+texture = ExtResource("13_ed1k4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y0xpj"]
+texture = ExtResource("4_5p7yb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3phw"]
+texture = ExtResource("5_u7ms7")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cscfq"]
+texture = ExtResource("6_l0uqd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -10, 16, -9.75, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_b6v4u"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_y7y8g")
+sources/1 = SubResource("TileSetAtlasSource_y0xpj")
+sources/2 = SubResource("TileSetAtlasSource_l3phw")
+sources/3 = SubResource("TileSetAtlasSource_cscfq")
 
 [node name="ControlRoom" type="Node2D"]
 script = ExtResource("1_fo1qf")
+
+[node name="FloorSprite" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("2_kq4cl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.0313726, 0.0784314, 0.117647, 1)
+position = Vector2(320, 0)
+scale = Vector2(21, 1)
+texture = ExtResource("3_0crqc")
+
+[node name="Walls" type="TileMap" parent="."]
+position = Vector2(0, 7)
+tile_set = SubResource("TileSet_b6v4u")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 2, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 1, 0, 65555, 1, 0, 131091, 1, 0, 196627, 1, 0, 262163, 1, 0, 327699, 1, 0, 393235, 1, 0, 458771, 1, 0, 524307, 1, 0, 589843, 1, 0, 655379, 1, 0, 720915, 1, 0, 65536, 2, 0, 131072, 2, 0, 196608, 2, 0, 262144, 2, 0, 327680, 2, 0, 393216, 2, 0, 458752, 2, 0, 524288, 2, 0, 589824, 2, 0, 655360, 2, 0, 720896, 2, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655378, 3, 0)
+
+[node name="CarpetSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(319, 87)
+texture = ExtResource("3_1ujjn")
+
+[node name="CarpetSprite2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(518, 125)
+texture = ExtResource("3_1ujjn")
+
+[node name="CarpetSprite3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(123, 123)
+texture = ExtResource("3_1ujjn")
+
+[node name="CarpetSprite4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(119, 280)
+texture = ExtResource("3_1ujjn")
+
+[node name="CarpetSprite5" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(522, 278)
+texture = ExtResource("3_1ujjn")
 
 [node name="PlayerLogistics" parent="." groups=["Player"] instance=ExtResource("2_vrpsp")]
 position = Vector2(319, 227)
@@ -20,16 +109,18 @@ position = Vector2(319, 227)
 position = Vector2(320, 55)
 
 [node name="AssignmentsModule" parent="." instance=ExtResource("3_hrk0s")]
-position = Vector2(111, 117)
+position = Vector2(140, 118)
 
 [node name="RequisitionsModule" parent="." instance=ExtResource("4_khfr4")]
-position = Vector2(529, 117)
+position = Vector2(506, 112)
 
 [node name="ArrivalsModule" parent="." instance=ExtResource("5_v83tu")]
-position = Vector2(111, 282)
+position = Vector2(101, 264)
 
 [node name="StockpileModule" parent="." instance=ExtResource("6_26bx3")]
-position = Vector2(529, 282)
+position = Vector2(517, 264)
+
+[node name="BlinkingLights" type="Node" parent="."]
 
 [node name="DayNightCycle" type="Node" parent="." groups=["DayNightCycle"]]
 script = ExtResource("7_dj60l")
@@ -38,49 +129,55 @@ ingameMinutesPerRealSeconds = 24
 [node name="CanvasLayer" type="CanvasLayer" parent="DayNightCycle"]
 layer = 0
 
+[node name="Sprite2D" type="Sprite2D" parent="DayNightCycle/CanvasLayer"]
+position = Vector2(56.5, 43)
+texture = ExtResource("11_02xml")
+
 [node name="DayLabel" type="Label" parent="DayNightCycle/CanvasLayer"]
-offset_right = 35.0
-offset_bottom = 23.0
+offset_left = 30.5
+offset_top = 21.0
+offset_right = 65.5
+offset_bottom = 44.0
 theme = ExtResource("9_1nn4h")
 text = "Day:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DayValue" type="Label" parent="DayNightCycle/CanvasLayer"]
-offset_left = 26.0
-offset_top = 1.0
-offset_right = 54.0
-offset_bottom = 24.0
+offset_left = 56.5
+offset_top = 22.0
+offset_right = 84.5
+offset_bottom = 45.0
 theme = ExtResource("9_1nn4h")
 text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HourValue" type="Label" parent="DayNightCycle/CanvasLayer"]
-offset_left = -2.0
-offset_top = 21.0
-offset_right = 26.0
-offset_bottom = 44.0
+offset_left = 32.5
+offset_top = 42.0
+offset_right = 60.5
+offset_bottom = 65.0
 theme = ExtResource("9_1nn4h")
 text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HourMinuteColon" type="Label" parent="DayNightCycle/CanvasLayer"]
-offset_left = 9.0
-offset_top = 21.0
-offset_right = 37.0
-offset_bottom = 44.0
+offset_left = 43.5
+offset_top = 42.0
+offset_right = 71.5
+offset_bottom = 65.0
 theme = ExtResource("9_1nn4h")
 text = ":"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MinuteValue" type="Label" parent="DayNightCycle/CanvasLayer"]
-offset_left = 19.0
-offset_top = 21.0
-offset_right = 47.0
-offset_bottom = 44.0
+offset_left = 53.5
+offset_top = 42.0
+offset_right = 81.5
+offset_bottom = 65.0
 theme = ExtResource("9_1nn4h")
 text = "00"
 horizontal_alignment = 1
