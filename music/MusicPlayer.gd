@@ -1,10 +1,10 @@
 extends Node
 
 var musicPlayer : AudioStreamPlayer;
-var menuTrackFile : String = "res://music/Ambient 1.wav";
-var cutsceneTrackFile : String = "res://music/Ambient 8.wav";
-var platformerTrackFile : String = "res://music/Ambient 9.wav";
-var logisticsTrackFile : String = "res://music/Ambient 4.wav";
+var menuTrackFile : String = "res://music/Ambient 1.mp3";
+var cutsceneTrackFile : String = "res://music/Ambient 8.mp3";
+var platformerTrackFile : String = "res://music/Ambient 9.mp3";
+var logisticsTrackFile : String = "res://music/Ambient 4.mp3";
 
 func _ready():
 	musicPlayer = get_tree().root.get_node("Base/MusicPlayer");
