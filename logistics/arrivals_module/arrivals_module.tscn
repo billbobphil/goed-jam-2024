@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://brthe3mw3ir6e"]
 
 [ext_resource type="Script" path="res://logistics/arrivals_module/ArrivalsModule.gd" id="1_e66t1"]
-[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_tuolu"]
 [ext_resource type="Texture2D" uid="uid://ef4r7wjba2xt" path="res://aseprite-files/arrivals-module.png" id="2_1jpte"]
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="2_5d21o"]
+[ext_resource type="Texture2D" uid="uid://dx04fump3ytgl" path="res://aseprite-files/screen.png" id="4_ck4fv"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_mxv4j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kg5xr"]
-radius = 73.0069
+radius = 56.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5ivj"]
 size = Vector2(64, 139.494)
@@ -37,16 +37,15 @@ debug_color = Color(0.94902, 0.12549, 0.466667, 0.419608)
 visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-self_modulate = Color(0, 0, 0, 0.490196)
+self_modulate = Color(1, 1, 1, 0.882353)
 position = Vector2(319.5, 179)
-scale = Vector2(20.9688, 12.1875)
-texture = ExtResource("1_tuolu")
+texture = ExtResource("4_ck4fv")
 
 [node name="PopulationLabel" type="Label" parent="CanvasLayer"]
-offset_left = 85.0
-offset_top = 63.0
-offset_right = 170.0
-offset_bottom = 86.0
+offset_left = 125.0
+offset_top = 87.0
+offset_right = 255.0
+offset_bottom = 117.0
 theme = ExtResource("4_mxv4j")
 theme_override_font_sizes/font_size = 32
 text = "Population"
@@ -54,10 +53,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PopulationValue" type="Label" parent="CanvasLayer"]
-offset_left = 96.0
-offset_top = 96.0
-offset_right = 138.0
-offset_bottom = 126.0
+offset_left = 136.0
+offset_top = 120.0
+offset_right = 178.0
+offset_bottom = 150.0
 theme = ExtResource("4_mxv4j")
 theme_override_font_sizes/font_size = 32
 text = "000"
@@ -65,10 +64,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PopulationGoal" type="Label" parent="CanvasLayer"]
-offset_left = 156.0
-offset_top = 96.0
-offset_right = 198.0
-offset_bottom = 126.0
+offset_left = 196.0
+offset_top = 120.0
+offset_right = 238.0
+offset_bottom = 150.0
 theme = ExtResource("4_mxv4j")
 theme_override_font_sizes/font_size = 32
 text = "000"
@@ -76,10 +75,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PopulationSlash" type="Label" parent="CanvasLayer"]
-offset_left = 141.0
-offset_top = 96.0
-offset_right = 153.0
-offset_bottom = 126.0
+offset_left = 181.0
+offset_top = 120.0
+offset_right = 193.0
+offset_bottom = 150.0
 theme = ExtResource("4_mxv4j")
 theme_override_font_sizes/font_size = 32
 text = "/"
@@ -87,27 +86,27 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ExitButton" type="Button" parent="CanvasLayer"]
-offset_left = 511.0
-offset_top = 305.0
-offset_right = 628.0
-offset_bottom = 351.0
+offset_left = 494.0
+offset_top = 283.0
+offset_right = 611.0
+offset_bottom = 329.0
 theme = ExtResource("4_mxv4j")
 text = "EXIT"
 
 [node name="TechPointsLabel" type="Label" parent="CanvasLayer"]
-offset_left = 379.0
-offset_top = 62.0
-offset_right = 603.0
-offset_bottom = 92.0
+offset_left = 343.0
+offset_top = 91.0
+offset_right = 567.0
+offset_bottom = 121.0
 theme = ExtResource("4_mxv4j")
 theme_override_font_sizes/font_size = 32
 text = "Available Reward"
 
 [node name="TechPointsValue" type="Label" parent="CanvasLayer"]
-offset_left = 414.0
-offset_top = 93.0
-offset_right = 552.0
-offset_bottom = 123.0
+offset_left = 378.0
+offset_top = 122.0
+offset_right = 516.0
+offset_bottom = 152.0
 theme = ExtResource("4_mxv4j")
 theme_override_font_sizes/font_size = 32
 text = "0"
@@ -115,10 +114,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TechPointsCollectButton" type="Button" parent="CanvasLayer"]
-offset_left = 425.0
-offset_top = 124.0
-offset_right = 542.0
-offset_bottom = 170.0
+offset_left = 389.0
+offset_top = 160.0
+offset_right = 506.0
+offset_bottom = 206.0
 theme = ExtResource("4_mxv4j")
 text = "COLLECT"
 

@@ -1,7 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://7vmxawjwdiwg"]
 
 [ext_resource type="Script" path="res://logistics/requisitions_module/RequisitionsModule.gd" id="1_1bka1"]
-[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_r1hi4"]
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="2_hre31"]
 [ext_resource type="PackedScene" uid="uid://bi8pgy1vk8q86" path="res://logistics/requisitions_module/buildingGame/building_game.tscn" id="3_hfw4m"]
 [ext_resource type="PackedScene" uid="uid://dqxex403ldgog" path="res://logistics/requisitions_module/fuelGame/fuel_game.tscn" id="4_cuxtc"]
@@ -9,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://c34nfyiecdpaa" path="res://logistics/requisitions_module/foodGame/food_game.tscn" id="5_qi75g"]
 [ext_resource type="Texture2D" uid="uid://3sbse3882al4" path="res://aseprite-files/requistions-module.png" id="6_w01la"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="8_ddvob"]
+[ext_resource type="Texture2D" uid="uid://dx04fump3ytgl" path="res://aseprite-files/screen.png" id="8_wh2ue"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mmog8"]
-radius = 76.0066
+radius = 65.0077
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ww8vl"]
 size = Vector2(130.794, 64)
@@ -59,47 +59,46 @@ debug_color = Color(0.929412, 0.211765, 0.411765, 0.419608)
 visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-self_modulate = Color(0, 0, 0, 0.419608)
+self_modulate = Color(1, 1, 1, 0.882353)
 position = Vector2(318.5, 178)
-scale = Vector2(20.9063, 12.125)
-texture = ExtResource("1_r1hi4")
+texture = ExtResource("8_wh2ue")
 
 [node name="FuelButton" type="Button" parent="CanvasLayer"]
-offset_left = 78.0
+offset_left = 90.0
 offset_top = 80.0
-offset_right = 224.0
+offset_right = 236.0
 offset_bottom = 142.0
 theme = ExtResource("8_ddvob")
 text = "FUEL"
 
 [node name="BuildingButton" type="Button" parent="CanvasLayer"]
-offset_left = 408.0
+offset_left = 398.0
 offset_top = 80.0
-offset_right = 555.0
+offset_right = 545.0
 offset_bottom = 142.0
 theme = ExtResource("8_ddvob")
 text = "BUILDING"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer"]
-offset_left = 511.0
-offset_top = 305.0
-offset_right = 628.0
-offset_bottom = 351.0
+offset_left = 493.0
+offset_top = 282.0
+offset_right = 610.0
+offset_bottom = 328.0
 theme = ExtResource("8_ddvob")
 text = "EXIT"
 
 [node name="EntertainmentButton" type="Button" parent="CanvasLayer"]
-offset_left = 77.0
+offset_left = 89.0
 offset_top = 188.0
-offset_right = 223.0
+offset_right = 235.0
 offset_bottom = 250.0
 theme = ExtResource("8_ddvob")
 text = "ENTERTAINMENT"
 
 [node name="FoodButton" type="Button" parent="CanvasLayer"]
-offset_left = 411.0
+offset_left = 401.0
 offset_top = 188.0
-offset_right = 558.0
+offset_right = 548.0
 offset_bottom = 250.0
 theme = ExtResource("8_ddvob")
 text = "FOOD"

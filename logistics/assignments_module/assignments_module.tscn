@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqpxw627b3wta"]
+[gd_scene load_steps=20 format=3 uid="uid://cqpxw627b3wta"]
 
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="1_csql7"]
 [ext_resource type="Script" path="res://logistics/assignments_module/AssignmentsModule.gd" id="1_gs4kk"]
 [ext_resource type="Texture2D" uid="uid://6n5bws7pisql" path="res://aseprite-files/assignment-module.png" id="2_gcg0b"]
 [ext_resource type="PackedScene" uid="uid://smbhlrn06woj" path="res://logistics/technologyManager/food_tech_tree.tscn" id="3_ty68p"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_wdy85"]
+[ext_resource type="Texture2D" uid="uid://dx04fump3ytgl" path="res://aseprite-files/screen.png" id="5_bo8bl"]
 [ext_resource type="PackedScene" uid="uid://b7axyll4oswre" path="res://logistics/technologyManager/fuel_tech_tree.tscn" id="5_g4lgg"]
 [ext_resource type="PackedScene" uid="uid://d3sajvl14bsgp" path="res://logistics/assignments_module/technology_points_display.tscn" id="5_rmo44"]
 [ext_resource type="PackedScene" uid="uid://h2hpl563bx80" path="res://logistics/technologyManager/building_tech_tree.tscn" id="6_27t6c"]
@@ -12,10 +13,61 @@
 [ext_resource type="PackedScene" uid="uid://bfkuaeerlmupi" path="res://logistics/technologyManager/efficiency_tech_tree.tscn" id="8_v7wp5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gka08"]
-radius = 78.0256
+radius = 64.0078
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_73m1m"]
 size = Vector2(111.898, 60.8915)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eug6p"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.12549, 0.223529, 0.309804, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0.305882, 0.286275, 0.372549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i544o"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.145098, 0.254902, 0.352941, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0.164706, 0.662745, 0.47451, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgmkr"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.0705882, 0.141176, 0.2, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0.305882, 0.286275, 0.372549, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhncd"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.12549, 0.223529, 0.309804, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0.305882, 0.286275, 0.372549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tfqey"]
+texture = ExtResource("5_bo8bl")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0usc"]
+bg_color = Color(0.0313726, 0.0784314, 0.117647, 1)
 
 [node name="AssignmentsModule" type="Node2D"]
 script = ExtResource("1_gs4kk")
@@ -35,7 +87,6 @@ shape = SubResource("CircleShape2D_gka08")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-1.5, -4)
 rotation = -0.576933
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_73m1m")
 debug_color = Color(0.882353, 0.286275, 0.466667, 0.419608)
 
@@ -46,6 +97,12 @@ visible = false
 offset_right = 640.0
 offset_bottom = 360.0
 theme = ExtResource("4_wdy85")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_eug6p")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_i544o")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_wgmkr")
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_hhncd")
+theme_override_styles/panel = SubResource("StyleBoxTexture_tfqey")
+theme_override_styles/tabbar_background = SubResource("StyleBoxFlat_q0usc")
 all_tabs_in_front = true
 
 [node name="Food" type="Control" parent="CanvasLayer/TabContainer"]
@@ -53,18 +110,24 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="FoodTechTree" parent="CanvasLayer/TabContainer/Food" instance=ExtResource("3_ty68p")]
-position = Vector2(-127, -22)
+position = Vector2(-116, -6)
+
+[node name="FasterAutoGather" parent="CanvasLayer/TabContainer/Food/FoodTechTree" index="1"]
+position = Vector2(173, 171)
+
+[node name="DecreaseChops" parent="CanvasLayer/TabContainer/Food/FoodTechTree" index="2"]
+position = Vector2(173, 269)
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Food"]
 layout_mode = 0
-offset_left = 506.0
-offset_top = 269.0
-offset_right = 627.0
-offset_bottom = 319.0
+offset_left = 492.0
+offset_top = 261.0
+offset_right = 613.0
+offset_bottom = 311.0
 text = "EXIT"
 
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Food" instance=ExtResource("5_rmo44")]
-position = Vector2(596, 7)
+position = Vector2(569, 39)
 
 [node name="Fuel" type="Control" parent="CanvasLayer/TabContainer"]
 visible = false
@@ -73,17 +136,26 @@ mouse_filter = 2
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Fuel"]
 layout_mode = 0
-offset_left = 506.0
-offset_top = 269.0
-offset_right = 627.0
-offset_bottom = 319.0
+offset_left = 494.0
+offset_top = 262.0
+offset_right = 615.0
+offset_bottom = 312.0
 text = "EXIT"
 
 [node name="FuelTechTree" parent="CanvasLayer/TabContainer/Fuel" instance=ExtResource("5_g4lgg")]
 position = Vector2(-127, -22)
 
+[node name="AutoGatherTrack" parent="CanvasLayer/TabContainer/Fuel/FuelTechTree" index="0"]
+position = Vector2(184, 97)
+
+[node name="FasterAutoGather" parent="CanvasLayer/TabContainer/Fuel/FuelTechTree" index="1"]
+position = Vector2(185, 184)
+
+[node name="FasterFuelGauge" parent="CanvasLayer/TabContainer/Fuel/FuelTechTree" index="2"]
+position = Vector2(186, 277)
+
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Fuel" instance=ExtResource("5_rmo44")]
-position = Vector2(596, 7)
+position = Vector2(574, 34)
 
 [node name="Building" type="Control" parent="CanvasLayer/TabContainer"]
 visible = false
@@ -92,17 +164,26 @@ mouse_filter = 2
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Building"]
 layout_mode = 0
-offset_left = 506.0
-offset_top = 269.0
-offset_right = 627.0
-offset_bottom = 319.0
+offset_left = 494.0
+offset_top = 261.0
+offset_right = 615.0
+offset_bottom = 311.0
 text = "EXIT"
 
 [node name="BuildingTechTree" parent="CanvasLayer/TabContainer/Building" instance=ExtResource("6_27t6c")]
 position = Vector2(-127, -22)
 
+[node name="AutoGatherTrack" parent="CanvasLayer/TabContainer/Building/BuildingTechTree" index="0"]
+position = Vector2(186, 94)
+
+[node name="FasterAutoGather" parent="CanvasLayer/TabContainer/Building/BuildingTechTree" index="1"]
+position = Vector2(186, 181)
+
+[node name="LowerTowerHeight" parent="CanvasLayer/TabContainer/Building/BuildingTechTree" index="2"]
+position = Vector2(188, 271)
+
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Building" instance=ExtResource("5_rmo44")]
-position = Vector2(596, 7)
+position = Vector2(572, 37)
 
 [node name="Entertainment" type="Control" parent="CanvasLayer/TabContainer"]
 visible = false
@@ -111,17 +192,26 @@ mouse_filter = 2
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Entertainment"]
 layout_mode = 0
-offset_left = 506.0
-offset_top = 269.0
-offset_right = 627.0
-offset_bottom = 319.0
+offset_left = 493.0
+offset_top = 262.0
+offset_right = 614.0
+offset_bottom = 312.0
 text = "EXIT"
 
 [node name="EntertainmentTechTree" parent="CanvasLayer/TabContainer/Entertainment" instance=ExtResource("7_rdgb5")]
 position = Vector2(-127, -22)
 
+[node name="AutoGatherTrack" parent="CanvasLayer/TabContainer/Entertainment/EntertainmentTechTree" index="0"]
+position = Vector2(184, 93)
+
+[node name="FasterAutoGather" parent="CanvasLayer/TabContainer/Entertainment/EntertainmentTechTree" index="1"]
+position = Vector2(184, 184)
+
+[node name="HighRisk" parent="CanvasLayer/TabContainer/Entertainment/EntertainmentTechTree" index="2"]
+position = Vector2(186, 278)
+
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Entertainment" instance=ExtResource("5_rmo44")]
-position = Vector2(596, 7)
+position = Vector2(572, 35)
 
 [node name="Efficiency" type="Control" parent="CanvasLayer/TabContainer"]
 visible = false
@@ -130,17 +220,26 @@ mouse_filter = 2
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Efficiency"]
 layout_mode = 0
-offset_left = 506.0
-offset_top = 269.0
-offset_right = 627.0
-offset_bottom = 319.0
+offset_left = 493.0
+offset_top = 262.0
+offset_right = 614.0
+offset_bottom = 312.0
 text = "EXIT"
 
 [node name="EfficiencyTechTree" parent="CanvasLayer/TabContainer/Efficiency" instance=ExtResource("8_v7wp5")]
 position = Vector2(-127, -22)
 
+[node name="IncreaseMoveSpeed" parent="CanvasLayer/TabContainer/Efficiency/EfficiencyTechTree" index="0"]
+position = Vector2(186, 96)
+
+[node name="SlowTime" parent="CanvasLayer/TabContainer/Efficiency/EfficiencyTechTree" index="1"]
+position = Vector2(186, 188)
+
+[node name="AutoCollect" parent="CanvasLayer/TabContainer/Efficiency/EfficiencyTechTree" index="2"]
+position = Vector2(187, 281)
+
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Efficiency" instance=ExtResource("5_rmo44")]
-position = Vector2(596, 7)
+position = Vector2(571, 39)
 
 [connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
 [connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]
@@ -149,3 +248,9 @@ position = Vector2(596, 7)
 [connection signal="pressed" from="CanvasLayer/TabContainer/Building/ExitButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabContainer/Entertainment/ExitButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TabContainer/Efficiency/ExitButton" to="." method="_on_button_pressed"]
+
+[editable path="CanvasLayer/TabContainer/Food/FoodTechTree"]
+[editable path="CanvasLayer/TabContainer/Fuel/FuelTechTree"]
+[editable path="CanvasLayer/TabContainer/Building/BuildingTechTree"]
+[editable path="CanvasLayer/TabContainer/Entertainment/EntertainmentTechTree"]
+[editable path="CanvasLayer/TabContainer/Efficiency/EfficiencyTechTree"]
