@@ -121,6 +121,24 @@ offset_bottom = 206.0
 theme = ExtResource("4_mxv4j")
 text = "COLLECT"
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 33.0
+offset_top = 32.0
+offset_right = 297.0
+offset_bottom = 62.0
+theme = ExtResource("4_mxv4j")
+theme_override_font_sizes/font_size = 32
+text = "ARRIVALS MONITOR"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 35.0
+offset_top = 296.0
+offset_right = 415.0
+offset_bottom = 329.0
+theme = ExtResource("4_mxv4j")
+text = "View the current population as well as your population goal.
+When population increases, collect technology points."
+
 [connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
 [connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]
 [connection signal="pressed" from="CanvasLayer/ExitButton" to="." method="_on_exit_button_pressed"]

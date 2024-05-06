@@ -103,6 +103,24 @@ offset_bottom = 250.0
 theme = ExtResource("8_ddvob")
 text = "FOOD"
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 32.0
+offset_top = 293.0
+offset_right = 547.0
+offset_bottom = 326.0
+theme = ExtResource("8_ddvob")
+text = "Complete requistion tasks to increase the value of 
+any material in your stockpile."
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 33.0
+offset_top = 33.0
+offset_right = 548.0
+offset_bottom = 66.0
+theme = ExtResource("8_ddvob")
+theme_override_font_sizes/font_size = 32
+text = "REQUISTIONS"
+
 [connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
 [connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]
 [connection signal="pressed" from="CanvasLayer/FuelButton" to="." method="_on_fuel_button_pressed"]

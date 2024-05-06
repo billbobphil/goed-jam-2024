@@ -1,56 +1,55 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgef17oa63su7"]
 
 [ext_resource type="Script" path="res://logistics/requisitions_module/entertainmentGame/EntertainmentGame.gd" id="1_8xsf3"]
-[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_e5k4v"]
+[ext_resource type="Texture2D" uid="uid://dx04fump3ytgl" path="res://aseprite-files/screen.png" id="2_06w5s"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="3_ahe2v"]
 
 [node name="EntertainmentGame" type="Node2D" groups=["EntertainmentGame"]]
 script = ExtResource("1_8xsf3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0, 0, 0, 0.529412)
-position = Vector2(319, 176.5)
-scale = Vector2(20.9375, 12.0313)
-texture = ExtResource("1_e5k4v")
+self_modulate = Color(1, 1, 1, 0.882353)
+position = Vector2(320, 180)
+texture = ExtResource("2_06w5s")
 
 [node name="DieResultOne" type="Label" parent="."]
-offset_left = 214.0
-offset_top = 142.0
-offset_right = 254.0
-offset_bottom = 172.0
+offset_left = 193.0
+offset_top = 171.0
+offset_right = 233.0
+offset_bottom = 216.0
 theme = ExtResource("3_ahe2v")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DieResultTwo" type="Label" parent="."]
-offset_left = 357.0
-offset_top = 143.0
-offset_right = 397.0
-offset_bottom = 173.0
+offset_left = 386.0
+offset_top = 171.0
+offset_right = 426.0
+offset_bottom = 216.0
 theme = ExtResource("3_ahe2v")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DieGuessNumber" type="Label" parent="."]
-offset_left = 283.0
-offset_top = 210.0
-offset_right = 323.0
-offset_bottom = 240.0
+offset_left = 290.0
+offset_top = 261.0
+offset_right = 330.0
+offset_bottom = 321.0
 theme = ExtResource("3_ahe2v")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ExitButton" type="Button" parent="."]
-offset_left = 523.0
-offset_top = 5.0
-offset_right = 640.0
-offset_bottom = 51.0
+offset_left = 496.0
+offset_top = 28.0
+offset_right = 613.0
+offset_bottom = 74.0
 theme = ExtResource("3_ahe2v")
 text = "EXIT"
 
@@ -69,6 +68,17 @@ offset_right = 468.0
 offset_bottom = 317.0
 theme = ExtResource("3_ahe2v")
 text = "HIGHER"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 163.0
+offset_top = 33.0
+offset_right = 497.0
+offset_bottom = 102.0
+theme = ExtResource("3_ahe2v")
+text = "Two six-sided dice will be rolled.
+Guess whether the cumulative value of the dice will
+be higher or lower than the number presented.
+This will earn ENTERTAINMENT."
 
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="LowerButton" to="." method="_on_lower_button_pressed"]

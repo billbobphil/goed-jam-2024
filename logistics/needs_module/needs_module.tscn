@@ -133,6 +133,25 @@ offset_bottom = 328.0
 theme = ExtResource("4_l4nj6")
 text = "EXIT"
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 34.0
+offset_top = 27.0
+offset_right = 294.0
+offset_bottom = 57.0
+theme = ExtResource("4_l4nj6")
+theme_override_font_sizes/font_size = 32
+text = "POPULATION NEEDS"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 35.0
+offset_top = 276.0
+offset_right = 520.0
+offset_bottom = 327.0
+theme = ExtResource("4_l4nj6")
+text = "Have the required number of every resource
+listed here in your STOCKPILE at the end of the day 
+to trigger the mainland to send over a new islander."
+
 [connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
 [connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

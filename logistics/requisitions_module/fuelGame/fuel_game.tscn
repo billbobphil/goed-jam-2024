@@ -1,18 +1,18 @@
 [gd_scene load_steps=7 format=3 uid="uid://dqxex403ldgog"]
 
 [ext_resource type="Script" path="res://logistics/requisitions_module/fuelGame/FuelGame.gd" id="1_7p745"]
-[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="2_lvfgd"]
+[ext_resource type="Texture2D" uid="uid://dx04fump3ytgl" path="res://aseprite-files/screen.png" id="2_2b1b6"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="3_xbh7b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pcan"]
 bg_color = Color(0.239216, 0.658824, 0.772549, 0.145098)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_jonpo"]
-color = Color(0.780392, 0.698039, 0.101961, 1)
+color = Color(0.6, 0.458824, 0.466667, 1)
 thickness = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ni53"]
-bg_color = Color(0.627451, 0.501961, 0.878431, 1)
+bg_color = Color(0.764706, 0.639216, 0.541176, 1)
 
 [node name="FuelGame" type="Node2D" groups=["FuelGame"]]
 script = ExtResource("1_7p745")
@@ -20,16 +20,15 @@ speed = 35.0
 windows = Array[Vector2]([Vector2(15, 25), Vector2(25, 40), Vector2(60, 70), Vector2(40, 55), Vector2(75, 85), Vector2(35, 50), Vector2(85, 95)])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0, 0, 0, 0.321569)
-position = Vector2(317.5, 176)
-scale = Vector2(20.8438, 12)
-texture = ExtResource("2_lvfgd")
+self_modulate = Color(1, 1, 1, 0.882353)
+position = Vector2(320, 180)
+texture = ExtResource("2_2b1b6")
 
 [node name="MinBar" type="ProgressBar" parent="."]
 offset_left = 295.0
-offset_top = 21.0
-offset_right = 330.0
-offset_bottom = 330.0
+offset_top = 28.0
+offset_right = 376.0
+offset_bottom = 332.0
 theme_override_styles/background = SubResource("StyleBoxFlat_1pcan")
 theme_override_styles/fill = SubResource("StyleBoxLine_jonpo")
 fill_mode = 3
@@ -37,9 +36,9 @@ show_percentage = false
 
 [node name="MaxBar" type="ProgressBar" parent="."]
 offset_left = 295.0
-offset_top = 21.0
-offset_right = 330.0
-offset_bottom = 330.0
+offset_top = 28.0
+offset_right = 376.0
+offset_bottom = 332.0
 theme_override_styles/background = SubResource("StyleBoxFlat_1pcan")
 theme_override_styles/fill = SubResource("StyleBoxLine_jonpo")
 fill_mode = 3
@@ -47,20 +46,30 @@ show_percentage = false
 
 [node name="FillBar" type="ProgressBar" parent="."]
 offset_left = 295.0
-offset_top = 21.0
-offset_right = 330.0
-offset_bottom = 330.0
+offset_top = 28.0
+offset_right = 376.0
+offset_bottom = 332.0
 theme_override_styles/background = SubResource("StyleBoxFlat_1pcan")
 theme_override_styles/fill = SubResource("StyleBoxFlat_0ni53")
 fill_mode = 3
 show_percentage = false
 
 [node name="Button" type="Button" parent="."]
-offset_left = 511.0
-offset_top = 12.0
-offset_right = 628.0
-offset_bottom = 58.0
+offset_left = 496.0
+offset_top = 28.0
+offset_right = 613.0
+offset_bottom = 74.0
 theme = ExtResource("3_xbh7b")
 text = "EXIT"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 38.0
+offset_top = 279.0
+offset_right = 333.0
+offset_bottom = 330.0
+theme = ExtResource("3_xbh7b")
+text = "Hold [SPACEBAR]
+Let Go When Fuel Is Between Fill Lines.
+This will earn FUEL."
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

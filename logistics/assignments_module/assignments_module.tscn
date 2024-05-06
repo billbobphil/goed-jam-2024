@@ -65,6 +65,7 @@ corner_radius_top_right = 4
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tfqey"]
 texture = ExtResource("5_bo8bl")
+modulate_color = Color(1, 1, 1, 0.882353)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0usc"]
 bg_color = Color(0.0313726, 0.0784314, 0.117647, 1)
@@ -112,6 +113,9 @@ mouse_filter = 2
 [node name="FoodTechTree" parent="CanvasLayer/TabContainer/Food" instance=ExtResource("3_ty68p")]
 position = Vector2(-116, -6)
 
+[node name="Line2D" parent="CanvasLayer/TabContainer/Food/FoodTechTree/AutoGatherTrack" index="1"]
+default_color = Color(0.172549, 0, 0.564706, 1)
+
 [node name="FasterAutoGather" parent="CanvasLayer/TabContainer/Food/FoodTechTree" index="1"]
 position = Vector2(173, 171)
 
@@ -128,6 +132,14 @@ text = "EXIT"
 
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Food" instance=ExtResource("5_rmo44")]
 position = Vector2(569, 39)
+
+[node name="Label" type="Label" parent="CanvasLayer/TabContainer/Food"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 292.0
+offset_right = 463.0
+offset_bottom = 307.0
+text = "Select new skills using technology points."
 
 [node name="Fuel" type="Control" parent="CanvasLayer/TabContainer"]
 visible = false
@@ -157,6 +169,14 @@ position = Vector2(186, 277)
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Fuel" instance=ExtResource("5_rmo44")]
 position = Vector2(574, 34)
 
+[node name="Label" type="Label" parent="CanvasLayer/TabContainer/Fuel"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 292.0
+offset_right = 463.0
+offset_bottom = 307.0
+text = "Select new skills using technology points."
+
 [node name="Building" type="Control" parent="CanvasLayer/TabContainer"]
 visible = false
 layout_mode = 2
@@ -184,6 +204,14 @@ position = Vector2(188, 271)
 
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Building" instance=ExtResource("5_rmo44")]
 position = Vector2(572, 37)
+
+[node name="Label" type="Label" parent="CanvasLayer/TabContainer/Building"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 292.0
+offset_right = 463.0
+offset_bottom = 307.0
+text = "Select new skills using technology points."
 
 [node name="Entertainment" type="Control" parent="CanvasLayer/TabContainer"]
 visible = false
@@ -213,6 +241,14 @@ position = Vector2(186, 278)
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Entertainment" instance=ExtResource("5_rmo44")]
 position = Vector2(572, 35)
 
+[node name="Label" type="Label" parent="CanvasLayer/TabContainer/Entertainment"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 292.0
+offset_right = 463.0
+offset_bottom = 307.0
+text = "Select new skills using technology points."
+
 [node name="Efficiency" type="Control" parent="CanvasLayer/TabContainer"]
 visible = false
 layout_mode = 2
@@ -240,6 +276,14 @@ position = Vector2(187, 281)
 
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Efficiency" instance=ExtResource("5_rmo44")]
 position = Vector2(571, 39)
+
+[node name="Label" type="Label" parent="CanvasLayer/TabContainer/Efficiency"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 292.0
+offset_right = 463.0
+offset_bottom = 307.0
+text = "Select new skills using technology points."
 
 [connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
 [connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]

@@ -159,6 +159,23 @@ offset_bottom = 331.0
 theme = ExtResource("4_g2ord")
 text = "EXIT"
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 33.0
+offset_top = 26.0
+offset_right = 179.0
+offset_bottom = 56.0
+theme = ExtResource("4_g2ord")
+theme_override_font_sizes/font_size = 32
+text = "STOCKPILE"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 32.0
+offset_top = 313.0
+offset_right = 226.0
+offset_bottom = 336.0
+theme = ExtResource("4_g2ord")
+text = "Your total collected resources."
+
 [connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
 [connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

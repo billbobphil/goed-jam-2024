@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi8pgy1vk8q86"]
+[gd_scene load_steps=8 format=3 uid="uid://bi8pgy1vk8q86"]
 
 [ext_resource type="Script" path="res://logistics/requisitions_module/buildingGame/BuildingGame.gd" id="1_s4pq3"]
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="2_kjfvh"]
+[ext_resource type="Texture2D" uid="uid://dx04fump3ytgl" path="res://aseprite-files/screen.png" id="3_202xk"]
 [ext_resource type="PackedScene" uid="uid://qsxjgkn4b8gl" path="res://logistics/requisitions_module/buildingGame/building_block.tscn" id="3_bj5k5"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_3l0gc"]
 
@@ -15,18 +16,13 @@ size = Vector2(32, 108.8)
 script = ExtResource("1_s4pq3")
 buildingBlockScene = ExtResource("3_bj5k5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0, 0, 0, 0.266667)
-position = Vector2(318.5, 175)
-scale = Vector2(20.9063, 11.9375)
-texture = ExtResource("2_kjfvh")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, 360)
+position = Vector2(0, 348)
 collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(298, 0)
 scale = Vector2(26.1875, 1)
 texture = ExtResource("2_kjfvh")
@@ -34,6 +30,11 @@ texture = ExtResource("2_kjfvh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(298, 0)
 shape = SubResource("RectangleShape2D_isoor")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.882353)
+position = Vector2(320, 180)
+texture = ExtResource("3_202xk")
 
 [node name="BlockSpawnPoint" type="Node2D" parent="."]
 position = Vector2(330, 29)
@@ -43,7 +44,7 @@ position = Vector2(330, 29)
 [node name="AchievementLine" type="Sprite2D" parent="."]
 self_modulate = Color(0.207843, 0.619608, 0.372549, 1)
 position = Vector2(320, 143)
-scale = Vector2(21, 0.15625)
+scale = Vector2(18.25, 0.15625)
 texture = ExtResource("2_kjfvh")
 
 [node name="Area2D" type="Area2D" parent="AchievementLine"]
@@ -56,12 +57,22 @@ shape = SubResource("RectangleShape2D_lvmo0")
 debug_color = Color(0.976471, 0.156863, 0.0470588, 0.419608)
 
 [node name="ExitButton" type="Button" parent="."]
-offset_left = 519.0
-offset_top = 6.0
-offset_right = 636.0
-offset_bottom = 52.0
+offset_left = 498.0
+offset_top = 29.0
+offset_right = 615.0
+offset_bottom = 75.0
 theme = ExtResource("4_3l0gc")
 text = "EXIT"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 371.0
+offset_top = 277.0
+offset_right = 605.0
+offset_bottom = 328.0
+theme = ExtResource("4_3l0gc")
+text = "Move falling blocks with [A] and [D].
+Stack the blocks up to the green line.
+This will earn BUILDING materials."
 
 [connection signal="body_entered" from="AchievementLine/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AchievementLine/Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b52ntg6ft8q8r"]
 
 [ext_resource type="Script" path="res://logistics/requisitions_module/foodGame/FoodNote.gd" id="1_r23ki"]
-[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_yk8es"]
+[ext_resource type="Texture2D" uid="uid://3eisy24woaai" path="res://aseprite-files/note-block.png" id="2_3cckk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mokwy"]
 size = Vector2(48, 96)
@@ -12,8 +12,7 @@ minimumSpeed = 150.0
 maximumSpeed = 225.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["FoodNote"]]
-scale = Vector2(1.5, 3)
-texture = ExtResource("1_yk8es")
+texture = ExtResource("2_3cckk")
 
 [node name="Area2D" type="Area2D" parent="."]
 

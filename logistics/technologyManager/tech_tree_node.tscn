@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://byjmdwoosl8a3"]
 
-[ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="1_46wqp"]
 [ext_resource type="Script" path="res://logistics/technologyManager/TechTreeNode.gd" id="1_80c06"]
+[ext_resource type="Texture2D" uid="uid://c1n7cq81013pn" path="res://aseprite-files/circle-32x32.png" id="2_ukloi"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="3_iv3et"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5o6b"]
@@ -11,8 +11,8 @@ size = Vector2(32, 32)
 script = ExtResource("1_80c06")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.054902, 0.690196, 0.733333, 1)
-texture = ExtResource("1_46wqp")
+self_modulate = Color(0.505882, 0.384314, 0.443137, 1)
+texture = ExtResource("2_ukloi")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -31,3 +31,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -57,13 +57,21 @@ func rollAndCheck():
 	higherButton.disabled = true;
 	var dieOne = randi() % 6 + 1;
 	var dieTwo = randi() % 6 + 1;
-	dieResultOne.text = str(dieOne);
-	dieResultTwo.text = str(dieTwo);
+
 	var dieTotal = dieOne + dieTwo;
 
-	#TODO replace with animation instead
-	#add 2 seconds of artificial delay
-	await get_tree().create_timer(2.0).timeout;
+	var timer_duration = 0.1;
+	var elapsed_time = 0.0
+	while elapsed_time < 1.5:
+        # Show random values during the roll
+		dieResultOne.text = str(randi() % 6 + 1)
+		dieResultTwo.text = str(randi() % 6 + 1)
+
+		await get_tree().create_timer(timer_duration).timeout
+		elapsed_time += timer_duration
+	
+	dieResultOne.text = str(dieOne);
+	dieResultTwo.text = str(dieTwo);
 
 	if guessDirection == 'higher' && dieTotal > numberToGuessAround:
 		print('guessed higher and won');
@@ -75,6 +83,7 @@ func rollAndCheck():
 		if isHighRiskEnabled:
 			entertainment_gained.emit(-2);
 
+	await get_tree().create_timer(2.5).timeout;
 	resetGame();
 
 func giveReward():

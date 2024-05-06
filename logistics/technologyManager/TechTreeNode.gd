@@ -38,3 +38,12 @@ func unlock():
 	costLabel.text = "UNLOCKED";
 	for node in nextNodes:
 		node.makeAvailable();
+
+
+func _on_area_2d_mouse_entered():
+	if isAvailable && !isUnlocked:
+		sprite.self_modulate = Color(0.6, 0.45882, 0.46667, 1.0);
+
+func _on_area_2d_mouse_exited():
+	if !isUnlocked:
+		sprite.self_modulate = Color(0.50588, 0.38431, 0.44314, 1.0);

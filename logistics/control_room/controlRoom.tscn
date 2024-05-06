@@ -104,21 +104,6 @@ position = Vector2(598, 39)
 [node name="PlayerLogistics" parent="." groups=["Player"] instance=ExtResource("2_vrpsp")]
 position = Vector2(317, 206)
 
-[node name="NeedsModule" parent="." instance=ExtResource("2_k83lv")]
-position = Vector2(320, 55)
-
-[node name="AssignmentsModule" parent="." instance=ExtResource("3_hrk0s")]
-position = Vector2(140, 113)
-
-[node name="RequisitionsModule" parent="." instance=ExtResource("4_khfr4")]
-position = Vector2(506, 112)
-
-[node name="ArrivalsModule" parent="." instance=ExtResource("5_v83tu")]
-position = Vector2(144, 268)
-
-[node name="StockpileModule" parent="." instance=ExtResource("6_26bx3")]
-position = Vector2(498, 268)
-
 [node name="BlinkingLights" type="Node" parent="."]
 
 [node name="BlinkingLight" parent="BlinkingLights" instance=ExtResource("15_edcv6")]
@@ -143,6 +128,7 @@ ingameMinutesPerRealSeconds = 24
 
 [node name="CanvasLayer" type="CanvasLayer" parent="DayNightCycle"]
 layer = 0
+follow_viewport_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="DayNightCycle/CanvasLayer"]
 position = Vector2(56.5, 43)
@@ -197,5 +183,20 @@ theme = ExtResource("9_1nn4h")
 text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="NeedsModule" parent="." instance=ExtResource("2_k83lv")]
+position = Vector2(320, 55)
+
+[node name="AssignmentsModule" parent="." instance=ExtResource("3_hrk0s")]
+position = Vector2(140, 113)
+
+[node name="RequisitionsModule" parent="." instance=ExtResource("4_khfr4")]
+position = Vector2(506, 112)
+
+[node name="ArrivalsModule" parent="." instance=ExtResource("5_v83tu")]
+position = Vector2(144, 268)
+
+[node name="StockpileModule" parent="." instance=ExtResource("6_26bx3")]
+position = Vector2(498, 268)
 
 [connection signal="day_tick" from="DayNightCycle" to="NeedsModule" method="_on_day_tick"]
