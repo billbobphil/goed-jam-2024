@@ -39,13 +39,15 @@ func _process(delta):
 		progressBar.value += speed * delta;
 
 func processButtonRelease():
-	resetGame();
 	if(progressBar.value > currentWindow.x && progressBar.value < currentWindow.y):
 		fuel_gained.emit(1);
 		SoundEffectAccess.soundEffects.resourceGet.play();
 		scored.visible = true;
+		resetGame();
 		await get_tree().create_timer(.75).timeout;
 		scored.visible = false;
+	else:
+		resetGame();
 		
 
 func enableGame():
