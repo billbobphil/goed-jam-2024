@@ -14,3 +14,4 @@ func increasePopulation(amount):
 func checkVictory():
 	if currentPopulation >= populationVictoryThreshold:
 		SceneChangeManager.goToEnd();
+		SoundEffectAccess.soundEffects.playerWalk.stop();

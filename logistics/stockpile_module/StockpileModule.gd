@@ -20,12 +20,16 @@ func assignValuesToInterface():
 	technologyLabel.text = str(TechnologyManager.techPointsInInventory);
 
 func _on_button_pressed():
+	SoundEffectAccess.soundEffects.computerOff.play();
 	canvas.hide();
 	interactable.reenableInteraction();
 
 func _on_interactable_player_exited_interactable():
+	if canvas.visible:
+		SoundEffectAccess.soundEffects.computerOff.play();
 	canvas.hide();
 
 func _on_interactable_player_interacted():
+	SoundEffectAccess.soundEffects.computerOn.play();
 	assignValuesToInterface();
 	canvas.show();

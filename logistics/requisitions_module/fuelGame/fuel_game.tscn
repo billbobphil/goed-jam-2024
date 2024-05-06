@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqxex403ldgog"]
+[gd_scene load_steps=8 format=3 uid="uid://dqxex403ldgog"]
 
 [ext_resource type="Script" path="res://logistics/requisitions_module/fuelGame/FuelGame.gd" id="1_7p745"]
 [ext_resource type="Texture2D" uid="uid://dx04fump3ytgl" path="res://aseprite-files/screen.png" id="2_2b1b6"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="3_xbh7b"]
+[ext_resource type="Script" path="res://ButtonSoundEffects.gd" id="4_630t2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pcan"]
 bg_color = Color(0.239216, 0.658824, 0.772549, 0.145098)
@@ -61,6 +62,7 @@ offset_right = 613.0
 offset_bottom = 74.0
 theme = ExtResource("3_xbh7b")
 text = "EXIT"
+script = ExtResource("4_630t2")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 38.0
@@ -72,4 +74,5 @@ text = "Hold [SPACEBAR]
 Let Go When Fuel Is Between Fill Lines.
 This will earn FUEL."
 
+[connection signal="mouse_entered" from="Button" to="Button" method="_on_button_hovered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

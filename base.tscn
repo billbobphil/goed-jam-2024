@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmgj04kvyt4x8"]
+[gd_scene load_steps=19 format=3 uid="uid://dmgj04kvyt4x8"]
 
 [ext_resource type="Script" path="res://Base.gd" id="1_lbqj0"]
 [ext_resource type="PackedScene" uid="uid://cuycak53mdrlk" path="res://menu/menu.tscn" id="2_r5s5h"]
@@ -7,6 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://djcuow8plteka" path="res://logistics/control_room/controlRoom.tscn" id="5_d8rtb"]
 [ext_resource type="PackedScene" uid="uid://dktovqiqegf06" path="res://cutscenes/cutscene_two_player.tscn" id="5_y2rmd"]
 [ext_resource type="PackedScene" uid="uid://dyunplvkewb7i" path="res://endGame/end.tscn" id="7_4um1e"]
+[ext_resource type="AudioStream" uid="uid://8hjdygv67jtt" path="res://soundEffects/ButtonHover.wav" id="8_knwom"]
+[ext_resource type="AudioStream" uid="uid://5jdf26lscy26" path="res://soundEffects/button-click.wav" id="8_lkgf6"]
+[ext_resource type="Script" path="res://soundEffects/SoundEffects.gd" id="8_sqfky"]
+[ext_resource type="AudioStream" uid="uid://crj762uo5usal" path="res://soundEffects/jump.wav" id="9_w7alm"]
+[ext_resource type="AudioStream" uid="uid://bvnudobonyt5e" path="res://soundEffects/death.wav" id="10_brk12"]
+[ext_resource type="AudioStream" uid="uid://cbr4kbunas7qi" path="res://soundEffects/footsteps-3.wav" id="11_ega3l"]
+[ext_resource type="AudioStream" uid="uid://b1c2o4127xqw" path="res://soundEffects/thud.mp3" id="11_x4rym"]
+[ext_resource type="AudioStream" uid="uid://1vvgwb7jd6md" path="res://soundEffects/collectible-pickup.wav" id="13_sikv1"]
+[ext_resource type="AudioStream" uid="uid://vpkj6jrliqsb" path="res://soundEffects/PopulationIncreasesSoundEffect.wav" id="14_jitue"]
+[ext_resource type="AudioStream" uid="uid://cguvua4ou2xcj" path="res://soundEffects/computer-off.mp3" id="16_cr4vx"]
+[ext_resource type="AudioStream" uid="uid://dlthmjgsoshec" path="res://soundEffects/computer-on.mp3" id="17_5j3ni"]
 
 [node name="Base" type="Node2D" groups=["Base"]]
 scale = Vector2(1, 0.998095)
@@ -19,3 +30,50 @@ logistics = ExtResource("5_d8rtb")
 end = ExtResource("7_4um1e")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -16.0
+
+[node name="SoundEffects" type="Node" parent="."]
+script = ExtResource("8_sqfky")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("8_knwom")
+volume_db = -5.0
+
+[node name="PlayerJump" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("9_w7alm")
+volume_db = -5.0
+
+[node name="PlayerGetBumped" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("10_brk12")
+volume_db = -5.0
+
+[node name="PlayerInteract" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("11_x4rym")
+volume_db = -5.0
+
+[node name="PlayerWalk" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("11_ega3l")
+
+[node name="FoodChop" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("11_x4rym")
+volume_db = -5.0
+
+[node name="ResourceGet" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("8_lkgf6")
+volume_db = -5.0
+
+[node name="PopulationGet" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("14_jitue")
+volume_db = -15.0
+
+[node name="PlayerCollect" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("13_sikv1")
+volume_db = -5.0
+
+[node name="ComputerOff" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("16_cr4vx")
+volume_db = -5.0
+
+[node name="ComputerOn" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("17_5j3ni")
+volume_db = -5.0

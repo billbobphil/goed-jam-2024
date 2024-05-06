@@ -26,4 +26,6 @@ func _on_area_2d_body_exited(body:Node2D):
 
 
 func goToNextScene():
+	SoundEffectAccess.soundEffects.playerInteract.play();
+	SoundEffectAccess.soundEffects.playerWalk.stop();
 	SceneChangeManager.goToCutsceneTwo();

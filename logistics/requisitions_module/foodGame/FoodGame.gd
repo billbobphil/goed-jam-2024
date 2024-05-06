@@ -78,6 +78,7 @@ func getRandomNoteTime():
 	timeForThisNote =  randf() * (maximumTimeBetweenNotes - minimumTimeBetweenNotes) + minimumTimeBetweenNotes;
 
 func _on_exit_button_pressed():
+	SoundEffectAccess.soundEffects.computerOff.play();
 	disableGame();
 	if interactable:
 		interactable.reenableInteraction();

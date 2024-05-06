@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cqpxw627b3wta"]
+[gd_scene load_steps=21 format=3 uid="uid://cqpxw627b3wta"]
 
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="1_csql7"]
 [ext_resource type="Script" path="res://logistics/assignments_module/AssignmentsModule.gd" id="1_gs4kk"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b7axyll4oswre" path="res://logistics/technologyManager/fuel_tech_tree.tscn" id="5_g4lgg"]
 [ext_resource type="PackedScene" uid="uid://d3sajvl14bsgp" path="res://logistics/assignments_module/technology_points_display.tscn" id="5_rmo44"]
 [ext_resource type="PackedScene" uid="uid://h2hpl563bx80" path="res://logistics/technologyManager/building_tech_tree.tscn" id="6_27t6c"]
+[ext_resource type="Script" path="res://ButtonSoundEffects.gd" id="7_2vpml"]
 [ext_resource type="PackedScene" uid="uid://d3qkbbvucy14x" path="res://logistics/technologyManager/entertainment_tech_tree.tscn" id="7_rdgb5"]
 [ext_resource type="PackedScene" uid="uid://bfkuaeerlmupi" path="res://logistics/technologyManager/efficiency_tech_tree.tscn" id="8_v7wp5"]
 
@@ -129,6 +130,7 @@ offset_top = 260.0
 offset_right = 611.0
 offset_bottom = 310.0
 text = "EXIT"
+script = ExtResource("7_2vpml")
 
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Food" instance=ExtResource("5_rmo44")]
 position = Vector2(563, 38)
@@ -153,6 +155,7 @@ offset_top = 260.0
 offset_right = 611.0
 offset_bottom = 310.0
 text = "EXIT"
+script = ExtResource("7_2vpml")
 
 [node name="FuelTechTree" parent="CanvasLayer/TabContainer/Fuel" instance=ExtResource("5_g4lgg")]
 position = Vector2(-116, -6)
@@ -186,6 +189,7 @@ offset_top = 260.0
 offset_right = 611.0
 offset_bottom = 310.0
 text = "EXIT"
+script = ExtResource("7_2vpml")
 
 [node name="BuildingTechTree" parent="CanvasLayer/TabContainer/Building" instance=ExtResource("6_27t6c")]
 position = Vector2(-116, -6)
@@ -219,6 +223,7 @@ offset_top = 260.0
 offset_right = 611.0
 offset_bottom = 310.0
 text = "EXIT"
+script = ExtResource("7_2vpml")
 
 [node name="EntertainmentTechTree" parent="CanvasLayer/TabContainer/Entertainment" instance=ExtResource("7_rdgb5")]
 position = Vector2(-116, -6)
@@ -252,6 +257,7 @@ offset_top = 260.0
 offset_right = 611.0
 offset_bottom = 310.0
 text = "EXIT"
+script = ExtResource("7_2vpml")
 
 [node name="EfficiencyTechTree" parent="CanvasLayer/TabContainer/Efficiency" instance=ExtResource("8_v7wp5")]
 position = Vector2(-116, -4)
@@ -275,10 +281,15 @@ text = "Select new skills using technology points."
 
 [connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
 [connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]
+[connection signal="mouse_entered" from="CanvasLayer/TabContainer/Food/ExitButton" to="CanvasLayer/TabContainer/Food/ExitButton" method="_on_button_hovered"]
 [connection signal="pressed" from="CanvasLayer/TabContainer/Food/ExitButton" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/TabContainer/Fuel/ExitButton" to="CanvasLayer/TabContainer/Fuel/ExitButton" method="_on_button_hovered"]
 [connection signal="pressed" from="CanvasLayer/TabContainer/Fuel/ExitButton" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/TabContainer/Building/ExitButton" to="CanvasLayer/TabContainer/Building/ExitButton" method="_on_button_hovered"]
 [connection signal="pressed" from="CanvasLayer/TabContainer/Building/ExitButton" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/TabContainer/Entertainment/ExitButton" to="CanvasLayer/TabContainer/Entertainment/ExitButton" method="_on_button_hovered"]
 [connection signal="pressed" from="CanvasLayer/TabContainer/Entertainment/ExitButton" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/TabContainer/Efficiency/ExitButton" to="CanvasLayer/TabContainer/Efficiency/ExitButton" method="_on_button_hovered"]
 [connection signal="pressed" from="CanvasLayer/TabContainer/Efficiency/ExitButton" to="." method="_on_button_pressed"]
 
 [editable path="CanvasLayer/TabContainer/Food/FoodTechTree"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://7q6vfq0gown8"]
+[gd_scene load_steps=9 format=3 uid="uid://7q6vfq0gown8"]
 
 [ext_resource type="Script" path="res://logistics/needs_module/NeedsSystem.gd" id="1_fi0lj"]
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="2_hwrfb"]
 [ext_resource type="Texture2D" uid="uid://dxwydswgvksem" path="res://aseprite-files/needs-module.png" id="2_k8t3p"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_l4nj6"]
 [ext_resource type="Texture2D" uid="uid://dx04fump3ytgl" path="res://aseprite-files/screen.png" id="4_ralwu"]
+[ext_resource type="Script" path="res://ButtonSoundEffects.gd" id="6_23cq2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dcqed"]
 radius = 78.0064
@@ -132,6 +133,7 @@ offset_right = 605.0
 offset_bottom = 328.0
 theme = ExtResource("4_l4nj6")
 text = "EXIT"
+script = ExtResource("6_23cq2")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 34.0
@@ -154,4 +156,5 @@ to trigger the mainland to send over a new islander."
 
 [connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
 [connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]
+[connection signal="mouse_entered" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_button_hovered"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

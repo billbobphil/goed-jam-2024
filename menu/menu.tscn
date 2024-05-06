@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuycak53mdrlk"]
+[gd_scene load_steps=5 format=3 uid="uid://cuycak53mdrlk"]
 
 [ext_resource type="Script" path="res://menu/Menu.gd" id="1_c11rx"]
 [ext_resource type="Texture2D" uid="uid://cu6lqajis208r" path="res://aseprite-files/menu-background.png" id="2_70cth"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="2_shop5"]
+[ext_resource type="Script" path="res://ButtonSoundEffects.gd" id="4_vhd3h"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_c11rx")
@@ -22,6 +23,7 @@ offset_bottom = 352.0
 theme = ExtResource("2_shop5")
 theme_override_font_sizes/font_size = 32
 text = "PLAY"
+script = ExtResource("4_vhd3h")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 125.0
@@ -37,4 +39,5 @@ theme_override_constants/shadow_outline_size = 0
 theme_override_font_sizes/font_size = 64
 text = "Isolation Island"
 
+[connection signal="mouse_entered" from="CanvasLayer/PlayButton" to="CanvasLayer/PlayButton" method="_on_button_hovered"]
 [connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]

@@ -22,6 +22,9 @@ func _physics_process(_delta):
 		updateIdleAnimation();
 
 func updateWalkAnimation(direction):
+	if !SoundEffectAccess.soundEffects.playerWalk.is_playing():
+		SoundEffectAccess.soundEffects.playerWalk.play();
+	
 	if direction.y < 0:
 		animatedSprite.play("walking-up");
 	elif direction.y > 0:
@@ -32,6 +35,7 @@ func updateWalkAnimation(direction):
 		animatedSprite.play("walking-left");
 
 func updateIdleAnimation():
+	SoundEffectAccess.soundEffects.playerWalk.stop();
 	var currentAnimation = animatedSprite.animation;
 	 
 	if currentAnimation == "walking-up":

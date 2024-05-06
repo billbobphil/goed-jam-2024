@@ -9,10 +9,13 @@ var activeGame = null;
 @onready var interactable : Interactable = $Interactable;
 
 func _on_interactable_player_interacted():
+	SoundEffectAccess.soundEffects.computerOn.play();
 	gameSelectionCanvas.visible = true;
 	activeGame = null;
 
 func _on_interactable_player_exited_interactable():
+	if gameSelectionCanvas.visible:
+		SoundEffectAccess.soundEffects.computerOff.play();
 	if activeGame != null:
 		activeGame.disableGame();
 	gameSelectionCanvas.visible = false;
@@ -25,6 +28,7 @@ func _on_fuel_button_pressed():
 		gameSelectionCanvas.visible = false;
 
 func _on_exit_button_pressed():
+	SoundEffectAccess.soundEffects.computerOff.play();
 	if activeGame == null:
 		gameSelectionCanvas.visible = false;
 		interactable.reenableInteraction();

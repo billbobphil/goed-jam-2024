@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://drs3xmyxyxx2b"]
+[gd_scene load_steps=9 format=3 uid="uid://drs3xmyxyxx2b"]
 
 [ext_resource type="Script" path="res://logistics/stockpile_module/StockpileModule.gd" id="1_j7pgf"]
 [ext_resource type="PackedScene" uid="uid://b7x7cet5prnd0" path="res://logistics/interactable/interactable.tscn" id="2_cxpok"]
 [ext_resource type="Texture2D" uid="uid://c1o0gkf5e7k10" path="res://aseprite-files/stockpile-module.png" id="2_pd2ad"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_g2ord"]
 [ext_resource type="Texture2D" uid="uid://dx04fump3ytgl" path="res://aseprite-files/screen.png" id="4_s0act"]
+[ext_resource type="Script" path="res://ButtonSoundEffects.gd" id="6_1br4n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0r0vw"]
 radius = 59.0
@@ -158,6 +159,7 @@ offset_right = 615.0
 offset_bottom = 331.0
 theme = ExtResource("4_g2ord")
 text = "EXIT"
+script = ExtResource("6_1br4n")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 33.0
@@ -178,4 +180,5 @@ text = "Your total collected resources."
 
 [connection signal="player_exited_interactable" from="Interactable" to="." method="_on_interactable_player_exited_interactable"]
 [connection signal="player_interacted" from="Interactable" to="." method="_on_interactable_player_interacted"]
+[connection signal="mouse_entered" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_button_hovered"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

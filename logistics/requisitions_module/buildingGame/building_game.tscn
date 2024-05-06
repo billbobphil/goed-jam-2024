@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi8pgy1vk8q86"]
+[gd_scene load_steps=9 format=3 uid="uid://bi8pgy1vk8q86"]
 
 [ext_resource type="Script" path="res://logistics/requisitions_module/buildingGame/BuildingGame.gd" id="1_s4pq3"]
 [ext_resource type="Texture2D" uid="uid://bggni8sn1nl73" path="res://temp-assets/32x32-cube.png" id="2_kjfvh"]
 [ext_resource type="Texture2D" uid="uid://dx04fump3ytgl" path="res://aseprite-files/screen.png" id="3_202xk"]
 [ext_resource type="PackedScene" uid="uid://qsxjgkn4b8gl" path="res://logistics/requisitions_module/buildingGame/building_block.tscn" id="3_bj5k5"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="4_3l0gc"]
+[ext_resource type="Script" path="res://ButtonSoundEffects.gd" id="6_y8tfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isoor"]
 size = Vector2(838, 32)
@@ -63,6 +64,7 @@ offset_right = 615.0
 offset_bottom = 75.0
 theme = ExtResource("4_3l0gc")
 text = "EXIT"
+script = ExtResource("6_y8tfe")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 371.0
@@ -76,4 +78,5 @@ This will earn BUILDING materials."
 
 [connection signal="body_entered" from="AchievementLine/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AchievementLine/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="ExitButton" to="ExitButton" method="_on_button_hovered"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

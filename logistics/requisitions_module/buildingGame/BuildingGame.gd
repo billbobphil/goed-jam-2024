@@ -69,6 +69,7 @@ func _on_area_2d_body_exited(body:Node2D):
 		blocksWithActiveCollisionsWithLine.erase(body);
 
 func _on_exit_button_pressed():
+	SoundEffectAccess.soundEffects.computerOff.play();
 	disableGame();
 	if interactable:
 		interactable.reenableInteraction();

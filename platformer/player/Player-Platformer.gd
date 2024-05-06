@@ -40,8 +40,11 @@ func _ready():
 func _physics_process(delta):
 	if velocity.x == 0:
 		playerSprite.play("idle");
+		SoundEffectAccess.soundEffects.playerWalk.stop();
 	elif is_on_floor():
 		playerSprite.play("walk");
+		if !SoundEffectAccess.soundEffects.playerWalk.is_playing():
+			SoundEffectAccess.soundEffects.playerWalk.play();
 
 	if velocity.x < 0:
 		playerSprite.flip_h = true;
@@ -130,13 +133,17 @@ func jump():
 	isJumping = true;
 	shouldFall = true;
 	playerSprite.play("jump");
+	SoundEffectAccess.soundEffects.playerJump.play();
+	SoundEffectAccess.soundEffects.playerWalk.stop();
 
 func enemyBounceJump():
 	velocity.y = JUMP_VELOCITY * .8;
 	shouldFall = true;
 	isJumping = true;
+	SoundEffectAccess.soundEffects.playerJump.play();
 
 func knockback(knockbackDirection, knockbackForce):
 	shouldGetKnockedBack = true;
 	knockbackXForce = knockbackDirection * knockbackForce;
 	knockbackYForce = -100;
+	SoundEffectAccess.soundEffects.playerGetBumped.play();

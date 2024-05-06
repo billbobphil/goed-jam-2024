@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyunplvkewb7i"]
+[gd_scene load_steps=5 format=3 uid="uid://dyunplvkewb7i"]
 
 [ext_resource type="Script" path="res://endGame/End.gd" id="1_0stnc"]
 [ext_resource type="Texture2D" uid="uid://cu6lqajis208r" path="res://aseprite-files/menu-background.png" id="2_0fr2t"]
 [ext_resource type="Theme" uid="uid://c6sutivwcotru" path="res://themes/standard-font-theme.tres" id="2_mipr7"]
+[ext_resource type="Script" path="res://ButtonSoundEffects.gd" id="4_0eaaw"]
 
 [node name="End" type="Node2D"]
 script = ExtResource("1_0stnc")
@@ -30,6 +31,7 @@ offset_bottom = 353.0
 theme = ExtResource("2_mipr7")
 theme_override_font_sizes/font_size = 32
 text = "MENU"
+script = ExtResource("4_0eaaw")
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
 offset_left = 125.0
@@ -53,4 +55,5 @@ offset_bottom = 206.0
 theme = ExtResource("2_mipr7")
 text = "by billbobphil"
 
+[connection signal="mouse_entered" from="CanvasLayer/MenuButton" to="CanvasLayer/MenuButton" method="_on_button_hovered"]
 [connection signal="pressed" from="CanvasLayer/MenuButton" to="." method="_on_menu_button_pressed"]

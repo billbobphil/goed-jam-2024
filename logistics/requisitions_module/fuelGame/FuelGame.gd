@@ -53,6 +53,7 @@ func disableGame():
 	visible = false;
 
 func _on_button_pressed():
+	SoundEffectAccess.soundEffects.computerOff.play();
 	isGameActive = false;
 	visible = false;
 	if interactable:

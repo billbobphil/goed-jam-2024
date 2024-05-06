@@ -25,6 +25,7 @@ GameReferenceManager="*res://logistics/gameReferenceManager/GameReferenceManager
 EfficiencySkillMediator="*res://logistics/technologyManager/skills/efficiency/EfficiencySkillMediator.gd"
 SceneChangeManager="*res://SceneChangeManager.gd"
 MusicPlayer="*res://music/MusicPlayer.gd"
+SoundEffectAccess="*res://soundEffects/SoundEffectAccess.gd"
 
 [display]
 
