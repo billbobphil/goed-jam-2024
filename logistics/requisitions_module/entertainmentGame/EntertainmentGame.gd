@@ -5,6 +5,7 @@ extends Game
 @onready var dieGuessNumber : Label = $DieGuessNumber;
 @onready var higherButton : Button = $HigherButton;
 @onready var lowerButton : Button = $LowerButton;
+@onready var scored : Label = $Scored;
 var isHighRiskEnabled = false;
 
 var numberToGuessAround = 0;
@@ -21,6 +22,7 @@ func enableGame():
 	resetGame();
 
 func disableGame():
+	scored.visible = false;
 	isGameActive = false;
 	visible = false;
 
@@ -84,7 +86,7 @@ func rollAndCheck():
 		if isHighRiskEnabled:
 			entertainment_gained.emit(-2);
 
-	await get_tree().create_timer(2.5).timeout;
+	await get_tree().create_timer(1.5).timeout;
 	resetGame();
 
 func giveReward():
@@ -92,5 +94,9 @@ func giveReward():
 		entertainment_gained.emit(1);
 	else:
 		entertainment_gained.emit(3);
+	scored.visible = true;
+	SoundEffectAccess.soundEffects.resourceGet.play();
+	await get_tree().create_timer(1).timeout;
+	scored.visible = false;
 
 	

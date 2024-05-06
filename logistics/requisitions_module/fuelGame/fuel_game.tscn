@@ -74,5 +74,14 @@ text = "Hold [SPACEBAR]
 Let Go When Fuel Is Between Fill Lines.
 This will earn FUEL."
 
+[node name="Scored" type="Label" parent="."]
+visible = false
+offset_left = 381.0
+offset_top = 140.0
+offset_right = 421.0
+offset_bottom = 163.0
+theme = ExtResource("3_xbh7b")
+text = "+ Fuel"
+
 [connection signal="mouse_entered" from="Button" to="Button" method="_on_button_hovered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

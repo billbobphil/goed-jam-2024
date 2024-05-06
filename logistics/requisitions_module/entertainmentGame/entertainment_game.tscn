@@ -82,6 +82,15 @@ Guess whether the cumulative value of the dice will
 be higher or lower than the number presented.
 This will earn ENTERTAINMENT."
 
+[node name="Scored" type="Label" parent="."]
+visible = false
+offset_left = 261.0
+offset_top = 248.0
+offset_right = 359.0
+offset_bottom = 271.0
+theme = ExtResource("3_ahe2v")
+text = "+ Entertainment"
+
 [connection signal="mouse_entered" from="ExitButton" to="ExitButton" method="_on_button_hovered"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="mouse_entered" from="LowerButton" to="ExitButton" method="_on_button_hovered"]

@@ -6,6 +6,10 @@ class_name PlayerLogistics
 var isMovementEnabled : bool = true;
 @onready var animatedSprite : AnimatedSprite2D = $AnimatedSprite2D;
 
+func _process(_delta):
+	if Input.is_action_just_pressed("unstuck"):
+		position = Vector2(317, 206);
+
 func _physics_process(_delta):
 	if !isMovementEnabled:
 		return;

@@ -9,6 +9,7 @@ func getCurrentPopulation():
 func increasePopulation(amount):
 	currentPopulation += amount;
 	TechnologyManager.increaseTechPoints(1);
+	SoundEffectAccess.soundEffects.populationGet.play();
 	checkVictory();
 
 func checkVictory():

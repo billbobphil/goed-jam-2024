@@ -4,6 +4,7 @@ extends Game
 @onready var blockSpawnPoint : Node2D = $BlockSpawnPoint;
 @onready var blocksContainer : Node = $BlocksContainer;
 @onready var achievementLine : Sprite2D = $AchievementLine;
+@onready var scored : Label = $Scored;
 var spawnedBlocks : Array = [];
 var blocksWithActiveCollisionsWithLine : Array = [];
 var playerReference;
@@ -22,8 +23,13 @@ func _process(_delta):
 		return;
 	for block in blocksWithActiveCollisionsWithLine:
 		if block.position.y < achievementLine.position.y && !block.isUnderPlayerControl:
+			scored.visible = true;
+			SoundEffectAccess.soundEffects.resourceGet.play();
 			building_gained.emit(1);
 			resetGame();
+			await get_tree().create_timer(1).timeout;
+			scored.visible = false;
+
 
 func enableGame():
 	isGameActive = true;
@@ -34,6 +40,7 @@ func enableGame():
 	resetGame();
 
 func disableGame():
+	scored.visible = false;
 	cleanupBlocks();
 	isGameActive = false;
 	visible = false;

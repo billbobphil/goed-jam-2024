@@ -4,6 +4,7 @@ extends Game
 @onready var noteSpawnLocation : Node2D = $NoteSpawnLocation;
 @onready var noteContainer : Node = $NoteContainer;
 @onready var noteHitterSprite : Sprite2D = $NoteHitter/Sprite2D;
+@onready var scored : Label = $Scored;
 var notesWithinRange : Array = [];
 
 @export var minimumTimeBetweenNotes : float = 3;
@@ -48,7 +49,11 @@ func _process(delta):
 
 			if numberOfNotesHit >= numberOfNotesBeforeScore:
 				food_gained.emit(1);
+				SoundEffectAccess.soundEffects.resourceGet.play();
+				scored.visible = true;
 				resetGame();
+				await get_tree().create_timer(1).timeout;
+				scored.visible = false;
 		else:
 			isDebounced = true;
 			noteHitterSprite.modulate = Color(1, 0, 0, 1);
@@ -59,6 +64,7 @@ func enableGame():
 	resetGame();
 
 func disableGame():
+	scored.visible = false;
 	isGameActive = false;
 	visible = false;
 	resetGame();

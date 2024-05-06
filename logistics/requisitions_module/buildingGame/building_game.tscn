@@ -76,6 +76,15 @@ text = "Move falling blocks with [A] and [D].
 Stack the blocks up to the green line.
 This will earn BUILDING materials."
 
+[node name="Scored" type="Label" parent="."]
+visible = false
+offset_left = 261.0
+offset_top = 113.0
+offset_right = 387.0
+offset_bottom = 136.0
+theme = ExtResource("4_3l0gc")
+text = "+ Building Materials"
+
 [connection signal="body_entered" from="AchievementLine/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AchievementLine/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="mouse_entered" from="ExitButton" to="ExitButton" method="_on_button_hovered"]

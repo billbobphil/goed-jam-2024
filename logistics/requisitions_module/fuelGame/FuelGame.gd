@@ -6,6 +6,7 @@ var currentWindow : Vector2;
 @onready var progressBar = $FillBar;
 @onready var minBar = $MinBar;
 @onready var maxBar = $MaxBar;
+@onready var scored : Label = $Scored;
 var canPress : bool = true;
 
 signal fuel_gained
@@ -38,10 +39,14 @@ func _process(delta):
 		progressBar.value += speed * delta;
 
 func processButtonRelease():
+	resetGame();
 	if(progressBar.value > currentWindow.x && progressBar.value < currentWindow.y):
 		fuel_gained.emit(1);
+		SoundEffectAccess.soundEffects.resourceGet.play();
+		scored.visible = true;
+		await get_tree().create_timer(.75).timeout;
+		scored.visible = false;
 		
-	resetGame();
 
 func enableGame():
 	isGameActive = true;
@@ -49,6 +54,7 @@ func enableGame():
 	resetGame();
 
 func disableGame():
+	scored.visible = false;
 	isGameActive = false;
 	visible = false;
 
