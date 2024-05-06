@@ -62,6 +62,7 @@ position = Vector2(173, 72)
 [node name="AutoGatherOne" parent="AutoGatherTrack" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_bt5x5")]
 skill = SubResource("Resource_5t0jf")
 nextNodes = [NodePath("../AutoGatherTwo")]
+description = "1 entertainment will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="Line2D" type="Line2D" parent="AutoGatherTrack"]
 position = Vector2(16, 0)
@@ -74,6 +75,7 @@ position = Vector2(91, 0)
 skill = SubResource("Resource_54khj")
 prevNode = NodePath("../AutoGatherOne")
 nextNodes = [NodePath("../AutoGatherEight")]
+description = "2 entertainment will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="Line2D2" type="Line2D" parent="AutoGatherTrack"]
 position = Vector2(107, 0)
@@ -86,6 +88,7 @@ position = Vector2(182, 0)
 skill = SubResource("Resource_obnt3")
 prevNode = NodePath("../AutoGatherTwo")
 nextNodes = [NodePath("../AutoGather12")]
+description = "8 entertainment will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="Line2D3" type="Line2D" parent="AutoGatherTrack"]
 position = Vector2(198, 0)
@@ -98,6 +101,7 @@ position = Vector2(273, 0)
 skill = SubResource("Resource_jl8by")
 prevNode = NodePath("../AutoGatherEight")
 nextNodes = [NodePath("../AutoGather24")]
+description = "12 entertainment will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="Line2D4" type="Line2D" parent="AutoGatherTrack"]
 position = Vector2(289, 0)
@@ -109,6 +113,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 position = Vector2(364, 0)
 skill = SubResource("Resource_m1q1k")
 prevNode = NodePath("../AutoGather12")
+description = "24 entertainment will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="AutoGatherLabel" type="Label" parent="AutoGatherTrack"]
 offset_left = -16.0
@@ -124,6 +129,7 @@ position = Vector2(173, 190)
 [node name="FasterAutoGatherSix" parent="FasterAutoGather" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_bt5x5")]
 skill = SubResource("Resource_w88bd")
 nextNodes = [NodePath("../FasterAutoGatherFour")]
+description = "Increases the rate at which entertainment is auto-gathered for you from 12 to 6 hours."
 
 [node name="Line2D2" type="Line2D" parent="FasterAutoGather"]
 position = Vector2(16, 0)
@@ -136,6 +142,7 @@ position = Vector2(91, 0)
 skill = SubResource("Resource_eiogu")
 prevNode = NodePath("../FasterAutoGatherSix")
 nextNodes = [NodePath("../FasterAutoGatherTwo")]
+description = "Increases the rate at which entertainment is auto-gathered for you from 6 to 4 hours."
 
 [node name="Line2D3" type="Line2D" parent="FasterAutoGather"]
 position = Vector2(107, 0)
@@ -148,6 +155,7 @@ position = Vector2(182, 0)
 skill = SubResource("Resource_7is8s")
 prevNode = NodePath("../FasterAutoGatherFour")
 nextNodes = [NodePath("../FasterAutoGatherOne")]
+description = "Increases the rate at which entertainment is auto-gathered for you from 4 to 2 hours."
 
 [node name="Line2D4" type="Line2D" parent="FasterAutoGather"]
 position = Vector2(198, 0)
@@ -159,6 +167,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 position = Vector2(273, 0)
 skill = SubResource("Resource_0r1k8")
 prevNode = NodePath("../FasterAutoGatherTwo")
+description = "Increases the rate at which entertainment is auto-gathered for you from 2 to 1 hours."
 
 [node name="FasterAutoGatherLabel" type="Label" parent="FasterAutoGather"]
 offset_left = -16.0
@@ -173,6 +182,7 @@ position = Vector2(173, 298)
 
 [node name="HighRiskNode" parent="HighRisk" instance=ExtResource("1_bt5x5")]
 skill = SubResource("Resource_q2sd3")
+description = "When manually requisitioning entertainment a correct guess will now reward 3. However, an incorrect guess will remove 2."
 
 [node name="HighRiskLabel" type="Label" parent="HighRisk"]
 offset_left = -16.0

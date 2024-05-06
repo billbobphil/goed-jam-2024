@@ -4,6 +4,8 @@ class_name TechTreeNode
 
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var costLabel : Label = $CostLabel
+@onready var canvasLayer : CanvasLayer = $CanvasLayer
+@onready var label : Label = $CanvasLayer/Label;
 var isAvailable : bool = false;
 var isUnlocked : bool = false;
 @export var cost : int = 1;
@@ -13,6 +15,8 @@ var isUnlocked : bool = false;
 @export var description : String = "";
 
 func _ready():
+	canvasLayer.hide();
+	label.text = description;
 	if prevNode == null:
 		makeAvailable();
 	else:
@@ -41,9 +45,11 @@ func unlock():
 
 
 func _on_area_2d_mouse_entered():
+	canvasLayer.show();
 	if isAvailable && !isUnlocked:
 		sprite.self_modulate = Color(0.6, 0.45882, 0.46667, 1.0);
 
 func _on_area_2d_mouse_exited():
+	canvasLayer.hide();
 	if !isUnlocked:
 		sprite.self_modulate = Color(0.50588, 0.38431, 0.44314, 1.0);

@@ -38,6 +38,7 @@ position = Vector2(173, 72)
 [node name="AutoGatherOne" parent="AutoGatherTrack" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_iliod")]
 skill = SubResource("Resource_d466d")
 nextNodes = [NodePath("../AutoGatherTwo")]
+description = "1 building material will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="Line2D" type="Line2D" parent="AutoGatherTrack"]
 position = Vector2(16, 0)
@@ -50,6 +51,7 @@ position = Vector2(91, 0)
 skill = SubResource("Resource_5mbyc")
 prevNode = NodePath("../AutoGatherOne")
 nextNodes = [NodePath("../AutoGatherThree")]
+description = "2 building materials will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="Line2D2" type="Line2D" parent="AutoGatherTrack"]
 position = Vector2(107, 0)
@@ -61,6 +63,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 position = Vector2(182, 0)
 skill = SubResource("Resource_xq414")
 prevNode = NodePath("../AutoGatherTwo")
+description = "3 building materials will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="AutoGatherLabel" type="Label" parent="AutoGatherTrack"]
 offset_left = -16.0
@@ -75,6 +78,7 @@ position = Vector2(173, 190)
 
 [node name="FasterAutoGatherSix" parent="FasterAutoGather" instance=ExtResource("1_iliod")]
 skill = SubResource("Resource_vyjmw")
+description = "Increases the rate at which building materials are auto-gathered for you from 12 to 6 hours."
 
 [node name="FasterAutoGatherLabel" type="Label" parent="FasterAutoGather"]
 offset_left = -16.0
@@ -90,6 +94,7 @@ position = Vector2(173, 298)
 [node name="LowerTowerHeight25" parent="LowerTowerHeight" instance=ExtResource("1_iliod")]
 scale = Vector2(0.997936, 0.993715)
 skill = SubResource("Resource_5xodi")
+description = "When manually requistioning building materials the required building height is lowered by 25%."
 
 [node name="LowerTowerHeightLabel" type="Label" parent="LowerTowerHeight"]
 offset_left = -16.0

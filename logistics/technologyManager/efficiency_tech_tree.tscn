@@ -33,6 +33,7 @@ position = Vector2(173, 72)
 [node name="IncreaseSpeed20" parent="IncreaseMoveSpeed" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_scgf1")]
 skill = SubResource("Resource_1k71j")
 nextNodes = [NodePath("../IncreaseSpeed20Again")]
+description = "Increases your movement speed by 20%."
 
 [node name="Line2D" type="Line2D" parent="IncreaseMoveSpeed"]
 position = Vector2(16, 0)
@@ -44,6 +45,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 position = Vector2(91, 0)
 skill = SubResource("Resource_ebvma")
 prevNode = NodePath("../IncreaseSpeed20")
+description = "Increases your movement speed by an additional 20%."
 
 [node name="Label" type="Label" parent="IncreaseMoveSpeed"]
 offset_left = -16.0
@@ -59,6 +61,7 @@ position = Vector2(173, 190)
 [node name="SlowTime50" parent="SlowTime" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_scgf1")]
 skill = SubResource("Resource_4enva")
 nextNodes = [NodePath("../SlowTime30")]
+description = "Slows the passage of time by 50%. Warning: This can dramatically increase overall play time."
 
 [node name="Line2D2" type="Line2D" parent="SlowTime"]
 position = Vector2(16, 0)
@@ -70,6 +73,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 position = Vector2(91, 0)
 skill = SubResource("Resource_n1xa8")
 prevNode = NodePath("../SlowTime50")
+description = "Slows the passage of time to 33% of original rate. Warning: This can dramatically increase overall play time."
 
 [node name="Label" type="Label" parent="SlowTime"]
 offset_left = -16.0
@@ -84,6 +88,7 @@ position = Vector2(173, 298)
 
 [node name="AutoCollectTechPoints" parent="AutoCollect" instance=ExtResource("1_scgf1")]
 skill = SubResource("Resource_r1p2j")
+description = "Awarded technology points are now automatically collected for you."
 
 [node name="Label" type="Label" parent="AutoCollect"]
 offset_left = -16.0

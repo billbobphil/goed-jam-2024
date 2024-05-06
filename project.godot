@@ -24,6 +24,7 @@ AutoGatherer="*res://logistics/resourceManager/AutoGatherer.gd"
 GameReferenceManager="*res://logistics/gameReferenceManager/GameReferenceManager.gd"
 EfficiencySkillMediator="*res://logistics/technologyManager/skills/efficiency/EfficiencySkillMediator.gd"
 SceneChangeManager="*res://SceneChangeManager.gd"
+MusicPlayer="*res://music/MusicPlayer.gd"
 
 [display]
 

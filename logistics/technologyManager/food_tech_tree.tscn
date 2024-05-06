@@ -62,6 +62,7 @@ position = Vector2(173, 72)
 [node name="AutoGatherOne" parent="AutoGatherTrack" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_imhwb")]
 skill = SubResource("Resource_54xu0")
 nextNodes = [NodePath("../AutoGatherTwo")]
+description = "1 food will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="Line2D" type="Line2D" parent="AutoGatherTrack"]
 position = Vector2(16, 0)
@@ -74,6 +75,7 @@ position = Vector2(91, 0)
 skill = SubResource("Resource_h8u3f")
 prevNode = NodePath(".")
 nextNodes = [NodePath("../AutoGatherFour")]
+description = "2 food will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="Line2D2" type="Line2D" parent="AutoGatherTrack"]
 position = Vector2(107, 0)
@@ -86,6 +88,7 @@ position = Vector2(182, 0)
 skill = SubResource("Resource_2rld3")
 prevNode = NodePath(".")
 nextNodes = [NodePath("../AutoGatherEight")]
+description = "4 food will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="Line2D3" type="Line2D" parent="AutoGatherTrack"]
 position = Vector2(198, 0)
@@ -97,6 +100,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 position = Vector2(273, 0)
 skill = SubResource("Resource_m6vb2")
 prevNode = NodePath(".")
+description = "8 food will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="AutoGatherLabel" type="Label" parent="AutoGatherTrack"]
 offset_left = -16.0
@@ -112,6 +116,7 @@ position = Vector2(173, 190)
 [node name="FasterAutoGatherSix" parent="FasterAutoGather" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_imhwb")]
 skill = SubResource("Resource_hf3co")
 nextNodes = [NodePath("../FasterAutoGatherFour")]
+description = "Increases the rate at which food is auto-gathered for you from 12 to 6 hours."
 
 [node name="Line2D2" type="Line2D" parent="FasterAutoGather"]
 position = Vector2(16, 0)
@@ -124,6 +129,7 @@ position = Vector2(91, 0)
 skill = SubResource("Resource_winh4")
 prevNode = NodePath("../FasterAutoGatherSix")
 nextNodes = [NodePath("../FasterAutoGatherTwo")]
+description = "Increases the rate at which food is auto-gathered for you from 6 to 4 hours."
 
 [node name="Line2D3" type="Line2D" parent="FasterAutoGather"]
 position = Vector2(107, 0)
@@ -136,6 +142,7 @@ position = Vector2(182, 0)
 skill = SubResource("Resource_tuf16")
 prevNode = NodePath("../FasterAutoGatherFour")
 nextNodes = [NodePath("../FasterAutoGatherOne")]
+description = "Increases the rate at which food is auto-gathered for you from 4 to 2 hours."
 
 [node name="Line2D4" type="Line2D" parent="FasterAutoGather"]
 position = Vector2(198, 0)
@@ -147,6 +154,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 position = Vector2(273, 0)
 skill = SubResource("Resource_t3kej")
 prevNode = NodePath("../FasterAutoGatherTwo")
+description = "Increases the rate at which food is auto-gathered for you from 2 to 1 hours."
 
 [node name="FasterAutoGatherLabel" type="Label" parent="FasterAutoGather"]
 offset_left = -16.0
@@ -162,6 +170,7 @@ position = Vector2(173, 298)
 [node name="DecreaseChopsFive" parent="DecreaseChops" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_imhwb")]
 skill = SubResource("Resource_13ic8")
 nextNodes = [NodePath("../DecreaseChopsThree")]
+description = "When manually requistioning food, reduces the number of correct chops from 7 to 5."
 
 [node name="Line2D" type="Line2D" parent="DecreaseChops"]
 position = Vector2(16, 0)
@@ -173,6 +182,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 position = Vector2(91, 0)
 skill = SubResource("Resource_0umtk")
 prevNode = NodePath("../DecreaseChopsFive")
+description = "When manually requistioning food, reduces the number of correct chops from 5 to 3."
 
 [node name="DecreaseChopsLabel" type="Label" parent="DecreaseChops"]
 offset_left = -16.0

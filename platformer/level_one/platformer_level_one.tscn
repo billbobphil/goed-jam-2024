@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cybuho2sam237"]
+[gd_scene load_steps=15 format=3 uid="uid://cybuho2sam237"]
 
+[ext_resource type="Script" path="res://platformer/level_one/PlatformerLevelOne.gd" id="1_652rn"]
 [ext_resource type="Texture2D" uid="uid://usuva7wvhgom" path="res://temp-assets/floor-wall-tileset-16x16.png" id="1_c350g"]
 [ext_resource type="Texture2D" uid="uid://irkjwxuunc3v" path="res://generic-art-assets/Dark Tree.png" id="1_xu2gw"]
 [ext_resource type="Texture2D" uid="uid://damooqbvtdnbi" path="res://generic-art-assets/Dark Tree-extra-tree-left.png" id="2_7mxdn"]
@@ -256,6 +257,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5755y")
 
 [node name="PlatformerLevelOne" type="Node2D"]
+script = ExtResource("1_652rn")
 
 [node name="BackdropTrees" type="Node2D" parent="."]
 

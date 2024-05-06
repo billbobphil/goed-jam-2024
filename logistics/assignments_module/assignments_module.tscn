@@ -124,14 +124,14 @@ position = Vector2(173, 269)
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Food"]
 layout_mode = 0
-offset_left = 492.0
-offset_top = 261.0
-offset_right = 613.0
-offset_bottom = 311.0
+offset_left = 490.0
+offset_top = 260.0
+offset_right = 611.0
+offset_bottom = 310.0
 text = "EXIT"
 
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Food" instance=ExtResource("5_rmo44")]
-position = Vector2(569, 39)
+position = Vector2(563, 38)
 
 [node name="Label" type="Label" parent="CanvasLayer/TabContainer/Food"]
 layout_mode = 0
@@ -148,26 +148,23 @@ mouse_filter = 2
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Fuel"]
 layout_mode = 0
-offset_left = 494.0
-offset_top = 262.0
-offset_right = 615.0
-offset_bottom = 312.0
+offset_left = 490.0
+offset_top = 260.0
+offset_right = 611.0
+offset_bottom = 310.0
 text = "EXIT"
 
 [node name="FuelTechTree" parent="CanvasLayer/TabContainer/Fuel" instance=ExtResource("5_g4lgg")]
-position = Vector2(-127, -22)
-
-[node name="AutoGatherTrack" parent="CanvasLayer/TabContainer/Fuel/FuelTechTree" index="0"]
-position = Vector2(184, 97)
+position = Vector2(-116, -6)
 
 [node name="FasterAutoGather" parent="CanvasLayer/TabContainer/Fuel/FuelTechTree" index="1"]
-position = Vector2(185, 184)
+position = Vector2(173, 171)
 
 [node name="FasterFuelGauge" parent="CanvasLayer/TabContainer/Fuel/FuelTechTree" index="2"]
-position = Vector2(186, 277)
+position = Vector2(173, 269)
 
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Fuel" instance=ExtResource("5_rmo44")]
-position = Vector2(574, 34)
+position = Vector2(563, 38)
 
 [node name="Label" type="Label" parent="CanvasLayer/TabContainer/Fuel"]
 layout_mode = 0
@@ -184,26 +181,23 @@ mouse_filter = 2
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Building"]
 layout_mode = 0
-offset_left = 494.0
-offset_top = 261.0
-offset_right = 615.0
-offset_bottom = 311.0
+offset_left = 490.0
+offset_top = 260.0
+offset_right = 611.0
+offset_bottom = 310.0
 text = "EXIT"
 
 [node name="BuildingTechTree" parent="CanvasLayer/TabContainer/Building" instance=ExtResource("6_27t6c")]
-position = Vector2(-127, -22)
-
-[node name="AutoGatherTrack" parent="CanvasLayer/TabContainer/Building/BuildingTechTree" index="0"]
-position = Vector2(186, 94)
+position = Vector2(-116, -6)
 
 [node name="FasterAutoGather" parent="CanvasLayer/TabContainer/Building/BuildingTechTree" index="1"]
-position = Vector2(186, 181)
+position = Vector2(173, 171)
 
 [node name="LowerTowerHeight" parent="CanvasLayer/TabContainer/Building/BuildingTechTree" index="2"]
-position = Vector2(188, 271)
+position = Vector2(173, 269)
 
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Building" instance=ExtResource("5_rmo44")]
-position = Vector2(572, 37)
+position = Vector2(563, 38)
 
 [node name="Label" type="Label" parent="CanvasLayer/TabContainer/Building"]
 layout_mode = 0
@@ -220,26 +214,23 @@ mouse_filter = 2
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Entertainment"]
 layout_mode = 0
-offset_left = 493.0
-offset_top = 262.0
-offset_right = 614.0
-offset_bottom = 312.0
+offset_left = 490.0
+offset_top = 260.0
+offset_right = 611.0
+offset_bottom = 310.0
 text = "EXIT"
 
 [node name="EntertainmentTechTree" parent="CanvasLayer/TabContainer/Entertainment" instance=ExtResource("7_rdgb5")]
-position = Vector2(-127, -22)
-
-[node name="AutoGatherTrack" parent="CanvasLayer/TabContainer/Entertainment/EntertainmentTechTree" index="0"]
-position = Vector2(184, 93)
+position = Vector2(-116, -6)
 
 [node name="FasterAutoGather" parent="CanvasLayer/TabContainer/Entertainment/EntertainmentTechTree" index="1"]
-position = Vector2(184, 184)
+position = Vector2(173, 171)
 
 [node name="HighRisk" parent="CanvasLayer/TabContainer/Entertainment/EntertainmentTechTree" index="2"]
-position = Vector2(186, 278)
+position = Vector2(173, 269)
 
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Entertainment" instance=ExtResource("5_rmo44")]
-position = Vector2(572, 35)
+position = Vector2(563, 38)
 
 [node name="Label" type="Label" parent="CanvasLayer/TabContainer/Entertainment"]
 layout_mode = 0
@@ -256,26 +247,23 @@ mouse_filter = 2
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TabContainer/Efficiency"]
 layout_mode = 0
-offset_left = 493.0
-offset_top = 262.0
-offset_right = 614.0
-offset_bottom = 312.0
+offset_left = 490.0
+offset_top = 260.0
+offset_right = 611.0
+offset_bottom = 310.0
 text = "EXIT"
 
 [node name="EfficiencyTechTree" parent="CanvasLayer/TabContainer/Efficiency" instance=ExtResource("8_v7wp5")]
-position = Vector2(-127, -22)
-
-[node name="IncreaseMoveSpeed" parent="CanvasLayer/TabContainer/Efficiency/EfficiencyTechTree" index="0"]
-position = Vector2(186, 96)
+position = Vector2(-116, -4)
 
 [node name="SlowTime" parent="CanvasLayer/TabContainer/Efficiency/EfficiencyTechTree" index="1"]
-position = Vector2(186, 188)
+position = Vector2(173, 171)
 
 [node name="AutoCollect" parent="CanvasLayer/TabContainer/Efficiency/EfficiencyTechTree" index="2"]
-position = Vector2(187, 281)
+position = Vector2(173, 269)
 
 [node name="TechnologyPointsDisplay" parent="CanvasLayer/TabContainer/Efficiency" instance=ExtResource("5_rmo44")]
-position = Vector2(571, 39)
+position = Vector2(563, 38)
 
 [node name="Label" type="Label" parent="CanvasLayer/TabContainer/Efficiency"]
 layout_mode = 0

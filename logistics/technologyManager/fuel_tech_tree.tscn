@@ -67,6 +67,7 @@ position = Vector2(173, 72)
 [node name="AutoGatherOne" parent="AutoGatherTrack" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_vy6gu")]
 skill = SubResource("Resource_f2u4k")
 nextNodes = [NodePath("../AutoGatherEight")]
+description = "1 fuel will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="Line2D" type="Line2D" parent="AutoGatherTrack"]
 position = Vector2(16, 0)
@@ -79,6 +80,7 @@ position = Vector2(91, 0)
 skill = SubResource("Resource_bnxn8")
 prevNode = NodePath("../AutoGatherOne")
 nextNodes = [NodePath("../AutoGather16")]
+description = "8 fuel will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="Line2D2" type="Line2D" parent="AutoGatherTrack"]
 position = Vector2(107, 0)
@@ -91,6 +93,7 @@ position = Vector2(182, 0)
 skill = SubResource("Resource_373jg")
 prevNode = NodePath("../AutoGatherEight")
 nextNodes = [NodePath("../AutoGather32")]
+description = "16 fuel will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="Line2D3" type="Line2D" parent="AutoGatherTrack"]
 position = Vector2(198, 0)
@@ -103,6 +106,7 @@ position = Vector2(273, 0)
 skill = SubResource("Resource_v5hdq")
 prevNode = NodePath("../AutoGather16")
 nextNodes = [NodePath("../AutoGather64")]
+description = "32 fuel will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="Line2D4" type="Line2D" parent="AutoGatherTrack"]
 position = Vector2(289, 0)
@@ -114,6 +118,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 position = Vector2(364, 0)
 skill = SubResource("Resource_4k0vk")
 prevNode = NodePath("../AutoGather32")
+description = "64 fuel will be requisitioned for you every 12 hours, or faster if you've invested in FASTER AUTO GATHER."
 
 [node name="AutoGatherLabel" type="Label" parent="AutoGatherTrack"]
 offset_left = -16.0
@@ -129,6 +134,7 @@ position = Vector2(173, 190)
 [node name="FasterAutoGatherSix" parent="FasterAutoGather" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_vy6gu")]
 skill = SubResource("Resource_ly8vd")
 nextNodes = [NodePath("../FasterAutoGatherFour")]
+description = "Increases the rate at which fuel is auto-gathered for you from 12 to 6 hours."
 
 [node name="Line2D2" type="Line2D" parent="FasterAutoGather"]
 position = Vector2(16, 0)
@@ -141,6 +147,7 @@ position = Vector2(91, 0)
 skill = SubResource("Resource_4jk62")
 prevNode = NodePath("../FasterAutoGatherSix")
 nextNodes = [NodePath("../FasterAutoGatherTwo")]
+description = "Increases the rate at which fuel is auto-gathered for you from 6 to 4 hours."
 
 [node name="Line2D3" type="Line2D" parent="FasterAutoGather"]
 position = Vector2(107, 0)
@@ -153,6 +160,7 @@ position = Vector2(182, 0)
 skill = SubResource("Resource_elaqi")
 prevNode = NodePath("../FasterAutoGatherFour")
 nextNodes = [NodePath("../FasterAutoGatherOne")]
+description = "Increases the rate at which fuel is auto-gathered for you from 4 to 2 hours."
 
 [node name="Line2D4" type="Line2D" parent="FasterAutoGather"]
 position = Vector2(198, 0)
@@ -164,6 +172,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 position = Vector2(273, 0)
 skill = SubResource("Resource_o4xi8")
 prevNode = NodePath("../FasterAutoGatherTwo")
+description = "Increases the rate at which fuel is auto-gathered for you from 2 to 1 hours."
 
 [node name="FasterAutoGatherLabel" type="Label" parent="FasterAutoGather"]
 offset_left = -16.0
@@ -179,6 +188,7 @@ position = Vector2(173, 298)
 [node name="FasterFuelGaugeFive" parent="FasterFuelGauge" node_paths=PackedStringArray("nextNodes") instance=ExtResource("1_vy6gu")]
 skill = SubResource("Resource_gbhrj")
 nextNodes = [NodePath("../FasterFuelGaugeTen")]
+description = "When manually requisitioning fuel the fuel gauge will fill up 50% faster."
 
 [node name="Line2D" type="Line2D" parent="FasterFuelGauge"]
 position = Vector2(16, 0)
@@ -190,6 +200,7 @@ default_color = Color(0.172537, 9.68391e-05, 0.563679, 1)
 position = Vector2(91, 0)
 skill = SubResource("Resource_75axi")
 prevNode = NodePath("../FasterFuelGaugeFive")
+description = "When manually requisitioning fuel the fuel gauge will fill up 50% faster."
 
 [node name="FasterFuelGaugeLabel" type="Label" parent="FasterFuelGauge"]
 offset_left = -16.0
